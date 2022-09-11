@@ -1,11 +1,12 @@
 import { View, StyleSheet } from 'react-native'
 import Header from './Header'
-// import GreetingButton from './GreetingButton'
+import GreetingButton from './GreetingButton'
 
 const Home = () => {
     return (
         <View style={styles.homeContainer}>
             <Header />
+            <GreetingButton />
         </View>
     )
 }

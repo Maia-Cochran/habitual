@@ -12,12 +12,22 @@ export default Header;
 
 const styles = StyleSheet.create({
     headerContainer: {
-        marginBottom: 500,
+        marginBottom: 50,
         backgroundColor: '#3A376F',
         height: 80,
         width: 300, 
         alignItems: 'center',
         justifyContent: 'center',
+        // shadowColor: "#869684",
+        // shadowOffset: {
+        //     width: 2,
+        //     height: 4,
+        // },
+        // shadowOpacity: .3,
+        // shadowRadius: 4.84,
+        // elevation: 5,
+        // ^^^ need to play with the shadow
+        //thinking purple for the greeting and green for the header
         borderWidth: 1,
             borderColor: '#3A376F',
             borderRadius: 23,
