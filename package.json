@@ -9,10 +9,14 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@types/react-native-snap-carousel": "^3.8.5",
+    "deprecated-react-native-prop-types": "^2.3.0",
     "expo": "~46.0.9",
     "expo-status-bar": "~1.4.0",
+    "prop-types": "^15.8.1",
     "react": "18.0.0",
-    "react-native": "0.69.5"
+    "react-native": "0.69.5",
+    "react-native-snap-carousel": "^4.0.0-beta.6"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
