@@ -2,7 +2,7 @@ import { View, StyleSheet } from 'react-native'
 import Header from './Header'
 import GreetingButton from './GreetingButton'
 import Carousel from './Carousel/Carousel'
-import ModalTester from './Modal'
+import ModalTemplate from './ModalTemplate'
 import BottomNavBar from './BottomNavBar'
 
 const Home = () => {
@@ -11,7 +11,7 @@ const Home = () => {
             <Header />
             <GreetingButton />
             {/* <Carousel /> */}
-            {/* <ModalTester /> */}
+            <ModalTemplate />
             <View style={styles.carouselContainer}>
                <Carousel />
             </View>
