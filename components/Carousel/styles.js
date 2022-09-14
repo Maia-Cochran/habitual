@@ -3,7 +3,10 @@ import { Dimensions, StyleSheet, Platform } from 'react-native';
 const { width: screenWidth } = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
+    // marginTop: 100,
     paddingTop: 30,
+    paddingBottom: 0,
+    marginBottom: 0
   },
   title: {
     fontSize: 20,
@@ -16,7 +19,7 @@ const styles = StyleSheet.create({
     flex: 1,
     borderRadius: 5,
     backgroundColor: 'lightblue',
-    marginBottom: Platform.select({ ios: 0, android: 1 }), //handle rendering bug.
+    // marginBottom: Platform.select({ ios: 0, android: 1 }), //handle rendering bug.
   },
   image: {
     ...StyleSheet.absoluteFillObject,
