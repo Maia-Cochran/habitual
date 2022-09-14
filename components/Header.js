@@ -12,13 +12,9 @@ export default Header;
 
 const styles = StyleSheet.create({
     headerContainer: {
-<<<<<<< HEAD
         marginBottom: 30,
         marginTop: 300,
-=======
-       
         marginBottom: 40,
->>>>>>> main
         backgroundColor: '#3A376F',
         height: 80,
         width: 300, 
