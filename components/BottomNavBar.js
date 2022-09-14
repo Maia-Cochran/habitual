@@ -16,7 +16,7 @@ export default BottomNavBar;
 const styles = StyleSheet.create({
     bottomNavBar: {
         backgroundColor: '#39376E',
-        height: 110,
+        height: 90,
         width: '100%',
         alignContent: 'center',
         justifyContent: 'center',
