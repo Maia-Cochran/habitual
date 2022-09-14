@@ -2,6 +2,7 @@ import { View, StyleSheet } from 'react-native'
 import Header from './Header'
 import GreetingButton from './GreetingButton'
 import Carousel from './Carousel/Carousel'
+import ModalTester from './Modal'
 
 const Home = () => {
     return (
@@ -9,6 +10,7 @@ const Home = () => {
             <Header />
             <GreetingButton />
             <Carousel />
+            <ModalTester />
         </View>
     )
 }

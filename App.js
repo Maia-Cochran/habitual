@@ -1,11 +1,16 @@
 // import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 import Home from './components/Home';
+// import Modal from 'react-native-modal';
+import Modal from './components/Modal';
 
 const App = () => {
+
   return (
     <View style={styles.appContainer}>
       <Home />
+      <Modal />
+      <Button title='ChecklistModalView'></Button>
     </View>
   );
 }
@@ -18,6 +23,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#F8EDDF',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  image: {
+    flex: 1,
   },
 });
 
