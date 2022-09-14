@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     backgroundColor: 'lightblue',
     // marginBottom: Platform.select({ ios: 0, android: 1 }), //handle rendering bug.
+    marginBottom: 0,
   },
   image: {
     ...StyleSheet.absoluteFillObject,

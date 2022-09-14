@@ -12,7 +12,10 @@ const Home = () => {
             <GreetingButton />
             {/* <Carousel /> */}
             {/* <ModalTester /> */}
-            <BottomNavBar />
+            <View style={styles.carouselContainer}>
+               <Carousel />
+            </View>
+            {/* <BottomNavBar /> */}
         </View>
     )
 }
@@ -25,5 +28,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         // height: 100,
         // width: 100
+    },
+    carouselContainer:{
+        height: '40%',
+        width: '100%',
     }
+   
 })

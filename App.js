@@ -15,6 +15,9 @@ const App = () => {
       {/* <Button title='ChecklistModalView'></Button> */}
       {/* <Carousel /> */}
       {/* <BottomNavBar /> */}
+      <View style={styles.bottomNavContainer}>
+         <BottomNavBar />   
+      </View>
     </View>
   );
 }
@@ -31,6 +34,12 @@ const styles = StyleSheet.create({
   image: {
     flex: 1,
   },
+  bottomNavContainer: {
+    alignItems: 'flexEnd',
+    justifyContent: 'flexEnd',
+    height: 60,
+    width: "100%"
+  }
 });
 
 {/* <StatusBar style="auto" />  */}
