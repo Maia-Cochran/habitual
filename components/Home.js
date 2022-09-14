@@ -9,8 +9,8 @@ const Home = () => {
         <View style={styles.homeContainer}>
             <Header />
             <GreetingButton />
-            {/* <Carousel /> */}
-            <BottomNavBar />
+            <Carousel />
+            {/* <BottomNavBar /> */}
         </View>
     )
 }

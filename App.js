@@ -8,8 +8,7 @@ const App = () => {
   return (
     <View style={styles.appContainer}>
       <Home />
-      {/* <Carousel /> */}
-      {/* <BottomNavBar /> */}
+      <BottomNavBar />   
     </View>
   );
 }
