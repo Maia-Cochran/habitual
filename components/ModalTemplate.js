@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { Button, Text, View, Modal, StyleSheet, Pressable } from "react-native";
 
 const ModalTemplate = () => {
-
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <View style={styles.centeredView}>
       <Modal
-        animationType="slide"
+        animationType="fade"
         transparent={true}
         visible={modalVisible}
+        presentationStyle={"fullscreen"}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
           setModalVisible(!modalVisible);
@@ -62,6 +62,8 @@ const ModalTemplate = () => {
       elevation: 5
     },
     button: {
+      height: 60,
+      width: 120,
       borderRadius: 20,
       padding: 10,
       elevation: 2
@@ -78,7 +80,7 @@ const ModalTemplate = () => {
       textAlign: "center"
     },
     modalText: {
-      marginBottom: 15,
+      margin: 15,
       textAlign: "center"
     }
   });

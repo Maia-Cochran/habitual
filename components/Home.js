@@ -10,12 +10,13 @@ const Home = () => {
         <View style={styles.homeContainer}>
             <Header />
             <GreetingButton />
-            {/* <Carousel /> */}
-            <ModalTemplate />
+            {/* <ModalTemplate /> */}
+            {/* ^^^ unsure of this location, does it exist in  */}
+            {/* Home component or within carousel? need to determine */}
+            {/* flow of data/components */}
             <View style={styles.carouselContainer}>
                <Carousel />
             </View>
-            {/* <BottomNavBar /> */}
         </View>
     )
 }
