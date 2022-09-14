@@ -14,11 +14,19 @@ const styles = StyleSheet.create({
   item: {
     width: '100%',
     height: screenWidth - 20, //height will be 20 units less than screen width.
+    shadowColor: "#000000",
+    shadowOffset: {
+        width: 6,
+        height: 6,
+    },
+    shadowOpacity: .7,
+    shadowRadius: 8,
+    elevation: 20,
   },
     imageContainer: {
     flex: 1,
     borderRadius: 5,
-    backgroundColor: 'lightblue',
+    backgroundColor: '#39376E',
     marginBottom: Platform.select({ ios: 0, android: 1 }), //handle rendering bug.
     marginBottom: 0,
   },

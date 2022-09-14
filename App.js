@@ -36,9 +36,9 @@ const styles = StyleSheet.create({
   },
   bottomNavContainer: {
     // alignItems: 'flex-end',
-    marginTop: -70,
+    marginTop: -90,
     // justifyContent: 'flex-end',
-    height: 80,
+    // height: 180,
     width: "100%"
   }
 });

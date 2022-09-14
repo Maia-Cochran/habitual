@@ -9,7 +9,6 @@ const ModalTemplate = () => {
         animationType="fade"
         transparent={true}
         visible={modalVisible}
-        presentationStyle={"fullscreen"}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
           setModalVisible(!modalVisible);
@@ -17,13 +16,13 @@ const ModalTemplate = () => {
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Hello World!</Text>
             <Pressable
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible(!modalVisible)}
             >
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle}>✖️</Text>
             </Pressable>
+            <Text style={styles.modalText}>Hello World!</Text>
           </View>
         </View>
       </Modal>
@@ -48,17 +47,19 @@ const ModalTemplate = () => {
     },
     modalView: {
       margin: 20,
-      backgroundColor: "white",
+      height: '93%',
+      width: '95%',
+      backgroundColor: "#2C3F54",
       borderRadius: 20,
       padding: 35,
       alignItems: "center",
       shadowColor: "#000",
       shadowOffset: {
-        width: 0,
-        height: 2
+        width: 6,
+        height: 6
       },
-      shadowOpacity: 0.25,
-      shadowRadius: 4,
+      shadowOpacity: 0.8,
+      shadowRadius: 10,
       elevation: 5
     },
     button: {
@@ -74,14 +75,27 @@ const ModalTemplate = () => {
       backgroundColor: "#F194FF",
     },
     buttonClose: {
-      backgroundColor: "#2196F3",
+      // alignContent: "flex-start",
+      // justifyContent: "flex-end",
+      backgroundColor: "#869684",
+      shadowColor: "#000",
+      width: 40,
+      shadowOffset: {
+        width: 6,
+        height: 6
+      },
+      shadowOpacity: 0.7,
+      shadowRadius: 4,
+      elevation: 5
     },
     textStyle: {
       color: "white",
       fontWeight: "bold",
-      textAlign: "center"
+      textAlign: "center",
+      fontSize: 16
     },
     modalText: {
+      color: '#FFFFFF',
       margin: 15,
       textAlign: "center"
     }
