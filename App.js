@@ -2,7 +2,7 @@
 import { StyleSheet, Text, View, Button, Modal } from 'react-native';
 import Home from './components/Home';
 // import Modal from 'react-native-modal';
-import ModalTester from '../components/Modal';
+// import ModalTemplate from '../components/ModalTemplate';
 import Carousel from './components/Carousel/Carousel';
 import BottomNavBar from './components/BottomNavBar';
 
