@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     flex: 1,
     borderRadius: 5,
     backgroundColor: 'lightblue',
-    // marginBottom: Platform.select({ ios: 0, android: 1 }), //handle rendering bug.
+    marginBottom: Platform.select({ ios: 0, android: 1 }), //handle rendering bug.
     marginBottom: 0,
   },
   image: {

@@ -24,13 +24,13 @@ export default Home;
 
 const styles = StyleSheet.create({
     homeContainer: {
-        marginTop: 80,
+        // marginTop: 80,
         alignItems: 'center',
         // height: 100,
         // width: 100
     },
     carouselContainer:{
-        height: '40%',
+        height: '70%',
         width: '100%',
     }
    

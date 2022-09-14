@@ -35,9 +35,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   bottomNavContainer: {
-    alignItems: 'flexEnd',
-    justifyContent: 'flexEnd',
-    height: 60,
+    // alignItems: 'flex-end',
+    marginTop: -70,
+    // justifyContent: 'flex-end',
+    height: 80,
     width: "100%"
   }
 });
