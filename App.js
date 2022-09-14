@@ -2,7 +2,7 @@
 import { StyleSheet, Text, View, Button } from 'react-native';
 import Home from './components/Home';
 // import Modal from 'react-native-modal';
-import Modal from './components/Modal';
+import ModalTester from './components/Modal';
 import Carousel from './components/Carousel/Carousel';
 import BottomNavBar from './components/BottomNavBar';
 
@@ -11,8 +11,8 @@ const App = () => {
   return (
     <View style={styles.appContainer}>
       <Home />
-      <Modal />
-      <Button title='ChecklistModalView'></Button>
+      {/* <ModalTester /> */}
+      {/* <Button title='ChecklistModalView'></Button> */}
       {/* <Carousel /> */}
       {/* <BottomNavBar /> */}
     </View>

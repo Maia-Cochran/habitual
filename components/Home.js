@@ -10,8 +10,8 @@ const Home = () => {
         <View style={styles.homeContainer}>
             <Header />
             <GreetingButton />
-            <Carousel />
-            <ModalTester />
+            {/* <Carousel /> */}
+            {/* <ModalTester /> */}
             <BottomNavBar />
         </View>
     )
