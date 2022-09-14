@@ -2,7 +2,8 @@ import React from 'react';
 import { ParallaxImage } from 'react-native-snap-carousel';
 import { View, Text, Pressable, SafeAreaView } from 'react-native';
 // import styles from './styles';
-import GoodVibeModal from '../Navigation/GoodVibeModal';
+import GoodVibeView from './GoodVibeView';
+// import GoodVibeModal from '../Navigation/GoodVibeModal';
 import { Dimensions, StyleSheet, Platform } from 'react-native';
 
 function CarouselItem({ item, index }, parallaxProps) {
@@ -10,7 +11,7 @@ function CarouselItem({ item, index }, parallaxProps) {
     <Pressable style={[styles.container, {borderColor: 'red'}, {borderWidth: 2}]} onPress={() => alert('Image description:' + item.description)}> 
       <SafeAreaView style={styles.container}>
         <View style={styles.container}>
-          <GoodVibeModal style={styles.container}/>
+          <GoodVibeView style={styles.container}/>
         </View>
       </SafeAreaView>
     </Pressable>
