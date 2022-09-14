@@ -12,26 +12,31 @@ export default Header;
 
 const styles = StyleSheet.create({
     headerContainer: {
+<<<<<<< HEAD
         marginBottom: 30,
         marginTop: 300,
+=======
+       
+        marginBottom: 40,
+>>>>>>> main
         backgroundColor: '#3A376F',
         height: 80,
         width: 300, 
         alignItems: 'center',
         justifyContent: 'center',
-        // shadowColor: "#869684",
-        // shadowOffset: {
-        //     width: 2,
-        //     height: 4,
-        // },
-        // shadowOpacity: .3,
-        // shadowRadius: 4.84,
-        // elevation: 5,
+        borderWidth: 1,
+        borderColor: '#3A376F',
+        borderRadius: 23,
+        shadowColor: "#869684",
+        shadowOffset: {
+            width: 2,
+            height: 4,
+        },
+        shadowOpacity: .8,
+        shadowRadius: 5,
+        elevation: 10,
         // ^^^ need to play with the shadow
         //thinking purple for the greeting and green for the header
-        borderWidth: 1,
-            borderColor: '#3A376F',
-            borderRadius: 23,
     },
 
     title: {
