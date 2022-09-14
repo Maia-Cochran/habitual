@@ -3,6 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 
 const BottomNavBar = () => {
 
+
     return (
         <View style={styles.bottomNavBar}>
             <Text style={styles.title}> 🏠      📅      🪷      📄 </Text>
@@ -14,15 +15,16 @@ export default BottomNavBar;
 
 const styles = StyleSheet.create({
     bottomNavBar: {
+        
         backgroundColor: '#39376E',
         // marginBottom: 380,
-        height: 80,
-        width: 400,
+        height: 60,
+        width: '100%',
         // alignItems: 'center',
         justifyContent: 'center',
         borderWidth: 1,
         borderColor: '#39376E',
-        borderRadius: 18,
+        // borderRadius: 18,
         shadowColor: "#869684",
         shadowOffset: {
         width: 2,
