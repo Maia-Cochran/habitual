@@ -8,7 +8,9 @@ const App = () => {
   return (
     <View style={styles.appContainer}>
       <Home />
-      <BottomNavBar />   
+      <View style={styles.bottomNavContainer}>
+         <BottomNavBar />   
+      </View>
     </View>
   );
 }
@@ -22,6 +24,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     // justifyContent: 'center',
   },
+  bottomNavContainer: {
+    alignItems: 'flexEnd',
+    justifyContent: 'flexEnd',
+    height: 60,
+    width: "100%"
+  }
 });
 
 {/* <StatusBar style="auto" />  */}

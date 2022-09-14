@@ -15,16 +15,16 @@ export default BottomNavBar;
 
 const styles = StyleSheet.create({
     bottomNavBar: {
-        flex: 1,
+        
         backgroundColor: '#39376E',
         // marginBottom: 380,
-        height: 50,
+        height: 60,
         width: '100%',
         // alignItems: 'center',
         justifyContent: 'center',
         borderWidth: 1,
         borderColor: '#39376E',
-        borderRadius: 18,
+        // borderRadius: 18,
         shadowColor: "#869684",
         shadowOffset: {
         width: 2,
