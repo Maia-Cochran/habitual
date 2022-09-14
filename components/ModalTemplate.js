@@ -62,12 +62,14 @@ const ModalTemplate = () => {
       elevation: 5
     },
     button: {
-      height: 60,
+      marginTop: 10,
+      height: 40,
       width: 120,
       borderRadius: 20,
       padding: 10,
       elevation: 2
     },
+    // ^^ this styling will change with connection of modal to carousel
     buttonOpen: {
       backgroundColor: "#F194FF",
     },
