@@ -1,6 +1,5 @@
 import React, { useState, StyleSheet } from "react";
-import { Button, Text, View } from "react-native";
-import Modal from "react-native-modal";
+import { Button, Text, View, Modal } from "react-native";
 
 function ModalTester() {
   const [isModalVisible, setModalVisible] = useState(false);

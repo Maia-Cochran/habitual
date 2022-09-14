@@ -1,8 +1,8 @@
 // import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, Modal } from 'react-native';
 import Home from './components/Home';
 // import Modal from 'react-native-modal';
-import ModalTester from './components/Modal';
+import ModalTester from '../components/Modal';
 import Carousel from './components/Carousel/Carousel';
 import BottomNavBar from './components/BottomNavBar';
 
