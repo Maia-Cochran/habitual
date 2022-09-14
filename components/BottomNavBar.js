@@ -15,6 +15,7 @@ export default BottomNavBar;
 
 const styles = StyleSheet.create({
     bottomNavBar: {
+        flex: 1,
         backgroundColor: '#39376E',
         // marginBottom: 380,
         height: 50,
