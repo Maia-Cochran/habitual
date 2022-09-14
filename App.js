@@ -25,9 +25,10 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
   },
   bottomNavContainer: {
-    alignItems: 'flexEnd',
-    justifyContent: 'flexEnd',
-    height: 60,
+    // alignItems: 'flex-end',
+    marginTop: -70,
+    // justifyContent: 'flex-end',
+    height: 80,
     width: "100%"
   }
 });
