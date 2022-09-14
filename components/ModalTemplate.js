@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Button, Text, View, Modal, StyleSheet, Pressable } from "react-native";
+import CheckListModal from "./Navigation/CheckListModal";
+import GoodVibeModal from "./Navigation/GoodVibeModal";
+import CalendarModal from "./Navigation/CalendarModal"
 
 const ModalTemplate = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -22,7 +25,9 @@ const ModalTemplate = () => {
             >
               <Text style={styles.textStyle}>✖️</Text>
             </Pressable>
-            <Text style={styles.modalText}>Hello World!</Text>
+            <Text style={styles.modalText}>{<GoodVibeModal />}</Text>
+            <Text style={styles.modalText}>{<CheckListModal />}</Text>
+            <Text style={styles.modalText}>{<CalendarModal />}</Text>
           </View>
         </View>
       </Modal>
