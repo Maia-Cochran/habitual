@@ -1,20 +1,25 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
+import CalendarModal from '../Navigation/GoodVibeModal';
 
-const CalendarCard = () => {
+const GoodVibeCard = () => {
     return (
-        <View>
-            <Text style={styles.textStyle}>Calendar View to see streaks</Text>
-            <Text style={styles.textStyle}>This is the carousel card that user can click to see the modal</Text>
-        </View>
-
+                <View style={styles.card}>
+                    <Text style={styles.textStyle}>Tell Me Something Good</Text>
+                    <Text style={styles.textStyle}>🪷</Text>
+                    <Text style={styles.textStyle}>Press Here for your dose of good vibes</Text>
+                    <CalendarModal style={{zIndex:1}}/>
+                </View>
     )
 }
 
 const styles = StyleSheet.create({
     textStyle: {
-        fontSize: 30
-    }
+        fontSize: 25,
+        textAlign: 'center',
+        color: 'white',
+        padding: 10
+    },
 })
 
-export default CalendarCard
+export default GoodVibeCard

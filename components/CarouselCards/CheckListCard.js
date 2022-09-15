@@ -3,9 +3,11 @@ import { View, Text, StyleSheet } from 'react-native';
 
 const CheckListView = () => {
     return (
-        <View>
+        <View style={styles.card}>
             <Text style={styles.textStyle}>Check List!</Text>
+            <Text style={styles.textStyle}>📄</Text>
             <Text style={styles.textStyle}>This is the carousel card that user can click to see the modal</Text>
+            <CheckListModal style={{zIndex:1}}/>
         </View>
 
     )
