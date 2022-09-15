@@ -16,9 +16,6 @@
 //     </Pressable>
 //   );
 // }
-
-
-
 // const { width: screenWidth } = Dimensions.get('window');
 // const styles = StyleSheet.create({
 //   container: { //container for carousel
