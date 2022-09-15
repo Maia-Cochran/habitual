@@ -1,7 +1,7 @@
 import { View, StyleSheet, TouchableHighlight } from 'react-native'
 import Header from './Header'
 import GreetingButton from './GreetingButton'
-import Carousel from './Carousel/Carousel'
+import HabitualCarousel from './Carousel/Carousel'
 import ModalTemplate from './ModalTemplate'
 import BottomNavBar from './BottomNavBar'
 import { useState } from 'react';
@@ -36,12 +36,12 @@ const fetchApiCall = () => {
             {/* <TouchableHighlight onPress={mantras}>   */}
               <GreetingButton quote={quote.mantra} fetch={fetchApiCall}/>
             {/* </TouchableHighlight> */}
-            <ModalTemplate />
+            {/* <ModalTemplate /> */}
             {/* ^^^ unsure of this location, does it exist in  */}
             {/* Home component or within carousel? need to determine */}
             {/* flow of data/components */}
             <View style={styles.carouselContainer}>
-               <Carousel />
+               <HabitualCarousel />
             </View>
         </View>
     )
