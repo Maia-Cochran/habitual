@@ -5,12 +5,10 @@ import Carousel from './Carousel/Carousel'
 import ModalTemplate from './ModalTemplate'
 import BottomNavBar from './BottomNavBar'
 import { useState } from 'react';
-
-
+import GoodVibeCard from './CarouselCards/GoodVibeCard'
 
 
 const Home = () =>{
-
    const [quote, setQuote] = useState('')  
 //    console.log(555, hasQuote)
 
@@ -27,16 +25,13 @@ const fetchApiCall = () => {
         });
     }
 
-
-
-
     return (
         <View style={styles.homeContainer}>
             <Header />
             {/* <TouchableHighlight onPress={mantras}>   */}
               <GreetingButton quote={quote.mantra} fetch={fetchApiCall}/>
             {/* </TouchableHighlight> */}
-            <ModalTemplate />
+            {/* <GoodVibeCard /> */}
             {/* ^^^ unsure of this location, does it exist in  */}
             {/* Home component or within carousel? need to determine */}
             {/* flow of data/components */}
