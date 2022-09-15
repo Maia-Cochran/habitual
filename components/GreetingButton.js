@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
 
 
-const GreetingButton = ({mantras}) => {
+const GreetingButton = ({ quote, fetch}) => {
 
     //make a data file with the mantras and affirmations from self-care center
     // import the data file here
@@ -10,9 +10,9 @@ const GreetingButton = ({mantras}) => {
 
 
     return (
-       <TouchableHighlight onPress={mantras}>     
+       <TouchableHighlight onPress={fetch}>     
             <View style={styles.greetingContainer}>
-                <Text style={styles.title}> {this.s}</Text>
+                <Text style={styles.title}> {quote}</Text>
             </View>
         </TouchableHighlight>
     )

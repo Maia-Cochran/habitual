@@ -4,20 +4,22 @@ import GreetingButton from './GreetingButton'
 import Carousel from './Carousel/Carousel'
 import ModalTemplate from './ModalTemplate'
 import BottomNavBar from './BottomNavBar'
-import { Component } from 'react';
+import { useState } from 'react';
 
-class Home extends Component  {
-    constructor() {
-        super();
-        this.state = {
-            text: ''
-    }
-}
 
-fetchApiCall = () => {
+
+
+const Home = () =>{
+
+   const [quote, setQuote] = useState('')  
+//    console.log(555, hasQuote)
+
+const fetchApiCall = () => {
+    console.log(quote)
     return fetch("http://localhost:3001/mantra")
         .then(response => response.json())
         .then(data => {
+            setQuote(data)
           console.log(data);
         })
         .catch(err => {
@@ -25,13 +27,15 @@ fetchApiCall = () => {
         });
     }
 
-render(props){
+
+
+
     return (
         <View style={styles.homeContainer}>
             <Header />
-            <TouchableHighlight onPress={mantras}>  
-              <GreetingButton text={this.state.text}/>
-            </TouchableHighlight>
+            {/* <TouchableHighlight onPress={mantras}>   */}
+              <GreetingButton quote={quote.mantra} fetch={fetchApiCall}/>
+            {/* </TouchableHighlight> */}
             <ModalTemplate />
             {/* ^^^ unsure of this location, does it exist in  */}
             {/* Home component or within carousel? need to determine */}
@@ -41,7 +45,7 @@ render(props){
             </View>
         </View>
     )
-  }
+
 }
 
 export default Home;
