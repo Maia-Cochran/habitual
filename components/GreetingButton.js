@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, Pressable, TouchableHighlight, PermissionsAndroid } from 'react-native';
 
 
-const GreetingButton = ({mantras}) => {
+const GreetingButton = ({ quote, fetch}) => {
 
     //make a data file with the mantras and affirmations from self-care center
     // import the data file here
@@ -10,13 +10,11 @@ const GreetingButton = ({mantras}) => {
 
 
     return (
-        <Pressable onPress={mantras}>
-            {/* <TouchableHighlight onPress={mantras}>      */}
-                <View style={styles.greetingContainer}>
-                    <Text style={styles.title}> {this.s}</Text>
-                </View>
-            {/* </TouchableHighlight> */}
-        </Pressable>
+       <TouchableHighlight onPress={fetch}>     
+            <View style={styles.greetingContainer}>
+                <Text style={styles.title}> {quote}</Text>
+            </View>
+        </TouchableHighlight>
     )
   }
 
