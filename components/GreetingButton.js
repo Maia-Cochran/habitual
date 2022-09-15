@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
+import { View, Text, StyleSheet, Pressable, TouchableHighlight, PermissionsAndroid } from 'react-native';
 
 
 const GreetingButton = ({mantras}) => {
@@ -10,11 +10,13 @@ const GreetingButton = ({mantras}) => {
 
 
     return (
-       <TouchableHighlight onPress={mantras}>     
-            <View style={styles.greetingContainer}>
-                <Text style={styles.title}> {this.s}</Text>
-            </View>
-        </TouchableHighlight>
+        <Pressable onPress={mantras}>
+            {/* <TouchableHighlight onPress={mantras}>      */}
+                <View style={styles.greetingContainer}>
+                    <Text style={styles.title}> {this.s}</Text>
+                </View>
+            {/* </TouchableHighlight> */}
+        </Pressable>
     )
   }
 

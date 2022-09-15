@@ -29,9 +29,7 @@ render(props){
     return (
         <View style={styles.homeContainer}>
             <Header />
-            <TouchableHighlight onPress={mantras}>  
-              <GreetingButton text={this.state.text}/>
-            </TouchableHighlight>
+            <GreetingButton text={this.state.text}/>
             <ModalTemplate />
             {/* ^^^ unsure of this location, does it exist in  */}
             {/* Home component or within carousel? need to determine */}
