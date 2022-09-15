@@ -24,14 +24,14 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#3A376F',
         borderRadius: 23,
-        shadowColor: "#869684",
-        shadowOffset: {
-            width: 2,
-            height: 4,
-        },
-        shadowOpacity: .8,
-        shadowRadius: 5,
-        elevation: 10,
+        shadowColor: "#000",
+      shadowOffset: {
+        width: 6,
+        height: 6
+      },
+      shadowOpacity: 0.8,
+      shadowRadius: 10,
+      elevation: 5
         // ^^^ need to play with the shadow
         //thinking purple for the greeting and green for the header
     },

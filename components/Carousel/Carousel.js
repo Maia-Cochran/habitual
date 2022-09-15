@@ -23,12 +23,21 @@ class HabitualCarousel extends Component {
       <View>
         <View style={{
           backgroundColor:'#3A376F',
+          marginTop: 40,
           color: 'white',
           alignItems: 'center',
-          borderRadius: 16,
+          borderRadius: 20,
           height: 400,
           width: '100%',
           padding: 40,
+          shadowColor: "#000",
+          shadowOffset: {
+            width: 6,
+            height: 6
+          },
+          shadowOpacity: 0.8,
+          shadowRadius: 10,
+          elevation: 5
           // marginLeft: 25,
           // marginRight: 25, 
         }}

@@ -69,18 +69,19 @@ const ModalTemplate = () => {
       elevation: 5
     },
     button: {
-      marginTop: 150,
+      marginTop: -150,
       height: 400,
       width: 300,
       borderRadius: 20,
       padding: 10,
       // elevation: 2,
       opacity: 0.0,
-      // zIndex: -1,
+      zIndex: 1,
     },
     // ^^ this styling will change with connection of modal to carousel
     buttonOpen: {
       backgroundColor: "#869684",
+      zIndex: 1
     },
     buttonClose: {
       // alignItems: 'center',

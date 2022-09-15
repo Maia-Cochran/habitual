@@ -25,21 +25,22 @@ const styles = StyleSheet.create({
     greetingContainer: {
         backgroundColor: '#869684',
         // marginBottom: 500,
-        height: 60,
-        width: 300, 
+        height: 85,
+        width: 350, 
+        padding: 10,
         alignItems: 'center',
         justifyContent: 'center',
         borderWidth: 1,
         borderColor: '#3A376F',
         borderRadius: 18,
-        shadowColor: "#869684",
+        shadowColor: "#000",
         shadowOffset: {
-            width: 2,
-            height: 4,
+            width: 6,
+            height: 6
         },
-        shadowOpacity: .8,
-        shadowRadius: 5,
-        elevation: 10,
+        shadowOpacity: 0.8,
+        shadowRadius: 10,
+        elevation: 5
     },
 
     title: {
