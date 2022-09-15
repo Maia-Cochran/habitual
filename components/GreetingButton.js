@@ -1,32 +1,23 @@
 import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
 
 
-const GreetingButton = () => {
-    
+const GreetingButton = ({mantras}) => {
+
     //make a data file with the mantras and affirmations from self-care center
     // import the data file here
     // create function to randomly pick a phrase from the data file and populate the greeting button
     // try to create the data file into an API
 
-    const fetchApiCall = () => {
-      return fetch("http://localhost:3001/mantra")
-          .then(response => response.json())
-          .then(response => {
-            console.log(response);
-          })
-          .catch(err => {
-            console.log(err);
-          });
-      }
 
     return (
-       <TouchableHighlight onPress={fetchApiCall}>     
+       <TouchableHighlight onPress={mantras}>     
             <View style={styles.greetingContainer}>
-                <Text style={styles.title}> Happiness is the highest form of health. </Text>
+                <Text style={styles.title}> {this.s}</Text>
             </View>
         </TouchableHighlight>
     )
-}
+  }
+
 
 export default GreetingButton;
 
