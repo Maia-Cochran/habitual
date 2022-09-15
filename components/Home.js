@@ -5,6 +5,7 @@ import Carousel from './Carousel/Carousel'
 import ModalTemplate from './ModalTemplate'
 import BottomNavBar from './BottomNavBar'
 import { useState } from 'react';
+import { GoodVibeModal } from './Navigation/GoodVibeModal'
 import GoodVibeCard from './CarouselCards/GoodVibeCard'
 
 
@@ -30,6 +31,7 @@ const fetchApiCall = () => {
             <Header />
             {/* <TouchableHighlight onPress={mantras}>   */}
               <GreetingButton quote={quote.mantra} fetch={fetchApiCall}/>
+              {/* <GoodVibeModal compliments={compliments.compliment} /> */}
             {/* </TouchableHighlight> */}
             {/* <GoodVibeCard /> */}
             {/* ^^^ unsure of this location, does it exist in  */}
