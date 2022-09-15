@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const CalendarView = () => {
+const CalendarCard = () => {
     return (
         <View>
             <Text style={styles.textStyle}>Calendar View to see streaks</Text>
@@ -17,4 +17,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default CalendarView
+export default CalendarCard
