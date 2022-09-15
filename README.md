@@ -68,6 +68,12 @@ Visit the published site [here]()
 3. `cd` into the root of the project directory
 4. Run `npm install`
 5. Run `npm start`
+----
+### Please do the following to run API:
+1. Clone down https://github.com/GOECHA/mantras-api
+2. npm install
+3. node server.js
+
 
 ## Contributors
  - [Shauna MacFarlane-Okongo](https://github.com/DrSLMac) | [LinkedIn](https://github.com/DrSLMac)
