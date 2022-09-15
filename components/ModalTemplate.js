@@ -3,6 +3,7 @@ import { Button, Text, View, Modal, StyleSheet, Pressable } from "react-native";
 import CheckListModal from "./Navigation/CheckListModal";
 import GoodVibeModal from "./Navigation/GoodVibeModal";
 import CalendarModal from "./Navigation/CalendarModal"
+// import GoodVibeCard from "./CarouselCards/GoodVibeCard";
 
 const ModalTemplate = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -15,27 +16,27 @@ const ModalTemplate = () => {
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
           setModalVisible(!modalVisible);
-        }}
-      >
+        }}>
+
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
             <Pressable
-              style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
-            >
+              style={[styles.buttonClose]}
+              onPress={() => setModalVisible(!modalVisible)}>
               <Text style={styles.textStyle}>✖️</Text>
             </Pressable>
-            <Text style={styles.modalText}>{<GoodVibeModal />}</Text>
-            <Text style={styles.modalText}>{<CheckListModal />}</Text>
-            <Text style={styles.modalText}>{<CalendarModal />}</Text>
+              <Text style={styles.modalText}>{<GoodVibeModal />}</Text>
+              <Text style={styles.modalText}>{<CheckListModal />}</Text>
+              <Text style={styles.modalText}>{<CalendarModal />}</Text>
           </View>
         </View>
       </Modal>
+
       <Pressable
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible(true)}
       >
-        <Text style={styles.textStyle}>Show Modal</Text>
+        <Text style={styles.textStyle}>Press Here for your dose of good vibes</Text>
       </Pressable>
     </View>
   );
@@ -48,10 +49,10 @@ const ModalTemplate = () => {
       flex: 1,
       justifyContent: "center",
       alignItems: "center",
-      marginTop: 22
+      // marginTop: 22
     },
     modalView: {
-      margin: 20,
+      // margin: 10,
       height: '93%',
       width: '95%',
       backgroundColor: "#2C3F54",
@@ -68,23 +69,28 @@ const ModalTemplate = () => {
       elevation: 5
     },
     button: {
-      marginTop: 10,
-      height: 40,
-      width: 120,
+      marginTop: 150,
+      height: 400,
+      width: 300,
       borderRadius: 20,
       padding: 10,
-      elevation: 2
+      // elevation: 2,
+      opacity: 0.0,
+      // zIndex: -1,
     },
     // ^^ this styling will change with connection of modal to carousel
     buttonOpen: {
-      backgroundColor: "#F194FF",
+      backgroundColor: "#869684",
     },
     buttonClose: {
-      // alignContent: "flex-start",
-      // justifyContent: "flex-end",
+      // alignItems: 'center',
+      // alignContent: "center",
+      justifyContent: "center",
       backgroundColor: "#869684",
       shadowColor: "#000",
       width: 40,
+      height: 40,
+      borderRadius: 20,
       shadowOffset: {
         width: 6,
         height: 6
@@ -105,3 +111,6 @@ const ModalTemplate = () => {
       textAlign: "center"
     }
   });
+
+
+  // styles.button, 

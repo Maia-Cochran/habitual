@@ -6,9 +6,10 @@ const GoodVibeCard = () => {
     return (
             <Pressable>
                 <View style={styles.card}>
-                    <Text style={styles.textStyle}>Tell Me Something Good</Text>
-                    <Text style={styles.textStyle}>This is the carousel card that user can click to see the modal</Text>
                     <ModalTemplate />
+                    <Text style={styles.textStyle}>Tell Me Something Good</Text>
+                    <Text style={styles.textStyle}>🪷</Text>
+                    <Text style={styles.textStyle}>This is the carousel card that user can click to see the modal</Text>
                 </View>
             </Pressable>
     )
@@ -16,7 +17,14 @@ const GoodVibeCard = () => {
 
 const styles = StyleSheet.create({
     textStyle: {
-        fontSize: 30
+        // flex: 1,
+        // alignItems: "center",
+        // justifyContent: "center",
+        // alignContent: "center",
+        fontSize: 25,
+        textAlign: 'center',
+        color: 'white',
+        // padding: 20
     },
     // card: {
     //     backgroundColor:'#3A376F',
