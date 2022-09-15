@@ -6,10 +6,10 @@ const GoodVibeCard = () => {
     return (
             <Pressable>
                 <View style={styles.card}>
-                    <ModalTemplate />
                     <Text style={styles.textStyle}>Tell Me Something Good</Text>
                     <Text style={styles.textStyle}>🪷</Text>
                     <Text style={styles.textStyle}>This is the carousel card that user can click to see the modal</Text>
+                    <ModalTemplate style={{zIndex:1}}/>
                 </View>
             </Pressable>
     )

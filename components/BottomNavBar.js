@@ -16,20 +16,19 @@ export default BottomNavBar;
 const styles = StyleSheet.create({
     bottomNavBar: {
         backgroundColor: '#39376E',
-        height: 90,
+        height: 105,
         width: '100%',
         alignContent: 'center',
         justifyContent: 'center',
         borderWidth: 1,
         borderColor: '#39376E',
-        shadowColor: "#869684",
+        shadowColor: "#000",
         shadowOffset: {
-        width: 4,
-        height: 4,
+            width: 4,
+            height: -1
         },
-        shadowOpacity: .8,
-        shadowRadius: 5,
-        elevation: 10,
+        shadowOpacity: 0.8,
+        shadowRadius: 10,
     },
 
     title: {
