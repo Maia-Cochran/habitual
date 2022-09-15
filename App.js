@@ -1,5 +1,5 @@
 // import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, Modal } from 'react-native';
+import { StyleSheet, Text, View, Button, Modal, ImageBackground } from 'react-native';
 import Home from './components/Home';
 // import Modal from 'react-native-modal';
 // import ModalTemplate from '../components/ModalTemplate';
@@ -9,16 +9,28 @@ import BottomNavBar from './components/BottomNavBar';
 const App = () => {
 
   return (
-    <View style={styles.appContainer}>
+  
+    <View style={styles.appContainer}>    
+    <ImageBackground   source={require("./assets/background-with-leaves.png")} resizeMode="cover">
+    <View style={styles.appContainer}> 
+    {/* <Image style={{zIndex: 2}} source={require("./assets/background-with-leaves.png")}/> */}
       <Home />
+     
       {/* <ModalTester /> */}
       {/* <Button title='ChecklistModalView'></Button> */}
       {/* <Carousel /> */}
       {/* <BottomNavBar /> */}
+      
+ 
+    
       <View style={styles.bottomNavContainer}>
-         <BottomNavBar />   
+         <BottomNavBar />      
       </View>
+      </View>
+      </ImageBackground>
     </View>
+   
+   
   );
 }
 
@@ -33,13 +45,17 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
+    height: '100%',
+    width: "100%",
+
   },
   bottomNavContainer: {
     // alignItems: 'flex-end',
     marginTop: -90,
     // justifyContent: 'flex-end',
     // height: 180,
-    width: "100%"
+    width: "100%",
+    margin: 10,
   }
 });
 
