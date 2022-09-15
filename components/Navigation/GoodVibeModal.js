@@ -7,35 +7,35 @@ const GoodVibeModal = () => {
     const [modalVisible, setModalVisible] = useState(false);
     const [compliments, setCompliments] = useState([]);
     const [error, setError] = useState('');
-    const getCompliments = async () => {
-        const url = "https://complimentr.com/api" 
-        setError('')
+    // const getCompliments = async () => {
+    //     const url = "https://complimentr.com/api" 
+    //     setError('')
     
-        try {
-          const response = await fetch(url)
-          const compliments = await response.json()
-          setCompliments(compliments)
-        } catch(error) {
-          setError(error.message)
-        }
-      }
-    
-      useEffect(() => {
-        getCompliments()
-      }, [])
-
-    // const fetchApiCall = () => {
-    //     console.log(compliments)
-    //     return fetch("https://complimentr.com/api")
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             setCompliments(data)
-    //           console.log(data);
-    //         })
-    //         .catch(err => {
-    //           console.log(err);
-    //         });
+    //     try {
+    //       const response = await fetch(url)
+    //       const compliments = await response.json()
+    //       setCompliments(compliments)
+    //     } catch(error) {
+    //       setError(error.message)
     //     }
+    //   }
+    
+    //   useEffect(() => {
+    //     getCompliments()
+    //   }, [])
+
+    const fetchApiCall = () => {
+        console.log(compliments)
+        return fetch("https://complimentr.com/api")
+            .then(response => response.json())
+            .then(data => {
+                setCompliments(data)
+              console.log(data);
+            })
+            .catch(err => {
+              console.log(err);
+            });
+        }
 
   return (
     <View style={styles.centeredView}>
@@ -57,6 +57,7 @@ const GoodVibeModal = () => {
               onPress={() => setModalVisible(!modalVisible)}>
               <Text style={styles.textStyle}>✖️</Text>
             </Pressable>
+              <Text style={styles.textStyle}>Random compliment from API goes here</Text>
           </View>
         </View>
       </Modal>

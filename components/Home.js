@@ -1,4 +1,4 @@
-import { View, StyleSheet, TouchableHighlight } from 'react-native'
+import { View, StyleSheet, TouchableHighlight, Image } from 'react-native'
 import Header from './Header'
 import GreetingButton from './GreetingButton'
 import Carousel from './Carousel/Carousel'
@@ -10,7 +10,7 @@ import GoodVibeCard from './CarouselCards/GoodVibeCard'
 
 
 const Home = () =>{
-   const [quote, setQuote] = useState('')  
+   const [quote, setQuote] = useState('Positive reinforcement leads to good habits.')  
 //    console.log(555, hasQuote)
 
 const fetchApiCall = () => {
@@ -28,10 +28,11 @@ const fetchApiCall = () => {
 
     return (
         <View style={styles.homeContainer}>
+
+            
             <Header />
             {/* <TouchableHighlight onPress={mantras}>   */}
-              <GreetingButton quote={quote.mantra} fetch={fetchApiCall}/>
-              {/* <GoodVibeModal compliments={compliments.compliment} /> */}
+              <GreetingButton quote={quote.mantra} fetch={fetchApiCall} title=""/>
             {/* </TouchableHighlight> */}
             {/* <GoodVibeCard /> */}
             {/* ^^^ unsure of this location, does it exist in  */}
@@ -40,6 +41,9 @@ const fetchApiCall = () => {
             <View style={styles.carouselContainer}>
                <Carousel />
             </View>
+            
+          
+            
         </View>
     )
 
