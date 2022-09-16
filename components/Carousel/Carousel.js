@@ -3,7 +3,7 @@ import { SafeAreaView, Text, View, StyleSheet } from 'react-native';
 import Carousel from 'react-native-snap-carousel'
 import CheckListCard from '../CarouselCards/CheckListCard';
 import GoodVibeCard from '../CarouselCards/GoodVibeCard';
-import ModalTemplate from '../ModalTemplate';
+// import ModalTemplate from '../ModalTemplate';
 
 
 // const SLIDER_1_FIRST_ITEM = 1;

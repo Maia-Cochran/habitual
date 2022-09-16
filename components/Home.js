@@ -18,12 +18,17 @@ const fetchApiCall = () => {
         .then(response => response.json())
         .then(data => {
             setQuote(data)
-          console.log(data);
+          console.log('data: ', data);
         })
         .catch(err => {
           console.log(err);
         });
     }
+
+    useEffect(() => {
+        fetchApiCall();
+      }, [])
+    
 
     // const [compliments, setCompliments] = useState([]);
     // const fetchCompliment = () => {
@@ -44,8 +49,6 @@ const fetchApiCall = () => {
 
     return (
         <View style={styles.homeContainer}>
-
-            
             <Header />
             {/* <TouchableHighlight onPress={mantras}>   */}
             <GreetingButton quote={quote.mantra} fetch={fetchApiCall} title=""/>

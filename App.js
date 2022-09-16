@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     // justifyContent: 'flex-end',
     // height: 180,
     width: "100%",
-    margin: 10,
+    margin: 20,
   }
 });
 

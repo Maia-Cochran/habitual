@@ -27,7 +27,7 @@ const GoodVibeCard = () => {
         <View style={styles.textContainer}>
             <Text style={styles.textStyle}>Tell Me Something Good</Text>
             <Text style={styles.textStyle}>🪷</Text>
-            <Text style={styles.textStyle}>Press Here for your dose of good vibes</Text>
+            <Text style={styles.textStyle}>Press Here for Your Dose of Good Vibes</Text>
             <View style={styles.goodVibeModalContainer}>
                 <View>
                     <GoodVibeModal compliment={compliments.compliment} fetch={getCompliments} style={{zIndex:2}}/>

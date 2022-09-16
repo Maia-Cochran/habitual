@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Text, View, Modal, StyleSheet, Pressable, TouchableHighlight} from "react-native";
+import { Text, View, Modal, StyleSheet, Pressable, TouchableHighlight, DevSettings} from "react-native";
 
 
 
 const GoodVibeModal = ({compliment, fetch}) => {
     const [modalVisible, setModalVisible] = useState(false);
+
+
   return (
     <TouchableHighlight onPress={fetch}>
         <View style={styles.centeredView}>
@@ -21,16 +23,13 @@ const GoodVibeModal = ({compliment, fetch}) => {
             <View style={styles.centeredView}>
             <View style={styles.modalView}>
                 <Pressable
-                style={[styles.buttonClose]}
-                onPress={() => setModalVisible(!modalVisible)
-                }>
-                    
+                    style={[styles.buttonClose]}
+                    onPress={() => {setModalVisible(!modalVisible), DevSettings.reload()}}
+                    >
                 <Text style={styles.textStyle}>✖️</Text>
                 </Pressable>
-                <Text style={styles.textStyle}>{compliment}
-                <Text style={styles.textStyle}>Tell Me Something Good</Text>
-                    <Text style={styles.textStyle}>🪷</Text>
-                    <Text style={styles.textStyle}>Press Here for your dose of good vibes</Text>
+
+                <Text style={styles.modalText}>{compliment}
                 </Text>
             </View>
             </View>
@@ -39,9 +38,6 @@ const GoodVibeModal = ({compliment, fetch}) => {
             style={[styles.button, styles.buttonOpen]}
             onPress={() => setModalVisible(true)}
         >
-            {/* <View style={styles.card}> */}
-                    
-               {/* </View> */}
         </Pressable>
         </View>
     </TouchableHighlight>
@@ -57,7 +53,7 @@ const styles = StyleSheet.create({
         
     },
     modalView: {
-        height: '93%',
+        height: '65%',
         width: '95%',
         backgroundColor: "#2C3F54",
         borderRadius: 20,
@@ -107,9 +103,14 @@ const styles = StyleSheet.create({
         fontSize: 16
     },
     modalText: {
-        color: '#FFFFFF',
-        margin: 15,
-        textAlign: "center"
+        // flex: 1,
+        // justifyContent: "center",
+        // alignContent: "center",
+        color: "white",
+        marginTop: '30%',
+        textAlign: "center",
+        fontSize: 48,
+        padding: 10
     }
 });
 
