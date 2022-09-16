@@ -5,7 +5,9 @@ import HabitualCarousel from './Carousel/Carousel'
 import ModalTemplate from './ModalTemplate'
 import BottomNavBar from './BottomNavBar'
 import { useState, useEffect } from 'react';
+
 import GoodVibeModal from './Navigation/GoodVibeModal'
+
 import GoodVibeCard from './CarouselCards/GoodVibeCard'
 
 
@@ -28,7 +30,6 @@ const fetchApiCall = () => {
     useEffect(() => {
         fetchApiCall();
       }, [])
-    
 
     // const [compliments, setCompliments] = useState([]);
     // const fetchCompliment = () => {
@@ -43,6 +44,7 @@ const fetchApiCall = () => {
     //           console.log(err);
     //         });
     //     }
+
 
 
 
