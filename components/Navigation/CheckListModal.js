@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Text, View, Modal, StyleSheet, Pressable } from "react-native";
 import AppLoading from 'expo-app-loading';
 import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
-
+import { LinearGradient } from 'expo-linear-gradient';
+import { BlurView } from 'expo-blur';
 
 
 const CheckListModal = () => {
@@ -71,6 +72,20 @@ const styles = StyleSheet.create({
         shadowRadius: 10,
         elevation: 5
     },
+    gradient:{
+      height: '100%',
+      width: '100%%',
+      borderRadius: 20,
+      shadowColor: "#000",
+      shadowOffset: {
+          width: 6,
+          height: 6
+      },
+      shadowOpacity: 0.8,
+      shadowRadius: 10,
+      elevation: 5,
+      padding: 10,
+  },
     button: {
         marginTop: -150,
         height: 400,
