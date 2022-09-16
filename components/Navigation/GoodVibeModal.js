@@ -32,18 +32,19 @@ const GoodVibeModal = ({compliment, fetch}) => {
                 
           
             <View style={styles.centeredView}>
+            
+            <View style={styles.modalView}>
             <LinearGradient
             // Background Linear Gradient
-            colors={['rgba(102, 124, 148, 1)',
+            colors={[
+              'rgba(102, 124, 148, 1)',
               'rgba(117, 135, 157, 1)',
               'rgba(158, 154, 182, 1)',
               'rgba(185, 170, 195, 1)',
               'rgba(197, 148, 142, 1)',
               'rgba(178, 131, 122, 1)', 
               ]}
-            style={styles.modalView}>
-            <View style={styles.modalView}>
-            
+            style={styles.gradient}>
 
                 <Pressable
                     style={[styles.buttonClose]}
@@ -54,9 +55,9 @@ const GoodVibeModal = ({compliment, fetch}) => {
 
                 <Text style={styles.modalText}>{compliment}
                 </Text>
-                
+                </LinearGradient>
             </View>
-            </LinearGradient>
+           
             </View>
           
         </Modal>
@@ -81,10 +82,11 @@ const styles = StyleSheet.create({
     },
     modalView: {
         height: '65%',
-        width: '95%',
-        // backgroundColor: "#2C3F54",
+        width: '80%',
+        backgroundColor: "#2C3F54",
+         // backgroundColor: "#2C3F54",
         borderRadius: 20,
-        padding: 35,
+        // padding: 35,
         alignItems: "center",
         shadowColor: "#000",
         shadowOffset: {
@@ -95,8 +97,22 @@ const styles = StyleSheet.create({
         shadowRadius: 10,
         elevation: 5
     },
+    gradient:{
+        height: '100%',
+        width: '100%%',
+        borderRadius: 20,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 6,
+            height: 6
+        },
+        shadowOpacity: 0.8,
+        shadowRadius: 10,
+        elevation: 5,
+        padding: 10,
+    },
     button: {
-        marginTop: -150,
+        // marginTop: -150,
         height: 400,
         width: 300,
         borderRadius: 20,
@@ -111,6 +127,7 @@ const styles = StyleSheet.create({
     buttonClose: {
         justifyContent: "center",
         backgroundColor: "#869684",
+        alignItems: "center",
         shadowColor: "#000",
         width: 40,
         height: 40,
@@ -138,8 +155,8 @@ const styles = StyleSheet.create({
         color: "white",
         marginTop: '30%',
         textAlign: "center",
-        fontSize: 48,
-        padding: 10,
+        fontSize: 30,
+        // padding: 10,
         fontFamily: 'IndieFlower_400Regular',
     }
 });
