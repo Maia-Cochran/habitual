@@ -31,7 +31,6 @@ class HabitualCarousel extends Component {
         <View style={styles.slideCard}
         >
           <GoodVibeCard id={this.state.carouselItems}/>
-         
           {/* <Text style={{fontSize: 30}}>{item.title}</Text>
           <Text style={{fontSize: 30}}>{item.icon}</Text>
           <Text>{item.text}</Text> */}

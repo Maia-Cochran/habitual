@@ -5,6 +5,9 @@ import HabitualCarousel from './Carousel/Carousel'
 import ModalTemplate from './ModalTemplate'
 import BottomNavBar from './BottomNavBar'
 import { useState, useEffect } from 'react';
+
+import GoodVibeModal from './Navigation/GoodVibeModal'
+
 import GoodVibeCard from './CarouselCards/GoodVibeCard'
 
 
@@ -25,9 +28,28 @@ const fetchApiCall = () => {
     }
 
 
+
     useEffect(() => {
         fetchApiCall();
       }, [])
+
+    // const [compliments, setCompliments] = useState([]);
+    // const fetchCompliment = () => {
+    //     console.log(compliments)
+    //     return fetch("https://complimentr.com/api")
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             setCompliments(data)
+    //           console.log(data);
+    //         })
+    //         .catch(err => {
+    //           console.log(err);
+    //         });
+    //     }
+
+
+
+
 
     return (
         <View style={styles.homeContainer}>
@@ -35,7 +57,7 @@ const fetchApiCall = () => {
             
             <Header />
             {/* <TouchableHighlight onPress={mantras}>   */}
-              <GreetingButton quote={quote.mantra} fetch={fetchApiCall} title=""/>
+            <GreetingButton quote={quote.mantra} fetch={fetchApiCall} title=""/>
             {/* </TouchableHighlight> */}
             {/* <GoodVibeCard /> */}
             {/* ^^^ unsure of this location, does it exist in  */}
@@ -44,9 +66,6 @@ const fetchApiCall = () => {
             <View style={styles.carouselContainer}>
                <HabitualCarousel />
             </View>
-            
-          
-            
         </View>
     )
 
