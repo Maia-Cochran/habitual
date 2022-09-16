@@ -11,7 +11,8 @@ if(!fontsLoaded){
     return <AppLoading />;
 } else{
     return (
-       <TouchableHighlight onPress={fetch}>     
+       <TouchableHighlight onPress={fetch} activeOpacity={0.5}
+       underlayColor="#B2CAAA" style={styles.highlight}>     
             <View style={styles.greetingContainer} >     
                 <Text title="Positive reinforcement leads to good habits." style={styles.title}>{quote}</Text>
             </View>
@@ -54,5 +55,14 @@ const styles = StyleSheet.create({
         color: '#F5F5F5',
         textAlign: 'center',
         fontFamily: 'IndieFlower_400Regular'
+    },
+
+    highlight: {
+        // margin:50, 
+        // width: 200, 
+        // height: 50, 
+        borderRadius: 18,
+        justifyContent: 'center', 
+        alignItems: 'center'
     }
 })
