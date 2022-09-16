@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Text, View, Modal, StyleSheet, Pressable, TouchableHighlight, DevSettings} from "react-native";
 import AppLoading from 'expo-app-loading';
 import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
-
+import { LinearGradient } from 'expo-linear-gradient';
 
 
 const GoodVibeModal = ({compliment, fetch}) => {
@@ -16,7 +16,9 @@ const GoodVibeModal = ({compliment, fetch}) => {
   } else{
   return (
     <TouchableHighlight onPress={fetch}>
+    
         <View style={styles.centeredView}>
+                
         <Modal
             // fetch={fetchAllData}
             // compliments={compliments.compliment}
@@ -27,8 +29,22 @@ const GoodVibeModal = ({compliment, fetch}) => {
             Alert.alert("Modal has been closed.");
             setModalVisible(!modalVisible);
             }}>
+                
+          
             <View style={styles.centeredView}>
+            <LinearGradient
+            // Background Linear Gradient
+            colors={['rgba(102, 124, 148, 1)',
+              'rgba(117, 135, 157, 1)',
+              'rgba(158, 154, 182, 1)',
+              'rgba(185, 170, 195, 1)',
+              'rgba(197, 148, 142, 1)',
+              'rgba(178, 131, 122, 1)', 
+              ]}
+            style={styles.modalView}>
             <View style={styles.modalView}>
+            
+
                 <Pressable
                     style={[styles.buttonClose]}
                     onPress={() => {setModalVisible(!modalVisible), DevSettings.reload()}}
@@ -38,9 +54,13 @@ const GoodVibeModal = ({compliment, fetch}) => {
 
                 <Text style={styles.modalText}>{compliment}
                 </Text>
+                
             </View>
+            </LinearGradient>
             </View>
+          
         </Modal>
+     
         <Pressable
             style={[styles.button, styles.buttonOpen]}
             onPress={() => setModalVisible(true)}
@@ -62,7 +82,7 @@ const styles = StyleSheet.create({
     modalView: {
         height: '65%',
         width: '95%',
-        backgroundColor: "#2C3F54",
+        // backgroundColor: "#2C3F54",
         borderRadius: 20,
         padding: 35,
         alignItems: "center",
@@ -107,7 +127,7 @@ const styles = StyleSheet.create({
         color: "white",
         fontWeight: "bold",
         textAlign: "center",
-        fontSize: 16,
+        fontSize: 12,
         fontFamily: 'IndieFlower_400Regular',
 
     },
