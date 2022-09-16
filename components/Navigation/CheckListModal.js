@@ -1,8 +1,21 @@
 import React, { useState } from "react";
 import { Text, View, Modal, StyleSheet, Pressable } from "react-native";
+import AppLoading from 'expo-app-loading';
+import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
+
+
 
 const CheckListModal = () => {
   const [modalVisible, setModalVisible] = useState(false);
+  let [fontsLoaded] = useFonts({
+    IndieFlower_400Regular,
+  });
+    
+  
+  
+  if(!fontsLoaded){
+      return <AppLoading />;
+     } else{
   return (
     <View style={styles.centeredView}>
       <Modal
@@ -32,8 +45,8 @@ const CheckListModal = () => {
       </Pressable>
     </View>
   );
-};
-
+ };
+}
 
 const styles = StyleSheet.create({
     centeredView: {
@@ -90,12 +103,14 @@ const styles = StyleSheet.create({
         color: "white",
         fontWeight: "bold",
         textAlign: "center",
-        fontSize: 16
+        fontSize: 16,
+        fontFamily: 'IndieFlower_400Regular',
     },
     modalText: {
         color: '#FFFFFF',
         margin: 15,
-        textAlign: "center"
+        textAlign: "center",
+        fontFamily: 'IndieFlower_400Regular',
     }
 });
 

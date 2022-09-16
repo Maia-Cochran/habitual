@@ -1,13 +1,23 @@
 import { View, Text, StyleSheet } from 'react-native';
+import AppLoading from 'expo-app-loading';
+import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
+
 
 const Header = () => {
+    let [fontsLoaded] = useFonts({
+        IndieFlower_400Regular,
+      });
+
+      if(!fontsLoaded){
+        return <AppLoading />;
+    } else{
     return (
         <View style={styles.headerContainer}>
-            <Text style={styles.title}>Habitual</Text>
+            <Text style={styles.title} title="">Habitual</Text>
         </View>
     )
+  }
 }
-
 export default Header;
 
 const styles = StyleSheet.create({
@@ -39,6 +49,7 @@ const styles = StyleSheet.create({
     title: {
         // fontFamily: ??? needs to be imported
         fontSize: 40,
-        color: '#F5F5F5'
+        color: '#F5F5F5',
+        fontFamily: 'IndieFlower_400Regular'
     }
 })

@@ -1,14 +1,15 @@
 import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
-
+import AppLoading from 'expo-app-loading';
+import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
 
 const GreetingButton = ({ quote, fetch}) => {
+    let [fontsLoaded] = useFonts({
+        IndieFlower_400Regular,
+      });
 
-    //make a data file with the mantras and affirmations from self-care center
-    // import the data file here
-    // create function to randomly pick a phrase from the data file and populate the greeting button
-    // try to create the data file into an API
-
-
+if(!fontsLoaded){
+    return <AppLoading />;
+} else{
     return (
        <TouchableHighlight onPress={fetch}>     
             <View style={styles.greetingContainer} >     
@@ -17,6 +18,7 @@ const GreetingButton = ({ quote, fetch}) => {
         </TouchableHighlight>
     )
   }
+}
 
 
 export default GreetingButton;
@@ -46,7 +48,11 @@ const styles = StyleSheet.create({
     title: {
         // fontFamily: ??? needs to be imported
         fontSize: 20,
+        paddingVertical: 2,
+        flexShrink: 1,
+        flexWrap: 'wrap',
         color: '#F5F5F5',
         textAlign: 'center',
+        fontFamily: 'IndieFlower_400Regular'
     }
 })

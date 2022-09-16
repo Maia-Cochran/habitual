@@ -1,8 +1,21 @@
 import { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 import CheckListModal from '../Navigation/CheckListModal';
+import AppLoading from 'expo-app-loading';
+import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
+
+
 
 const CheckListView = (props) => {
+    let [fontsLoaded] = useFonts({
+        IndieFlower_400Regular,
+      });
+    
+    
+    
+  if(!fontsLoaded){
+        return <AppLoading />;
+    } else{
     return (
         <View style={styles.card}>
             <Text style={styles.textStyle}>Check List!</Text>
@@ -13,11 +26,13 @@ const CheckListView = (props) => {
         </View>
 
     )
+  }
 }
 
 const styles = StyleSheet.create({
     textStyle: {
-        fontSize: 30
+        fontSize: 30,
+        fontFamily: 'IndieFlower_400Regular',
     }
 })
 

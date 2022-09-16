@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Text, View, Modal, StyleSheet, Pressable, TouchableHighlight, DevSettings} from "react-native";
+import AppLoading from 'expo-app-loading';
+import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
 
 
 
 const GoodVibeModal = ({compliment, fetch}) => {
     const [modalVisible, setModalVisible] = useState(false);
+    let [fontsLoaded] = useFonts({
+      IndieFlower_400Regular,
+    });
 
-
+    if(!fontsLoaded){
+      return <AppLoading />;
+  } else{
   return (
     <TouchableHighlight onPress={fetch}>
         <View style={styles.centeredView}>
@@ -42,8 +49,8 @@ const GoodVibeModal = ({compliment, fetch}) => {
         </View>
     </TouchableHighlight>
   );
-};
-
+ };
+}
 
 const styles = StyleSheet.create({
     centeredView: {
@@ -100,7 +107,9 @@ const styles = StyleSheet.create({
         color: "white",
         fontWeight: "bold",
         textAlign: "center",
-        fontSize: 16
+        fontSize: 16,
+        fontFamily: 'IndieFlower_400Regular',
+
     },
     modalText: {
         // flex: 1,
@@ -110,7 +119,8 @@ const styles = StyleSheet.create({
         marginTop: '30%',
         textAlign: "center",
         fontSize: 48,
-        padding: 10
+        padding: 10,
+        fontFamily: 'IndieFlower_400Regular',
     }
 });
 
