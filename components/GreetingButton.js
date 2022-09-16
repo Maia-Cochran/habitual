@@ -58,9 +58,8 @@ const styles = StyleSheet.create({
     },
 
     highlight: {
-        // margin:50, 
-        // width: 200, 
-        // height: 50, 
+        height: 85,
+        width: 350, 
         borderRadius: 18,
         justifyContent: 'center', 
         alignItems: 'center'
