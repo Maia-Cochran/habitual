@@ -1,36 +1,50 @@
-import React, { useState } from "react";
-import { Text, View, Modal, StyleSheet, Pressable } from "react-native";
+import React, { useState, useEffect } from "react";
+import { Text, View, Modal, StyleSheet, Pressable, TouchableHighlight} from "react-native";
 
-const GoodVibeModal = () => {
-  const [modalVisible, setModalVisible] = useState(false);
+
+
+const GoodVibeModal = ({compliment, fetch}) => {
+    const [modalVisible, setModalVisible] = useState(false);
   return (
-    <View style={styles.centeredView}>
-      <Modal
-        animationType="fade"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-          Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
-        }}>
-
+    <TouchableHighlight onPress={fetch}>
         <View style={styles.centeredView}>
-          <View style={styles.modalView}>
-            <Pressable
-              style={[styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}>
-              <Text style={styles.textStyle}>✖️</Text>
-            </Pressable>
-              <Text style={styles.textStyle}>Random compliment from API goes here</Text>
-          </View>
+        <Modal
+            // fetch={fetchAllData}
+            // compliments={compliments.compliment}
+            animationType="fade"
+            transparent={true}
+            visible={modalVisible}
+            onRequestClose={() => {
+            Alert.alert("Modal has been closed.");
+            setModalVisible(!modalVisible);
+            }}>
+            <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+                <Pressable
+                style={[styles.buttonClose]}
+                onPress={() => setModalVisible(!modalVisible)
+                }>
+                    
+                <Text style={styles.textStyle}>✖️</Text>
+                </Pressable>
+                <Text style={styles.textStyle}>{compliment}
+                <Text style={styles.textStyle}>Tell Me Something Good</Text>
+                    <Text style={styles.textStyle}>🪷</Text>
+                    <Text style={styles.textStyle}>Press Here for your dose of good vibes</Text>
+                </Text>
+            </View>
+            </View>
+        </Modal>
+        <Pressable
+            style={[styles.button, styles.buttonOpen]}
+            onPress={() => setModalVisible(true)}
+        >
+            {/* <View style={styles.card}> */}
+                    
+               {/* </View> */}
+        </Pressable>
         </View>
-      </Modal>
-      <Pressable
-        style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
-      >
-      </Pressable>
-    </View>
+    </TouchableHighlight>
   );
 };
 

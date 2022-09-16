@@ -27,6 +27,7 @@ class HabitualCarousel extends Component {
       <View style={{flexDirection: 'row'}}>
         <View style={styles.slideCard}
         >
+
           <GoodVibeCard id={this.state.carouselItems.id}/>
          
           {/* <Text style={{fontSize: 30}}>{item.title}</Text>
