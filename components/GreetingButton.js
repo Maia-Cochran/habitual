@@ -11,8 +11,8 @@ const GreetingButton = ({ quote, fetch}) => {
 
     return (
        <TouchableHighlight onPress={fetch}>     
-            <View style={styles.greetingContainer}>
-                <Text style={styles.title}> {quote}</Text>
+            <View style={styles.greetingContainer} >     
+                <Text title="Positive reinforcement leads to good habits." style={styles.title}>{quote}</Text>
             </View>
         </TouchableHighlight>
     )
