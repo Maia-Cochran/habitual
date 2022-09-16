@@ -1,7 +1,7 @@
 import { View, StyleSheet, TouchableHighlight, Image } from 'react-native'
 import Header from './Header'
 import GreetingButton from './GreetingButton'
-import Carousel from './Carousel/Carousel'
+import HabitualCarousel from './Carousel/Carousel'
 import ModalTemplate from './ModalTemplate'
 import BottomNavBar from './BottomNavBar'
 import { useState } from 'react';
@@ -9,11 +9,10 @@ import GoodVibeCard from './CarouselCards/GoodVibeCard'
 
 
 const Home = () =>{
-   const [quote, setQuote] = useState('Positive reinforcement leads to good habits.')  
+   const [quote, setQuote] = useState('')  
 //    console.log(555, hasQuote)
 
 const fetchApiCall = () => {
-    console.log(quote)
     return fetch("http://localhost:3001/mantra")
         .then(response => response.json())
         .then(data => {
@@ -38,7 +37,7 @@ const fetchApiCall = () => {
             {/* Home component or within carousel? need to determine */}
             {/* flow of data/components */}
             <View style={styles.carouselContainer}>
-               <Carousel />
+               <HabitualCarousel />
             </View>
             
           
