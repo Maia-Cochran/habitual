@@ -3,6 +3,8 @@ import { Text, View, Modal, StyleSheet, Pressable, TouchableHighlight, DevSettin
 import AppLoading from 'expo-app-loading';
 import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
 import { LinearGradient } from 'expo-linear-gradient';
+import { BlurView } from 'expo-blur';
+
 
 
 const GoodVibeModal = ({compliment, fetch}) => {
@@ -52,7 +54,6 @@ const GoodVibeModal = ({compliment, fetch}) => {
                     >
                 <Text style={styles.textStyle}>✖️</Text>
                 </Pressable>
-
                 <Text style={styles.modalText}>{compliment}
                 </Text>
                 </LinearGradient>
@@ -66,6 +67,9 @@ const GoodVibeModal = ({compliment, fetch}) => {
             style={[styles.button, styles.buttonOpen]}
             onPress={() => setModalVisible(true)}
         >
+             <BlurView intensity={80} tint="light" style={styles.blurContainer}>
+                <View style={styles.centeredView}></View>
+                </BlurView>
         </Pressable>
         </View>
     </TouchableHighlight>
