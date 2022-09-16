@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Text, View, Modal, StyleSheet, Pressable, TouchableHighlight, DevSettings} from "react-native";
 import AppLoading from 'expo-app-loading';
 import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
-
+import { BlurView } from 'expo-blur';
 
 
 const GoodVibeModal = ({compliment, fetch}) => {
@@ -10,6 +10,12 @@ const GoodVibeModal = ({compliment, fetch}) => {
     let [fontsLoaded] = useFonts({
       IndieFlower_400Regular,
     });
+
+   const handleBlur = () => {
+     setModalVisible(true);
+   }
+
+
 
     if(!fontsLoaded){
       return <AppLoading />;
@@ -46,6 +52,9 @@ const GoodVibeModal = ({compliment, fetch}) => {
             onPress={() => setModalVisible(true)}
         >
         </Pressable>
+        <BlurView intensity={80} tint="light" style={styles.blurContainer}>
+            {handleBlur}
+        </BlurView>
         </View>
     </TouchableHighlight>
   );
@@ -121,7 +130,12 @@ const styles = StyleSheet.create({
         fontSize: 48,
         padding: 10,
         fontFamily: 'IndieFlower_400Regular',
-    }
+    },
+    blurContainer: {
+        flex: 1,
+        // padding: 20,
+        // justifyContent: 'center',
+      },
 });
 
 export default GoodVibeModal;

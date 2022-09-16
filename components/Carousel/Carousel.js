@@ -4,7 +4,7 @@ import Carousel from 'react-native-snap-carousel'
 import CheckListCard from '../CarouselCards/CheckListCard';
 import GoodVibeCard from '../CarouselCards/GoodVibeCard';
 // import ModalTemplate from '../ModalTemplate';
-
+import { BlurView } from 'expo-blur';
 
 // const SLIDER_1_FIRST_ITEM = 1;
 class HabitualCarousel extends Component {
@@ -30,13 +30,13 @@ class HabitualCarousel extends Component {
       <View style={{flexDirection: 'row'}}>
         <View style={styles.slideCard}
         >
-          <GoodVibeCard id={this.state.carouselItems}/>
+          <GoodVibeCard id={this.state.carouselItems} item={item} index={this.state.activeIndex + 1}/>
           {/* <Text style={{fontSize: 30}}>{item.title}</Text>
           <Text style={{fontSize: 30}}>{item.icon}</Text>
           <Text>{item.text}</Text> */}
         </View>
         <View style={styles.slideCard}>
-           <CheckListCard id={this.state.carouselItem2}/>
+           <CheckListCard id={this.state.carouselItem2} item={item} index={this.state.activeIndex  + 1}/>
           <Text style={{fontSize: 30}}>{item.title}</Text>
           <Text style={{fontSize: 30}}>{item.icon}</Text>
           <Text>{item.text}</Text>
@@ -56,7 +56,6 @@ class HabitualCarousel extends Component {
   render() {
     return (
       <SafeAreaView style={{flex: 1,  }}>
-
         <View style={{ flex: 1, flexDirection:'column', justifyContent: 'center', alignContents: 'center' }}>
         <Carousel
             layout={"column"}
