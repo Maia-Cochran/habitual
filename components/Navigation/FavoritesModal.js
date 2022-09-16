@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Text, View, Modal, StyleSheet, Pressable } from "react-native";
+import GoodVibeCard from './GoodVibeCard';
 
 const FavoritesModal = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -28,7 +29,7 @@ const FavoritesModal = () => {
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible(true)}
       >
-        <Text style={styles.textStyle}>The Calendar will go here</Text>
+        <Text style={styles.textStyle}>[<GoodVibeCard />]</Text>
       </Pressable>
     </View>
   );

@@ -36,7 +36,7 @@ const GoodVibeCard = () => {
 
       if(!fontsLoaded){
         return <AppLoading />;
-    } else{
+    } else {
     return (
         <View style={styles.textContainer}>  
             <Text style={styles.textStyle}>Tell Me Something Good</Text>

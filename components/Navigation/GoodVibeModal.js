@@ -5,7 +5,8 @@ import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flowe
 import { LinearGradient } from 'expo-linear-gradient';
 import { BlurView } from 'expo-blur';
 
-
+//when the heart icon is clicked (onPress={run the function that will triger it to be
+//added to the empty array which lives within the FavoritesCard state using hooks})
 
 const GoodVibeModal = ({compliment, fetch}) => {
     const [modalVisible, setModalVisible] = useState(false);
@@ -22,8 +23,6 @@ const GoodVibeModal = ({compliment, fetch}) => {
         <View style={styles.centeredView}>
                 
         <Modal
-            // fetch={fetchAllData}
-            // compliments={compliments.compliment}
             animationType="fade"
             transparent={true}
             visible={modalVisible}
