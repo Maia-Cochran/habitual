@@ -4,7 +4,7 @@ import GreetingButton from './GreetingButton'
 import HabitualCarousel from './Carousel/Carousel'
 import ModalTemplate from './ModalTemplate'
 import BottomNavBar from './BottomNavBar'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import GoodVibeCard from './CarouselCards/GoodVibeCard'
 
 
@@ -23,6 +23,11 @@ const fetchApiCall = () => {
           console.log(err);
         });
     }
+
+
+    useEffect(() => {
+        fetchApiCall();
+      }, [])
 
     return (
         <View style={styles.homeContainer}>

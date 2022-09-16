@@ -15,9 +15,12 @@ class HabitualCarousel extends Component {
       carouselItems: [
         {
           id: 1
-        },
-     
-     
+        }, 
+      ],
+      carouselItem2: [
+        {
+          id: 1
+        }, 
       ]
     }
   }
@@ -27,18 +30,25 @@ class HabitualCarousel extends Component {
       <View style={{flexDirection: 'row'}}>
         <View style={styles.slideCard}
         >
-          <GoodVibeCard id={this.state.carouselItems.id}/>
+          <GoodVibeCard id={this.state.carouselItems}/>
          
           {/* <Text style={{fontSize: 30}}>{item.title}</Text>
           <Text style={{fontSize: 30}}>{item.icon}</Text>
           <Text>{item.text}</Text> */}
         </View>
         <View style={styles.slideCard}>
-           <CheckListCard id={this.state.carouselItems.id}/>
+           <CheckListCard id={this.state.carouselItem2}/>
           <Text style={{fontSize: 30}}>{item.title}</Text>
           <Text style={{fontSize: 30}}>{item.icon}</Text>
           <Text>{item.text}</Text>
         </View>
+        {/* <View style={styles.slideCard}>
+           <ModalTemplate id={this.state.carouselItems.id}/>
+          <Text style={{fontSize: 30}}>{item.title}</Text>
+          <Text style={{fontSize: 30}}>{item.icon}</Text>
+          <Text>{item.text}</Text>
+        </View>
+          */}
       </View>
     
     );
