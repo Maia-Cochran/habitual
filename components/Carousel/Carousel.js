@@ -6,75 +6,67 @@ import GoodVibeCard from '../CarouselCards/GoodVibeCard';
 import ModalTemplate from '../ModalTemplate';
 
 
-// const SLIDER_1_FIRST_ITEM = 1;
+const SLIDER_1_FIRST_ITEM = 1;
 class HabitualCarousel extends Component {
   constructor(props){
     super(props);
     this.state = {
-      activeIndex:0,
-      carouselItems: [
-        {
-          id: 1
-        },
-     
-      ]
-    }
+      slider1ActiveSlide: SLIDER_1_FIRST_ITEM
+  };
   }
+
+ 
 
   _renderItem = ({ item, index }) => {
-    return (
-      <View style={{flexDirection: 'row'}}>
-        <View style={styles.slideCard}
-        >
-          <GoodVibeCard id={this.state.carouselItems.id}/>
-         
-          {/* <Text style={{fontSize: 30}}>{item.title}</Text>
-          <Text style={{fontSize: 30}}>{item.icon}</Text>
-          <Text>{item.text}</Text> */}
-        </View>
-        <View style={{
-          backgroundColor:'#3A376F',
-          color: 'white',
-          alignItems: 'center',
-          borderRadius: 16,
-          height: 400,
-          width: '100%',
-          padding: 40,
-          // marginLeft: 25,
-          // marginRight: 25, 
-        }}
-        >
-           {/* <CheckListCard /> */}
-        
-          <Text style={{fontSize: 30}}>{item.title}</Text>
-          <Text style={{fontSize: 30}}>{item.icon}</Text>
-          <Text>{item.text}</Text>
-        </View>
-      </View>
-    
-    );
+    <GoodVibeCard data={item} even={(index + 1) % 2 === 0} />,
+    <CheckListCard data={item} even={(index + 1) % 2 === 0} />,
+    <ModalTemplate data={item} even={(index + 1) % 2 === 0} />
   }
+
+
+    carouselTest (number, title){
+      const { slider1ActiveSlide } = this.state;
+      return (
+        <View style={styles.carouselContainer}>
+          <View style={styles.slideCard}>
+             <Carousel
+                layout={"column"}
+                ref={ref => this.carousel = ref}
+                data={this.state.slider1ActiveSlide}
+                sliderWidth={350}
+                itemWidth={300}
+                renderItem={this._renderItem}
+                onSnapToItem = { index => this.setState({activeIndex:index}) } 
+              >
+             </Carousel>
+          
+            {/* <Text style={{fontSize: 30}}>{item.title}</Text>
+            <Text style={{fontSize: 30}}>{item.icon}</Text>
+            <Text>{item.text}</Text> */}
+          </View>
+          <View style={styles.slideCard} > 
+            <CheckListCard/> 
+          </View>
+        </View>
+      
+      )
+    }
+  
 
   render() {
+    const example1 = this.carouselTest(1, 'Default layout | Loop | Autoplay | Parallax | Scale | Opacity | Pagination with tappable dots');
+  
     return (
-      <SafeAreaView style={{flex: 1,  }}>
-
-        <View style={{ flex: 1, flexDirection:'column', justifyContent: 'center', alignContents: 'center' }}>
-        <Carousel
-            layout={"column"}
-            ref={ref => this.carousel = ref}
-            data={this.state.carouselItems}
-            sliderWidth={350}
-            itemWidth={300}
-            renderItem={this._renderItem}
-            onSnapToItem = { index => this.setState({activeIndex:index}) } 
-          />
-        </View>
+      <SafeAreaView >
+      
+        {/* <View style={{ flex: 1, flexDirection:'column', justifyContent: 'center', alignContents: 'center' }}> */}
+        {example1}
+        {/* </View> */}
       </SafeAreaView>
     )
+  
   }
 }
-
 // const styles = StyleSheet.create({
 //   textStyle: {
 //       fontSize: 30,
@@ -86,7 +78,12 @@ class HabitualCarousel extends Component {
 export default HabitualCarousel
 
 const styles = StyleSheet.create({
-  slideCard:{ 
+    carouselContainer: {
+      height: '60%',
+      width: '100%',
+      flexDirection: 'row'
+    },
+    slideCard:{ 
     backgroundColor:'#3A376F',
     marginTop: 40,
     color: 'white',
@@ -106,6 +103,12 @@ const styles = StyleSheet.create({
     // marginLeft: 25,
     marginRight: 25,
  },
+ carouselThings: {
+    flex: 1, 
+    flexDirection:'column', 
+    justifyContent: 'center', 
+    alignContents: 'center' 
+ }
 })
 
 
