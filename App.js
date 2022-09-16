@@ -5,9 +5,20 @@ import Home from './components/Home';
 // import ModalTemplate from '../components/ModalTemplate';
 import Carousel from './components/Carousel/Carousel';
 import BottomNavBar from './components/BottomNavBar';
+import AppLoading from 'expo-app-loading';
+import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
+
 
 const App = () => {
+  let [fontsLoaded] = useFonts({
+    IndieFlower_400Regular,
+  });
 
+
+
+  if(!fontsLoaded){
+    return <AppLoading />;
+} else{
   return (
   
     <View style={styles.appContainer}>    
@@ -32,8 +43,8 @@ const App = () => {
    
    
   );
+ }
 }
-
 export default App;
 
 const styles = StyleSheet.create({
@@ -41,6 +52,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'none',
     alignItems: 'center',
+    fontFamily: 'IndieFlower_400Regular',
     // justifyContent: 'center',
   },
   image: {
