@@ -17,6 +17,7 @@ class HabitualCarousel extends Component {
           id: 1
         },
      
+     
       ]
     }
   }
@@ -32,20 +33,8 @@ class HabitualCarousel extends Component {
           <Text style={{fontSize: 30}}>{item.icon}</Text>
           <Text>{item.text}</Text> */}
         </View>
-        <View style={{
-          backgroundColor:'#3A376F',
-          color: 'white',
-          alignItems: 'center',
-          borderRadius: 16,
-          height: 400,
-          width: '100%',
-          padding: 40,
-          // marginLeft: 25,
-          // marginRight: 25, 
-        }}
-        >
-           {/* <CheckListCard /> */}
-        
+        <View style={styles.slideCard}>
+           <CheckListCard id={this.state.carouselItems.id}/>
           <Text style={{fontSize: 30}}>{item.title}</Text>
           <Text style={{fontSize: 30}}>{item.icon}</Text>
           <Text>{item.text}</Text>
