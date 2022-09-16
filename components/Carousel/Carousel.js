@@ -42,6 +42,7 @@ class HabitualCarousel extends Component {
           // marginRight: 25, 
         }}
         >
+          
           <GoodVibeCard />
         
           {/* <Text style={{fontSize: 30}}>{item.title}</Text>
