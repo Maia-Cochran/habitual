@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Text, View, Modal, StyleSheet, Pressable, TouchableHighlight } from "react-native";
 import AppLoading from 'expo-app-loading';
 import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
+import { LinearGradient } from 'expo-linear-gradient';
+import { BlurView } from 'expo-blur';
 
 
 
@@ -16,7 +18,9 @@ const GoodVibeModal = ({compliment, fetch}) => {
   } else{
   return (
     <TouchableHighlight onPress={fetch}>
+    
         <View style={styles.centeredView}>
+                
         <Modal
             // fetch={fetchAllData}
             // compliments={compliments.compliment}
@@ -27,26 +31,47 @@ const GoodVibeModal = ({compliment, fetch}) => {
             Alert.alert("Modal has been closed.");
             setModalVisible(!modalVisible);
             }}>
+                
+          
             <View style={styles.centeredView}>
+            
             <View style={styles.modalView}>
+            <LinearGradient
+            // Background Linear Gradient
+            colors={[
+              'rgba(102, 124, 148, 1)',
+              'rgba(117, 135, 157, 1)',
+              'rgba(158, 154, 182, 1)',
+              'rgba(185, 170, 195, 1)',
+              'rgba(197, 148, 142, 1)',
+              'rgba(178, 131, 122, 1)', 
+              ]}
+            style={styles.gradient}>
+
                 <Pressable
                     style={[styles.buttonClose]}
                     onPress={() => {setModalVisible(!modalVisible)}}
                     >
                 <Text style={styles.textStyle}>✖️</Text>
                 </Pressable>
-
                 <Text style={styles.modalText}>{compliment}
                 </Text>
+                </LinearGradient>
             </View>
+           
             </View>
+          
         </Modal>
+     
         <Pressable
             style={[styles.button, styles.buttonOpen]}
             onPress = {async () => {
                 await fetch() 
                 setModalVisible(true)}}
         >
+             <BlurView intensity={80} tint="light" style={styles.blurContainer}>
+                <View style={styles.centeredView}></View>
+                </BlurView>
         </Pressable>
         </View>
     </TouchableHighlight>
@@ -63,10 +88,11 @@ const styles = StyleSheet.create({
     },
     modalView: {
         height: '65%',
-        width: '95%',
+        width: '80%',
         backgroundColor: "#2C3F54",
+         // backgroundColor: "#2C3F54",
         borderRadius: 20,
-        padding: 35,
+        // padding: 35,
         alignItems: "center",
         shadowColor: "#000",
         shadowOffset: {
@@ -77,8 +103,22 @@ const styles = StyleSheet.create({
         shadowRadius: 10,
         elevation: 5
     },
+    gradient:{
+        height: '100%',
+        width: '100%%',
+        borderRadius: 20,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 6,
+            height: 6
+        },
+        shadowOpacity: 0.8,
+        shadowRadius: 10,
+        elevation: 5,
+        padding: 10,
+    },
     button: {
-        marginTop: -150,
+        // marginTop: -150,
         height: 400,
         width: 300,
         borderRadius: 20,
@@ -93,6 +133,7 @@ const styles = StyleSheet.create({
     buttonClose: {
         justifyContent: "center",
         backgroundColor: "#869684",
+        alignItems: "center",
         shadowColor: "#000",
         width: 40,
         height: 40,
@@ -109,7 +150,7 @@ const styles = StyleSheet.create({
         color: "white",
         fontWeight: "bold",
         textAlign: "center",
-        fontSize: 16,
+        fontSize: 12,
         fontFamily: 'IndieFlower_400Regular',
 
     },
@@ -120,8 +161,8 @@ const styles = StyleSheet.create({
         color: "white",
         marginTop: '30%',
         textAlign: "center",
-        fontSize: 48,
-        padding: 10,
+        fontSize: 30,
+        // padding: 10,
         fontFamily: 'IndieFlower_400Regular',
     }
 });
