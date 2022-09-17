@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Text, View, Modal, StyleSheet, Pressable, TouchableHighlight, DevSettings} from "react-native";
+import { Text, View, Modal, StyleSheet, Pressable, TouchableHighlight } from "react-native";
 import AppLoading from 'expo-app-loading';
 import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -50,7 +50,7 @@ const GoodVibeModal = ({compliment, fetch}) => {
 
                 <Pressable
                     style={[styles.buttonClose]}
-                    onPress={() => {setModalVisible(!modalVisible), DevSettings.reload()}}
+                    onPress={() => {setModalVisible(!modalVisible)}}
                     >
                 <Text style={styles.textStyle}>✖️</Text>
                 </Pressable>
@@ -65,7 +65,9 @@ const GoodVibeModal = ({compliment, fetch}) => {
      
         <Pressable
             style={[styles.button, styles.buttonOpen]}
-            onPress={() => setModalVisible(true)}
+            onPress = {async () => {
+                await fetch() 
+                setModalVisible(true)}}
         >
              <BlurView intensity={80} tint="light" style={styles.blurContainer}>
                 <View style={styles.centeredView}></View>

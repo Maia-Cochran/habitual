@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import { Text, View, StyleSheet } from 'react-native';
 import AppLoading from 'expo-app-loading';
 import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
