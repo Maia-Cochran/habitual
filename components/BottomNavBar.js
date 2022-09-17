@@ -4,10 +4,11 @@ const BottomNavBar = () => {
 
     return (
         <View style={styles.bottomNavBar}>
-          <Image source={require("../assets/calendar.png")} style={styles.icons}/>
-           <Image source={require("../assets/checklist.png")} style={styles.icons}/>
-           <Image source={require("../assets/home.png")} style={styles.icons}/>
-           <Image source={require("../assets/lotus.png")} style={styles.icons}/>
+          {/* <Image source={require("../assets/calendar.png")} style={styles.icons}/> */}
+           <Image source={require("../assets/NavBarIcons/checklistIcon.png")} style={styles.icons}/>
+           {/* <Image source={require("../assets/NavBarIcons/checklistIcon.png")} style={styles.icons}/> */}
+           <Image source={require("../assets/NavBarIcons/favoriteIcon.png")} style={styles.icons}/>
+           <Image source={require("../assets/NavBarIcons/lotusIcon.png")} style={styles.icons}/>
         </View>
     )
 }
@@ -35,5 +36,6 @@ const styles = StyleSheet.create({
     icons: {
         color: '#F5F5F5',
         margin: 25,
+        height: 40,
     }
 })

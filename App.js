@@ -17,14 +17,16 @@ const App = () => {
   return (
   
     <View style={styles.appContainer}>    
-    <ImageBackground   source={require("./assets/background-with-leaves.png")} resizeMode="cover">
-    <View style={styles.appContainer}> 
-      <Home />
-      <CustomSlider data={data} />
-      <View style={styles.bottomNavContainer}>
-         <BottomNavBar />      
-      </View>
-      </View>
+      <ImageBackground   source={require("./assets/background-with-leaves.png")} resizeMode="cover">
+        <View style={styles.appContainer}> 
+          <Home />
+          <View>
+            <CustomSlider data={data} />
+          </View>
+          <View style={styles.bottomNavContainer}>
+            <BottomNavBar />      
+          </View>
+        </View>
       </ImageBackground>
     </View>
    
@@ -49,11 +51,11 @@ const styles = StyleSheet.create({
   },
   bottomNavContainer: {
     // alignItems: 'flex-end',
-    marginTop: -90,
+    marginTop: -80,
     // justifyContent: 'flex-end',
     // height: 180,
     width: "100%",
-    margin: 20,
+    // margin: 20,
   }
 });
 
