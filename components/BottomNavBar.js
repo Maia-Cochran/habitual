@@ -1,15 +1,13 @@
 import { View, Text, StyleSheet, Image } from 'react-native';
 
-
 const BottomNavBar = () => {
-
 
     return (
         <View style={styles.bottomNavBar}>
           <Image source={require("../assets/calendar.png")} style={styles.icons}/>
-           <Image source={require("../assets/checkList.png")} style={styles.icons}/>
+           <Image source={require("../assets/checklist.png")} style={styles.icons}/>
            <Image source={require("../assets/home.png")} style={styles.icons}/>
-           <Image source={require("../assets/zen.png")} style={styles.icons}/>
+           <Image source={require("../assets/lotus.png")} style={styles.icons}/>
         </View>
     )
 }
@@ -34,18 +32,8 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.8,
         shadowRadius: 10,
     },
-
-    // title: {
-    //     fontSize: 45,
-    //     color: '#F5F5F5',
-    //     textAlign: 'center',
-    // },
     icons: {
         color: '#F5F5F5',
         margin: 25,
-        // justifyContent: 'spaceEvenly',
     }
 })
-
-
-//   {/* <Text style={styles.title}> 🏠      📅      🪷      📄 </Text> */}

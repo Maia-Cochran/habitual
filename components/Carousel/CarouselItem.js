@@ -1,71 +1,35 @@
-// import React from 'react';
-// import { ParallaxImage } from 'react-native-snap-carousel';
-// import { View, Text, Pressable, SafeAreaView } from 'react-native';
-// // import styles from './styles';
-// import GoodVibeModal from '../Navigation/GoodVibeModal';
-// import { Dimensions, StyleSheet, Platform } from 'react-native';
+import React from 'react';
+import { ParallaxImage } from 'react-native-snap-carousel';
+import { Text, Pressable, SafeAreaView } from 'react-native';
+import styles from './styles';
+import AppLoading from 'expo-app-loading';
+import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
 
-// function CarouselItem({ item, index }, parallaxProps) {
-//   return (
-//     <Pressable style={[styles.container, {borderColor: 'red'}, {borderWidth: 2}]} onPress={() => alert('Image description:' + item.description)}> 
-//       <SafeAreaView style={styles.container}>
-//         <View style={styles.container}>
-//           <GoodVibeModal style={styles.container}/>
-//         </View>
-//       </SafeAreaView>
-//     </Pressable>
-//   );
-// }
-// const { width: screenWidth } = Dimensions.get('window');
-// const styles = StyleSheet.create({
-//   container: { //container for carousel
-//     // marginTop: 100,
-//     paddingTop: 30,
-//     paddingBottom: 0,
-//     marginBottom: 0,
-//     borderWidth: 2,
-//     borderColor: 'red'
-//   },
-//   title: {
-//     fontSize: 20,
-//   },
-//   item: {
-//     width: '100%',
-//     height: screenWidth - 20, //height will be 20 units less than screen width.
-//     shadowColor: "#000000",
-//     shadowOffset: {
-//         width: 6,
-//         height: 6,
-//     },
-//     shadowOpacity: .7,
-//     shadowRadius: 8,
-//     elevation: 20,
-//   },
-//   imageContainer: {
-//     flex: 1,
-//     borderRadius: 5,
-//     backgroundColor: '#39376E',
-//     marginBottom: Platform.select({ ios: 0, android: 1 }), //handle rendering bug.
-//     marginBottom: 0,
-//     borderWidth: 1,
-//     borderColor: 'red'
-//   },
-//   // image: {
-//   //   ...StyleSheet.absoluteFillObject,
-//   //   resizeMode: 'contain',
-//   // },
-//   dotContainer: {
-//     backgroundColor: 'rgb(230,0,0)',
-//   },
-//   dotStyle: {
-//     width: 10,
-//     height: 10,
-//     borderRadius: 5,
-//     backgroundColor: 'black',
-//   },
-//   inactiveDotStyle: {
-//     backgroundColor: 'rgb(255,230,230)',
-//   },
-// });
+const CarouselItem = ({item, index}, parallaxProps) => {
+    
+    // let [fontsLoaded] = useFonts({
+    //     IndieFlower_400Regular,
+    //   });
+    
+    //   if(!fontsLoaded){
+    //     return <AppLoading />;
+    // } else {
 
-// export default CarouselItem;
+    return (
+      <Pressable onPress={() => alert('Image description:' + item.description)}>
+        <SafeAreaView style={styles.item}>
+          <Text style={styles.title}>{item.title}</Text>
+          <ParallaxImage
+            source={item.image} 
+            containerStyle={styles.imageContainer}
+            style={styles.image}
+            {...parallaxProps} 
+          />
+          <Text style={styles.motto}>{item.motto}</Text>
+        </SafeAreaView>
+      </Pressable>
+    );
+//   }
+}
+
+export default CarouselItem
