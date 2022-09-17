@@ -12,7 +12,7 @@ const data =
         id: 2,
         title: "Checklist",
         // description: "Daily Routine Checklist",
-        image: require("../assets/checklist.png"),
+        image: require("../assets/checkList.png"),
         motto: "Press Here to See Your Daily Routines Checklist"  
       },
     

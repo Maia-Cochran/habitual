@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Text, View, Modal, StyleSheet, Pressable, TouchableHighlight } from "react-native";
-import AppLoading from 'expo-app-loading';
-import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
+// import AppLoading from 'expo-app-loading';
+// import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
 import { LinearGradient } from 'expo-linear-gradient';
 import { BlurView } from 'expo-blur';
 
@@ -9,13 +9,13 @@ import { BlurView } from 'expo-blur';
 
 const GoodVibeModal = ({compliment, fetch}) => {
     const [modalVisible, setModalVisible] = useState(false);
-    let [fontsLoaded] = useFonts({
-      IndieFlower_400Regular,
-    });
+    // let [fontsLoaded] = useFonts({
+    //   IndieFlower_400Regular,
+    // });
 
-    if(!fontsLoaded){
-      return <AppLoading />;
-  } else{
+//     if(!fontsLoaded){
+//       return <AppLoading />;
+//   } else{
   return (
     <TouchableHighlight onPress={fetch}>
     
@@ -77,7 +77,7 @@ const GoodVibeModal = ({compliment, fetch}) => {
     </TouchableHighlight>
   );
  };
-}
+
 
 const styles = StyleSheet.create({
     centeredView: {

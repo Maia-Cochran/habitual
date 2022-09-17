@@ -2,15 +2,14 @@ import React, { useState } from "react";
 import { Text, View, Modal, StyleSheet, Pressable } from "react-native";
 import AppLoading from 'expo-app-loading';
 import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
-import { LinearGradient } from 'expo-linear-gradient';
-import { BlurView } from 'expo-blur';
+// import { LinearGradient } from 'expo-linear-gradient';
+// import { BlurView } from 'expo-blur';
 
 
 const CheckListModal = () => {
   const [modalVisible, setModalVisible] = useState(false);
-  let [fontsLoaded] = useFonts({
-    IndieFlower_400Regular,
-  });
+  const [enteredGoalText, setEnteredGoalText] = useState(''); 
+  let [fontsLoaded] = useFonts({IndieFlower_400Regular,  });
     
   
   
