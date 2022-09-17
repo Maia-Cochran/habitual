@@ -1,18 +1,38 @@
-const data = 
+// import GoodVibeModal from "../components/Navigation/GoodVibeModal";
+// import { useState, useEffect } from 'react';
 
+// const [compliments, setCompliments] = useState([]);
+//     const [error, setError] = useState('');
+//     // let [fontsLoaded] = useFonts({
+//     //     IndieFlower_400Regular,
+//     //   });
+//     const getCompliments = async () => {
+//         const url = "https://complimentr.com/api" 
+//         setError('')
+//         try {
+//           const response = await fetch(url)
+//           const compliments = await response.json()
+//           setCompliments(compliments)
+//         } catch(error) {
+//           setError(error.message)
+//         }
+//       }
+
+const data = 
   [
     {
         id: 1,
         title: "Tell Me Something Good",
         // description: "Lotus flower icon",
         image: require("../assets/lotus.png"),
-          motto: "Press Here for Your Dose of Good Vibes"
+        motto: "Press Here for Your Dose of Good Vibes",
+        // modal: <GoodVibeModal />,
       },
      {
         id: 2,
         title: "Checklist",
         // description: "Daily Routine Checklist",
-        image: require("../assets/checklist.png"),
+        image: require("../assets/checkList.png"),
         motto: "Press Here to See Your Daily Routines Checklist"  
       },
     
