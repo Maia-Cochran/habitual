@@ -6,14 +6,13 @@ import CheckListModal from '../components/Navigation/CheckListModal'
 import GoodVibeModal from './Navigation/GoodVibeModal';
 
 
-const GreetingButton = ({ quote, fetch}) => {
+const GreetingButton = () => {
     const [compliments, setCompliments] = useState([]);
     const [error, setError] = useState('');
     let [fontsLoaded] = useFonts({
         IndieFlower_400Regular,
       });
-
-      const getCompliments = async () => {
+    const getCompliments = async () => {
         const url = "https://complimentr.com/api" 
         setError('')
     
@@ -30,22 +29,76 @@ const GreetingButton = ({ quote, fetch}) => {
         getCompliments()
       }, [])
 
-if(!fontsLoaded){
-    return <AppLoading />;
-} else{
-    
+
+      if(!fontsLoaded){
+        return <AppLoading />;
+    } else{
     return (
-       <View style={styles.greetingContainer}>     
+        <View style={styles.greetingContainer}>     
                 {/* <Text title="Positive reinforcement leads to good habits." style={styles.title}>{quote}</Text> */}
-                <Text style={styles.textStyle}>Press here to see your daily routine checklist</Text>
-                <GoodVibeModal 
-                    compliment={compliments.compliment} 
-                    fetch={getCompliments} 
-                />
+                <Text style={styles.textStyle}>Tell Me Something Good</Text>
+                <GoodVibeModal compliment={compliments.compliment} fetch={getCompliments} style={{zIndex:2}}/>
         </View>
+
+
+
+//         <View style={styles.textContainer}>  
+//             <Text style={styles.textStyle}>Tell Me Something Good</Text>
+//             <Image source={require("../../assets/zen.png")} style={styles.icons}/>
+//             <Text style={styles.textStyle}>Press Here for Your Dose of Good Vibes</Text>
+            
+//                 <View>
+// <GoodVibeModal compliment={compliments.compliment} fetch={getCompliments} style={{zIndex:2}}/>
+//                 </View>
+           
+//         </View>
     )
   }
-}
+};
+
+
+
+
+
+
+
+
+//     const [compliments, setCompliments] = useState([]);
+//     const [error, setError] = useState('');
+//     let [fontsLoaded] = useFonts({
+//         IndieFlower_400Regular,
+//       });
+
+//       const getCompliments = async () => {
+//         const url = "https://complimentr.com/api" 
+//         setError('')
+    
+//         try {
+//           const response = await fetch(url)
+//           const compliments = await response.json()
+//           setCompliments(compliments)
+//         } catch(error) {
+//           setError(error.message)
+//         }
+//       }
+  
+//       useEffect(() => {
+//         getCompliments()
+//       }, [])
+
+// if(!fontsLoaded){
+//     return <AppLoading />;
+// } else{
+    
+//     return (
+//        <View style={styles.greetingContainer}>     
+//                 {/* <Text title="Positive reinforcement leads to good habits." style={styles.title}>{quote}</Text> */}
+//                 <Text style={styles.textStyle}>Press here to see your daily routine checklist</Text>
+//                 <GoodVibeModal compliment={compliments.compliment} fetch={getCompliments} style={{zIndex:2}}/>
+//         </View>
+//     )
+//   }
+// }
 
 export default GreetingButton;
 

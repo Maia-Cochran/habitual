@@ -67,4 +67,4 @@ const GoodVibeCard = () => {
 //     }
 // })
 
-// export default GoodVibeCard
+export default GoodVibeCard
