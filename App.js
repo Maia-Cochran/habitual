@@ -1,4 +1,5 @@
 import { StyleSheet, Text, View, Button, Modal, ImageBackground } from 'react-native';
+// import React, { useState } from 'react';
 import Home from './components/Home';
 import BottomNavBar from './components/BottomNavBar';
 import AppLoading from 'expo-app-loading';
@@ -7,6 +8,7 @@ import CustomSlider from './components/Carousel/CustomSlider';
 import cardData from './utilities/data';
 
 const App = () => {
+  // const [modalVisible, setModalVisible] = useState(false);
   let [fontsLoaded] = useFonts({
     IndieFlower_400Regular,
   });

@@ -6,6 +6,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { BlurView } from 'expo-blur';
 
 const GoodVibeModal = ({compliment, fetch}) => {
+
     const [modalVisible, setModalVisible] = useState(false);
     let [fontsLoaded] = useFonts({
       IndieFlower_400Regular,
@@ -20,11 +21,12 @@ const GoodVibeModal = ({compliment, fetch}) => {
         <View style={styles.centeredView}>
                 
         <Modal
+            id={props.id}
+        // visible={props.visible}
             // fetch={fetchAllData}
             // compliments={compliments.compliment}
             animationType="fade"
             transparent={true}
-            visible={modalVisible}
             onRequestClose={() => {
             Alert.alert("Modal has been closed.");
             setModalVisible(!modalVisible);

@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState}  from 'react';
 import { ParallaxImage } from 'react-native-snap-carousel';
 import { Text, Pressable, SafeAreaView, Button } from 'react-native';
 import styles from './styles';
 import GoodVibeModal from '../Navigation/GoodVibeModal';
 import CheckListModal from '../Navigation/CheckListModal'
 import APICalls from '../../apiCalls';
+
 
 const CarouselItem = ({item, index, quote, fetch}, parallaxProps) => {
   console.log('id: ', item.id)
@@ -18,6 +19,7 @@ const CarouselItem = ({item, index, quote, fetch}, parallaxProps) => {
             }
         }}
             >
+
         <SafeAreaView style={styles.item}>
           <Text style={styles.title}>{item.title}</Text>
           <ParallaxImage
@@ -39,7 +41,9 @@ const CarouselItem = ({item, index, quote, fetch}, parallaxProps) => {
         </SafeAreaView>
       </Pressable>
     );
-//   }
-}
+  }
+// }
 
-export default CarouselItem
+export default CarouselItem;
+
+
