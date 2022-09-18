@@ -5,7 +5,7 @@ import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flowe
 import { LinearGradient } from 'expo-linear-gradient';
 import { BlurView } from 'expo-blur';
 
-const GoodVibeModal = ({compliment, fetch}) => {
+const GoodVibeModal = ({compliment, fetch}, props) => {
 
     const [modalVisible, setModalVisible] = useState(false);
     let [fontsLoaded] = useFonts({
