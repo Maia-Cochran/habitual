@@ -5,8 +5,6 @@ import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flowe
 import { LinearGradient } from 'expo-linear-gradient';
 import { BlurView } from 'expo-blur';
 
-
-
 const GoodVibeModal = ({compliment, fetch}) => {
     const [modalVisible, setModalVisible] = useState(false);
     let [fontsLoaded] = useFonts({
@@ -64,7 +62,7 @@ const GoodVibeModal = ({compliment, fetch}) => {
         </Modal>
      
         <Pressable
-            style={[styles.button, styles.buttonOpen]}
+            style={styles.buttonOpen}
             onPress = {async () => {
                 await fetch() 
                 setModalVisible(true)}}
@@ -87,8 +85,8 @@ const styles = StyleSheet.create({
         
     },
     modalView: {
-        height: '65%',
-        width: '80%',
+        height: '68%',
+        width: '85%',
         backgroundColor: "#2C3F54",
          // backgroundColor: "#2C3F54",
         borderRadius: 20,
@@ -117,18 +115,16 @@ const styles = StyleSheet.create({
         elevation: 5,
         padding: 10,
     },
-    button: {
-        // marginTop: -150,
-        height: 400,
-        width: 300,
-        borderRadius: 20,
-        padding: 10,
-        opacity: 0.0,
-        zIndex: 1,
-    },
     buttonOpen: {
         backgroundColor: "#869684",
-        zIndex: 1
+        height: 90,
+        width: 350,
+        borderRadius: 20,
+        marginTop: -66,
+        // padding: 10,
+        opacity: 0.0,
+        // borderColor: 'blue',
+        // borderWidth: 2,
     },
     buttonClose: {
         justifyContent: "center",

@@ -1,24 +1,5 @@
-// import GoodVibeModal from "../components/Navigation/GoodVibeModal";
-// import { useState, useEffect } from 'react';
 
-// const [compliments, setCompliments] = useState([]);
-//     const [error, setError] = useState('');
-//     // let [fontsLoaded] = useFonts({
-//     //     IndieFlower_400Regular,
-//     //   });
-//     const getCompliments = async () => {
-//         const url = "https://complimentr.com/api" 
-//         setError('')
-//         try {
-//           const response = await fetch(url)
-//           const compliments = await response.json()
-//           setCompliments(compliments)
-//         } catch(error) {
-//           setError(error.message)
-//         }
-//       }
-
-const data = 
+const cardData = 
   [
     {
         id: 1,
@@ -26,6 +7,7 @@ const data =
         // description: "Lotus flower icon",
         image: require("../assets/lotus.png"),
         motto: "Press Here for Your Dose of Good Vibes",
+        button: true,
         // modal: <GoodVibeModal />,
       },
      {
@@ -47,9 +29,10 @@ const data =
         id: 4,
         title: "Favorites",
         // description: "List of favorite compliments",
-        image: require("../assets/favorite.png"),
-        motto: "Press Here to See Your Favorites"
+        image: require("../assets/active-fav-icon-8.png"),
+        motto: "Press Here to See Your Favorites",
+        button: true,
       },
     ];
 
-  export default data;
+  export default cardData;

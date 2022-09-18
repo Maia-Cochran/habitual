@@ -1,50 +1,78 @@
-import React, { useState } from "react";
-import { Text, View, Modal, StyleSheet, Pressable } from "react-native";
+import React, { useState, useEffect } from "react";
+import { Text, View, Modal, StyleSheet, Pressable, TouchableHighlight } from "react-native";
 import AppLoading from 'expo-app-loading';
 import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
 import { LinearGradient } from 'expo-linear-gradient';
 import { BlurView } from 'expo-blur';
 
+const CheckListModal = ({compliment, fetch}) => {
+    const [modalVisible, setModalVisible] = useState(false);
+    let [fontsLoaded] = useFonts({
+      IndieFlower_400Regular,
+    });
 
-const CheckListModal = () => {
-  const [modalVisible, setModalVisible] = useState(false);
-  let [fontsLoaded] = useFonts({
-    IndieFlower_400Regular,
-  });
-    
-  
-  
-  if(!fontsLoaded){
+    if(!fontsLoaded){
       return <AppLoading />;
-     } else{
+  } else{
   return (
-    <View style={styles.centeredView}>
-      <Modal
-        animationType="fade"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-          Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
-        }}>
-
+    <TouchableHighlight onPress={fetch}>
+    
         <View style={styles.centeredView}>
-          <View style={styles.modalView}>
-            <Pressable
-              style={[styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}>
-              <Text style={styles.textStyle}>✖️</Text>
-            </Pressable>
-          </View>
+                
+        <Modal
+            // fetch={fetchAllData}
+            // compliments={compliments.compliment}
+            animationType="fade"
+            transparent={true}
+            visible={modalVisible}
+            onRequestClose={() => {
+            Alert.alert("Modal has been closed.");
+            setModalVisible(!modalVisible);
+            }}>
+                
+          
+            <View style={styles.centeredView}>
+            
+            <View style={styles.modalView}>
+            <LinearGradient
+            // Background Linear Gradient
+            colors={[
+              'rgba(102, 124, 148, 1)',
+              'rgba(117, 135, 157, 1)',
+              'rgba(158, 154, 182, 1)',
+              'rgba(185, 170, 195, 1)',
+              'rgba(197, 148, 142, 1)',
+              'rgba(178, 131, 122, 1)', 
+              ]}
+            style={styles.gradient}>
+
+                <Pressable
+                    style={[styles.buttonClose]}
+                    onPress={() => {setModalVisible(!modalVisible)}}
+                    >
+                <Text style={styles.textStyle}>✖️</Text>
+                </Pressable>
+                <Text style={styles.modalText}>{compliment}
+                </Text>
+                </LinearGradient>
+            </View>
+           
+            </View>
+          
+        </Modal>
+     
+        <Pressable
+            style={styles.buttonOpen}
+            onPress = {async () => {
+                await fetch() 
+                setModalVisible(true)}}
+        >
+             <BlurView intensity={80} tint="light" style={styles.blurContainer}>
+                <View style={styles.centeredView}></View>
+                </BlurView>
+        </Pressable>
         </View>
-      </Modal>
-      <Pressable
-        style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
-      >
-        <Text style={styles.textStyle}>The Checklist will go here</Text>
-      </Pressable>
-    </View>
+    </TouchableHighlight>
   );
  };
 }
@@ -57,11 +85,12 @@ const styles = StyleSheet.create({
         
     },
     modalView: {
-        height: '93%',
-        width: '95%',
+        height: '68%',
+        width: '85%',
         backgroundColor: "#2C3F54",
+         // backgroundColor: "#2C3F54",
         borderRadius: 20,
-        padding: 35,
+        // padding: 35,
         alignItems: "center",
         shadowColor: "#000",
         shadowOffset: {
@@ -73,35 +102,34 @@ const styles = StyleSheet.create({
         elevation: 5
     },
     gradient:{
-      height: '100%',
-      width: '100%%',
-      borderRadius: 20,
-      shadowColor: "#000",
-      shadowOffset: {
-          width: 6,
-          height: 6
-      },
-      shadowOpacity: 0.8,
-      shadowRadius: 10,
-      elevation: 5,
-      padding: 10,
-  },
-    button: {
-        marginTop: -150,
-        height: 400,
-        width: 300,
+        height: '100%',
+        width: '100%%',
         borderRadius: 20,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 6,
+            height: 6
+        },
+        shadowOpacity: 0.8,
+        shadowRadius: 10,
+        elevation: 5,
         padding: 10,
-        opacity: 0.0,
-        zIndex: 1,
     },
     buttonOpen: {
         backgroundColor: "#869684",
-        zIndex: 1
+        height: 90,
+        width: 350,
+        borderRadius: 20,
+        marginTop: -66,
+        // padding: 10,
+        opacity: 0.0,
+        // borderColor: 'blue',
+        // borderWidth: 2,
     },
     buttonClose: {
         justifyContent: "center",
         backgroundColor: "#869684",
+        alignItems: "center",
         shadowColor: "#000",
         width: 40,
         height: 40,
@@ -118,13 +146,19 @@ const styles = StyleSheet.create({
         color: "white",
         fontWeight: "bold",
         textAlign: "center",
-        fontSize: 16,
+        fontSize: 12,
         fontFamily: 'IndieFlower_400Regular',
+
     },
     modalText: {
-        color: '#FFFFFF',
-        margin: 15,
+        // flex: 1,
+        // justifyContent: "center",
+        // alignContent: "center",
+        color: "white",
+        marginTop: '30%',
         textAlign: "center",
+        fontSize: 30,
+        // padding: 10,
         fontFamily: 'IndieFlower_400Regular',
     }
 });

@@ -4,7 +4,7 @@ import GreetingButton from './GreetingButton'
 import { useState, useEffect } from 'react';
 
 const Home = () =>{
-   const [quote, setQuote] = useState('')  
+    const [quote, setQuote] = useState('')  
     const fetchApiCall = () => {
         return fetch("http://localhost:3001/mantra")
             .then(response => response.json())

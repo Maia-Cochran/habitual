@@ -58,6 +58,10 @@ const styles = StyleSheet.create({
         ...StyleSheet.absoluteFillObject,
         resizeMode: 'center',
       },
+    button: {
+      borderWidth: 2,
+      borderColor: 'red',
+    },
     dotContainer: {
         backgroundColor: 'rgb(230,0,0)',
       },
