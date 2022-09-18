@@ -5,9 +5,9 @@ const BottomNavBar = () => {
     return (
         <View style={styles.bottomNavBar}>
           {/* <Image source={require("../assets/calendar.png")} style={styles.icons}/> */}
-           <Image source={require("../assets/NavBarIcons/checklistIcon.png")} style={styles.icons}/>
+           <Image source={require("../assets/home-icon-8.png")} style={styles.icons}/>
            {/* <Image source={require("../assets/NavBarIcons/checklistIcon.png")} style={styles.icons}/> */}
-           <Image source={require("../assets/NavBarIcons/favoriteIcon.png")} style={styles.icons}/>
+           <Image source={require("../assets/fav-icon-8.png")} style={styles.icons}/>
            <Image source={require("../assets/NavBarIcons/lotusIcon.png")} style={styles.icons}/>
         </View>
     )
