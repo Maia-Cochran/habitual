@@ -5,7 +5,7 @@ import BottomNavBar from './components/BottomNavBar';
 import AppLoading from 'expo-app-loading';
 import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
 import CustomSlider from './components/Carousel/CustomSlider';
-import data from './utilities/data';
+import cardData from './utilities/data';
 
 const App = () => {
   // const [modalVisible, setModalVisible] = useState(false);
@@ -23,7 +23,7 @@ const App = () => {
         <View style={styles.appContainer}> 
           <Home />
           <View>
-            <CustomSlider data={data} />
+            <CustomSlider data={cardData} />
           </View>
           <View style={styles.bottomNavContainer}>
             <BottomNavBar />      
