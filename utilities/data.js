@@ -5,7 +5,7 @@ const cardData =
         id: 1,
         title: "Tell Me Something Good",
         // description: "Lotus flower icon",
-        image: require("../assets/lotus.png"),
+        image: require("../assets/active-lotus-icon-8.png"),
         motto: "Press Here for Your Dose of Good Vibes",
         button: true,
         // modal: <GoodVibeModal />,
