@@ -1,18 +1,14 @@
 import { StyleSheet, Text, View, Button, Modal, Dimensions, useWindowDimensions } from 'react-native';
 import React, { useState } from 'react';
 import Home from './components/Home';
-
 import AppLoading from 'expo-app-loading';
 import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
-
-
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NavigationContainer } from '@react-navigation/native';
 import FavoritesCard from './components/CarouselCards/FavoritesCard'
 
 const App = () => {
-  // const [apiKey, setApiKey] = useState('')
-  // const windowDimensions = Dimensions.get('window')
+  
   const Stack = createNativeStackNavigator()
 
   const Home = ({ navigation }) => {
@@ -20,16 +16,10 @@ const App = () => {
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Home Screen</Text>
       <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Favorites')}
+        title="Go to Favorites"
+        onPress={() => navigation.navigate('FavoritesCard', {name: 'All my Favorites'})}
       />
     </View>
-      // <Button
-      //   title="See Favorites"
-      //   onPress={() => 
-      //     navigation.navigate('Favorites', {name: 'All my Favorites'})
-      //   }
-      // />
     )
   }
   const FavoritesCard = ({navigation, route}) => {
@@ -57,7 +47,7 @@ const App = () => {
             options={{title: 'Welcome'}}
           />
           <Stack.Screen 
-            name="Favorites"
+            name="FavoritesCard"
             component={FavoritesCard}
           />
         </Stack.Navigator>
