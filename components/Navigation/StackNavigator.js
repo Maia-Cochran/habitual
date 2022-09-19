@@ -17,6 +17,7 @@ const screenOptionStyle = {
   headerTintColor: "white",
   headerBackTitle: "Back",
 };
+
 const HomeStackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
@@ -35,8 +36,8 @@ const HomeStackNavigator = () => {
 export default MainStackNavigator = () => {
     return (
         <Stack.Navigator screenOptions={{headerShown: false}}>
-          <Stack.Screen name="Splash" component={Splash} />
           <Stack.Screen name="BottomNavBar" component={BottomNavBar} />
+          <Stack.Screen name="Splash" component={Splash} />
         </Stack.Navigator>
     );
 }

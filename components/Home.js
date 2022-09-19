@@ -1,9 +1,13 @@
-import { View, StyleSheet, TouchableHighlight, Image } from 'react-native'
+import { View, StyleSheet, TouchableHighlight, Image, ImageBackground  } from 'react-native'
 import Header from './Header'
 import GreetingButton from './GreetingButton'
 import { useState, useEffect } from 'react';
+import AppLoading from 'expo-app-loading';
+import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
+import CustomSlider from './Carousel/CustomSlider';
+import BottomNavBar from './BottomNavBar'
 
-const Home = ({ navigation }) =>{
+const Home = ({ navigation, data }) =>{
    const [quote, setQuote] = useState('')  
     const fetchApiCall = () => {
         return fetch("http://localhost:3001/mantra")
@@ -22,28 +26,35 @@ const Home = ({ navigation }) =>{
             fetchApiCall();
         }, [])
 
+        let [fontsLoaded] = useFonts({
+          IndieFlower_400Regular,
+        });
+      
+        if(!fontsLoaded){
+          return <AppLoading />;
+      } else{
+
         return (
-          <View style={styles.appContainer}>
+         
             <View style={styles.appContainer}>    
             <ImageBackground   source={require("../assets/background-with-leaves.png")} resizeMode="cover">
               <View style={styles.appContainer}> 
               <Header />
                 <GreetingButton quote={quote.mantra} fetch={fetchApiCall} title="" onPress={() => navigation.navigate("GoodVibeModal")}/>
                 <Home />
-            //     <View>
-            //       <CustomSlider data={data} />
-            //     </View>
-            //     <View style={styles.bottomNavContainer}>
-            //       <BottomNavBar />      
-            //     </View>
-                  <BottomNavBar />      
-                </View>
+                <View>
+                   <CustomSlider data={data} />
+                 </View>
+                 <View style={styles.bottomNavContainer}>
+                   <BottomNavBar />      
+                 </View>
+                 </View>
             </ImageBackground>
             </View>
-          </View>
+     
          
         )
-
+      }
     }
 
 export default Home;
