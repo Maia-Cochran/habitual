@@ -6,13 +6,18 @@ import AppLoading from 'expo-app-loading';
 import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
 
 
-const FavoritesCard = () => {
+const FavoritesCard = ({renderFavorite}) => {
+    //rendeFavorite conditioned to be the data that always exists
+    // in a ternary !function()?? display: do nothing
+
+
+
 
     return (
         <View style={styles.favoritesContainer}>
             <ImageBackground  style={styles.imageContainer} source={require("../../assets/background-with-leaves.png")} resizeMode="cover">
-            <Text style={styles.textStyles}>This is where all my dreams come true</Text>
-            <Text>{favorites}</Text>
+            {!renderFavorite() ? <Text>Add Fav</Text> : renderFavorite()}
+            {/* <Text style={styles.textStyles}>This is where all my dreams come true</Text> */}
             </ImageBackground>
         </View>
     )

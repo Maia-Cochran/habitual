@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { Text, View, Modal, StyleSheet, Pressable, TouchableHighlight } from "react-native";
+import { Text, View, Modal, StyleSheet, Pressable, TouchableHighlight, Image, Button } from "react-native";
 import AppLoading from 'expo-app-loading';
 import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
 import { LinearGradient } from 'expo-linear-gradient';
 import { BlurView } from 'expo-blur';
 
-const GoodVibeModal = ({quote, fetch}, props) => {
+const GoodVibeModal = ({quote, fetch, addFavorite}) => {
     const [modalVisible, setModalVisible] = useState(false);
     const [favorite, setFavorite] = useState(false)
-
+    // const [displayQuote, setDisplayQuote] = useState('')
     let [fontsLoaded] = useFonts({
       IndieFlower_400Regular,
     });
+
+
     if(!fontsLoaded){
       return <AppLoading />;
   } else {
@@ -50,20 +52,28 @@ const GoodVibeModal = ({quote, fetch}, props) => {
                     onPress={() => {setModalVisible(!modalVisible)}}
                     >
                 <Text style={styles.textStyle}>✖️</Text>
+                </Pressable>      
+                <Pressable
+                    title="favButton"
+                    style={[styles.favBtn]}
+                    onPress={(e) => {
+                        addFavorite(e)
+                    }}
+                    >
+                <Image style={styles.textStyle} source={require('../../assets/heart.png')} />
                 </Pressable>
                 <Text style={styles.modalText}>{quote}</Text>
                 </LinearGradient>
+            </View> 
             </View>
-           
-            </View>
-          
         </Modal>
      
         <Pressable
             style={styles.buttonOpen}
             onPress = {async () => {
                 await fetch() 
-                setModalVisible(true)}}
+                setModalVisible(true)
+            }}
         >
              <BlurView intensity={80} tint="light" style={styles.blurContainer}>
                 <View style={styles.centeredView}></View>
@@ -158,6 +168,9 @@ const styles = StyleSheet.create({
         fontSize: 30,
         // padding: 10,
         fontFamily: 'IndieFlower_400Regular',
+    },
+    favBtn:{
+        height: 10,
     }
 });
 
