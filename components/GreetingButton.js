@@ -31,7 +31,7 @@ const GreetingButton = () => {
     return (
         <View style={styles.greetingContainer}>     
             <Text style={styles.textStyle}>Tell Me Something Good</Text>
-            <GoodVibeModal quote={quote.mantra} fetch={fetchApiCall} title=""/>
+        <GoodVibeModal quote={quote.mantra} fetch={fetchApiCall} title=""/>
         </View>
     )
   }

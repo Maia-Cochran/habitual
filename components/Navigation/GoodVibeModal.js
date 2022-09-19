@@ -7,6 +7,7 @@ import { BlurView } from 'expo-blur';
 
 const GoodVibeModal = ({quote, fetch}, props) => {
     const [modalVisible, setModalVisible] = useState(false);
+    const [favorite, setFavorite] = useState(false)
 
     let [fontsLoaded] = useFonts({
       IndieFlower_400Regular,
@@ -50,8 +51,7 @@ const GoodVibeModal = ({quote, fetch}, props) => {
                     >
                 <Text style={styles.textStyle}>✖️</Text>
                 </Pressable>
-                <Text style={styles.modalText}>{quote}
-                </Text>
+                <Text style={styles.modalText}>{quote}</Text>
                 </LinearGradient>
             </View>
            

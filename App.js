@@ -11,6 +11,8 @@ const App = () => {
   const [mantras, setMantras] = useState([])
   const [favs, setFavs] = useState([])
   const Stack = createNativeStackNavigator()
+  
+  
   const handleChange = (newMantra, newFav) => {
     setMantras([...mantras, newMantra])
     setFavs([...favs, newFav])
@@ -42,7 +44,6 @@ const App = () => {
           mantras={mantras}
           navigation={navigation}
         />
-        {/* <Text>This is the {route.params.name} page</Text> */}
       </View>
     )
   }

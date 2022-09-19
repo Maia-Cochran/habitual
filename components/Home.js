@@ -12,20 +12,22 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const Home = ({navigation, handleChange, }) =>{
     return (
         <View style={styles.homeContainer}>
-                <ImageBackground  source={require("../assets/background-with-leaves.png")} resizeMode="cover">
-            <Header />
-            <GreetingButton />
-            <View>
-                <CustomSlider data={cardData} />
-            </View>
-            <View style={styles.bottomNavContainer}>
-                    
-            <BottomNavBar/>    
-        <Button
-          title="Go to Favorites"
-          onPress={() => navigation.navigate('FavoritesCard', {name: 'All my Favorites'})}
-         />
-            </View>
+            <ImageBackground  source={require("../assets/background-with-leaves.png")} resizeMode="cover">
+                <Header />
+                <GreetingButton />
+                <View>
+                    <CustomSlider data={cardData} />
+                </View>
+                <View style={styles.bottomNavContainer}>
+                        
+                <BottomNavBar/>    
+                <View>
+                <Button
+                    title="Go to Favorites"
+                    onPress={() => navigation.navigate('FavoritesCard', {name: 'All my Favorites'})}/>
+                </View>
+
+                </View>
             </ImageBackground>
         </View>
     )
