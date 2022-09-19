@@ -17,11 +17,26 @@ const App = () => {
 
   const Home = ({ navigation }) => {
     return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+      <Button
+        title="Go to Details"
+        onPress={() => navigation.navigate('Favorites')}
+      />
+    </View>
+      // <Button
+      //   title="See Favorites"
+      //   onPress={() => 
+      //     navigation.navigate('Favorites', {name: 'All my Favorites'})
+      //   }
+      // />
+    )
+  }
+  const FavoritesCard = ({navigation, route}) => {
+    return (
       <View>
-        <Home
-          navigation={navigation}
-          dimensions={windowDimensions} />
-
+        {/* <FavoritesCard /> */}
+        <Text>This is the {route.params.name} page</Text>
       </View>
     )
   }
@@ -31,37 +46,21 @@ const App = () => {
   });
   if(!fontsLoaded){
     return <AppLoading />;
-} else{
+} else {
+
   return (
   <NavigationContainer>
-    <View style={styles.appContainer}>    
-      {/* <ImageBackground   source={require("./assets/background-with-leaves.png")} resizeMode="cover"> */}
         <Stack.Navigator>
           <Stack.Screen 
             name="Home"
             component={Home}
-            options={{title: 'Wecome'}}
+            options={{title: 'Welcome'}}
           />
           <Stack.Screen 
             name="Favorites"
             component={FavoritesCard}
           />
         </Stack.Navigator>
-
-
-        {/* <View style={styles.appContainer}> 
-          <Home />
-          <View>
-            <CustomSlider data={cardData} />
-          </View>
-          <View style={styles.bottomNavContainer}>
-            <BottomNavBar />      
-          </View>
-        </View> */}
-      {/* </ImageBackground> */}
-    </View>
-   
-
   </NavigationContainer>
   );
  }
@@ -80,9 +79,22 @@ const styles = StyleSheet.create({
     flex: 1,
     height: '100%',
     width: "100%",
-
   },
- 
 });
 
 {/* <StatusBar style="auto" />  */}
+
+
+ {/* <View style={styles.appContainer}>     */}
+      {/* <ImageBackground   source={require("./assets/background-with-leaves.png")} resizeMode="cover"> */}
+        {/* <View style={styles.appContainer}> 
+          <Home />
+          <View>
+            <CustomSlider data={cardData} />
+          </View>
+          <View style={styles.bottomNavContainer}>
+            <BottomNavBar />      
+          </View>
+        </View> */}
+      {/* </ImageBackground> */}
+    {/* </View> */}

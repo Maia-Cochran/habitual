@@ -5,8 +5,10 @@ import CustomSlider from './Carousel/CustomSlider';
 import BottomNavBar from './BottomNavBar';
 import cardData from '../utilities/data';
 // import { useState, useEffect } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const Home = () =>{
+const Home = ({navigation}) =>{
     return (
         <View style={styles.homeContainer}>
                 <ImageBackground  source={require("../assets/background-with-leaves.png")} resizeMode="cover">
