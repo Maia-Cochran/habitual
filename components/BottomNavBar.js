@@ -1,14 +1,14 @@
-import { View, Text, StyleSheet, Image } from 'react-native';
-
+import { Dimensions, View, Text, StyleSheet, Image } from 'react-native';
+const { width: screenWidth } = Dimensions.get('window');
 const BottomNavBar = () => {
 
     return (
         <View style={styles.bottomNavBar}>
           {/* <Image source={require("../assets/calendar.png")} style={styles.icons}/> */}
-           <Image source={require("../assets/home-icon-8.png")} style={styles.icons}/>
+           <Image source={require("../assets/active-home-icon-8.png")} style={styles.icons}/>
            {/* <Image source={require("../assets/NavBarIcons/checklistIcon.png")} style={styles.icons}/> */}
-           <Image source={require("../assets/fav-icon-8.png")} style={styles.icons}/>
-           <Image source={require("../assets/NavBarIcons/lotusIcon.png")} style={styles.icons}/>
+           <Image source={require("../assets/active-fav-icon-8.png")} style={styles.icons}/>
+           <Image source={require("../assets/active-lotus-icon-8.png")} style={styles.icons}/>
         </View>
     )
 }
@@ -36,6 +36,8 @@ const styles = StyleSheet.create({
     icons: {
         color: '#F5F5F5',
         margin: 25,
-        height: 40,
+        height: screenWidth/10,
+        width: screenWidth/8,
+        marginBottom: 20,
     }
 })

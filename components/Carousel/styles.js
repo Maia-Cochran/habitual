@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     motto: {
         fontFamily: 'IndieFlower_400Regular',
         padding: 30,
-        paddingBottom: 60,
+        paddingBottom: 30,
         fontSize: 24,
         textAlign: 'center',
         color: "white",
@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
         flex: 1,    
         ...StyleSheet.absoluteFillObject,
         resizeMode: 'center',
+        height: screenWidth,
       },
     dotContainer: {
         backgroundColor: 'rgb(230,0,0)',
