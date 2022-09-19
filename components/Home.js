@@ -1,7 +1,7 @@
 import { View, StyleSheet, TouchableHighlight, Image } from 'react-native'
 import Header from './Header'
 import GreetingButton from './GreetingButton'
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 
 const Home = () =>{
     // const [quote, setQuote] = useState('')  

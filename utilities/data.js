@@ -7,7 +7,7 @@ const cardData =
         // description: "Lotus flower icon",
         image: require("../assets/active-lotus-icon-8.png"),
         motto: "Press Here for Your Dose of Good Vibes",
-        button: true,
+        // button: true,
         // modal: <GoodVibeModal />,
       },
      {
@@ -31,7 +31,7 @@ const cardData =
         // description: "List of favorite compliments",
         image: require("../assets/active-fav-icon-8.png"),
         motto: "Press Here to See Your Favorites",
-        button: true,
+        // button: true,
       },
     ];
 

@@ -7,31 +7,28 @@ import { BlurView } from 'expo-blur';
 
 const GoodVibeModal = ({quote, fetch}, props) => {
     const [modalVisible, setModalVisible] = useState(false);
+
     let [fontsLoaded] = useFonts({
       IndieFlower_400Regular,
     });
-
     if(!fontsLoaded){
       return <AppLoading />;
-  } else{
+  } else {
+
   return (
     <TouchableHighlight onPress={fetch}>
-    
         <View style={styles.centeredView}>
-                
         <Modal
-            id={props.id}
-        // visible={props.visible}
             // fetch={fetchAllData}
             // compliments={compliments.compliment}
             animationType="fade"
             transparent={true}
+            visible={modalVisible}
             onRequestClose={() => {
             Alert.alert("Modal has been closed.");
             setModalVisible(!modalVisible);
             }}>
                 
-          
             <View style={styles.centeredView}>
             
             <View style={styles.modalView}>
@@ -77,7 +74,6 @@ const GoodVibeModal = ({quote, fetch}, props) => {
   );
  };
 }
-
 
 
 const styles = StyleSheet.create({
