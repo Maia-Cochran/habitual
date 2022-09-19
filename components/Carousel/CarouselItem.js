@@ -9,15 +9,15 @@ import CheckListModal from '../Navigation/CheckListModal'
 const CarouselItem = ({item}, parallaxProps) => {
   console.log('id: ', item.id)
     return (
-        <Pressable onPress={() => {
-            if(item.id === 1) {
-              console.log(item.id)
-                return (<GoodVibeModal />)
-            } else if (item.id === 2) {
-                return (<CheckListModal />)
-            }
-        }}
-            >
+        // <Pressable onPress={() => {
+        //     if(item.id === 1) {
+        //       console.log(item.id)
+        //         return (<GoodVibeModal />)
+        //     } else if (item.id === 2) {
+        //         return (<CheckListModal />)
+        //     }
+        // }}
+        //     >
 
         <SafeAreaView style={styles.item}>
           <Text style={styles.title}>{item.title}</Text>
@@ -38,7 +38,7 @@ const CarouselItem = ({item}, parallaxProps) => {
               ></Button>} */}
 
         </SafeAreaView>
-      </Pressable>
+      // </Pressable>
     );
   }
 // }

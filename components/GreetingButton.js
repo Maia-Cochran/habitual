@@ -4,26 +4,20 @@ import AppLoading from 'expo-app-loading';
 import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
 import GoodVibeModal from './Navigation/GoodVibeModal';
 
-const GreetingButton = () => {
-    const [quote, setQuote] = useState('')  
-    const fetchApiCall = () => {
-        return fetch("http://localhost:3001/mantra")
-            .then(response => response.json())
-            .then(data => {
-                setQuote(data)
-            console.log('data: ', data);
-            })
-            .catch(err => {
-            console.log(err);
-            });
-        }
-        useEffect(() => {
-            fetchApiCall();
-        }, [])
+const GreetingButton = ({ addFavorite, fetchApiCall, quote }) => {
+   
 
     let [fontsLoaded] = useFonts({
         IndieFlower_400Regular,
       });
+
+
+      const renderFavorite = () => {
+        return favs.map((mantra, index) =>{
+           return <Text key={index}>mantra.mantra</Text>
+        })
+     }
+
 
       if(!fontsLoaded){
         return <AppLoading />;
@@ -31,7 +25,7 @@ const GreetingButton = () => {
     return (
         <View style={styles.greetingContainer}>     
             <Text style={styles.textStyle}>Tell Me Something Good</Text>
-        <GoodVibeModal quote={quote.mantra} fetch={fetchApiCall} title=""/>
+        <GoodVibeModal quote={quote} fetch={fetchApiCall} title="" addFavorite={addFavorite}/>
         </View>
     )
   }

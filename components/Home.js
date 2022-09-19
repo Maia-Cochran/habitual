@@ -9,12 +9,12 @@ import cardData from '../utilities/data';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const Home = ({navigation, handleChange, }) =>{
+const Home = ({navigation, handleChange, addFavorite, fetchApiCall, quote }) =>{
     return (
         <View style={styles.homeContainer}>
             <ImageBackground  source={require("../assets/background-with-leaves.png")} resizeMode="cover">
                 <Header />
-                <GreetingButton />
+                <GreetingButton addFavorite={addFavorite} fetchApiCall={fetchApiCall} quote={quote}/>
                 <View>
                     <CustomSlider data={cardData} />
                 </View>
