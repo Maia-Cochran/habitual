@@ -27,8 +27,8 @@ const CarouselItem = ({item}, parallaxProps) => {
             style={styles.image}
             {...parallaxProps} 
           />
-          {/* <Text style={styles.motto}>{item.motto}</Text>
-            {item.button && 
+          <Text style={styles.motto}>{item.motto}</Text>
+            {/* {item.button && 
             <Button 
               style={styles.button} 
               title='Press here to refresh'

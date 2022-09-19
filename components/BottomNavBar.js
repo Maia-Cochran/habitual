@@ -1,14 +1,12 @@
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, Button, Pressable } from 'react-native';
 
 const BottomNavBar = () => {
 
     return (
         <View style={styles.bottomNavBar}>
-          {/* <Image source={require("../assets/calendar.png")} style={styles.icons}/> */}
-           <Image source={require("../assets/NavBarIcons/checklistIcon.png")} style={styles.icons}/>
-           {/* <Image source={require("../assets/NavBarIcons/checklistIcon.png")} style={styles.icons}/> */}
-           <Image source={require("../assets/NavBarIcons/favoriteIcon.png")} style={styles.icons}/>
-           <Image source={require("../assets/NavBarIcons/lotusIcon.png")} style={styles.icons}/>
+            <Pressable onPress={() => {console.log("Pressed!!")}}>
+                <Image source={require("../assets/active-fav-icon-8.png")} style={styles.icons}/>
+            </Pressable>
         </View>
     )
 }
@@ -19,7 +17,8 @@ const styles = StyleSheet.create({
     bottomNavBar: {
         flexDirection: 'row',
         backgroundColor: '#39376E',
-        height: 105,
+        // height: 105,
+        padding: 25,
         width: '100%',
         alignContent: 'center',
         justifyContent: 'center',
@@ -34,8 +33,10 @@ const styles = StyleSheet.create({
         shadowRadius: 10,
     },
     icons: {
+        // padding: 10,
         color: '#F5F5F5',
-        margin: 25,
-        height: 40,
+        // margin: 25,
+        height: 48,
+        width: 56,
     }
 })

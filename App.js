@@ -1,25 +1,55 @@
-import { StyleSheet, Text, View, Button, Modal, ImageBackground } from 'react-native';
-// import React, { useState } from 'react';
+import { StyleSheet, Text, View, Button, Modal, Dimensions, useWindowDimensions } from 'react-native';
+import React, { useState } from 'react';
 import Home from './components/Home';
-import BottomNavBar from './components/BottomNavBar';
+
 import AppLoading from 'expo-app-loading';
 import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
-import CustomSlider from './components/Carousel/CustomSlider';
-import cardData from './utilities/data';
+
+
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { NavigationContainer } from '@react-navigation/native';
+import FavoritesCard from './components/CarouselCards/FavoritesCard'
 
 const App = () => {
+  // const [apiKey, setApiKey] = useState('')
+  // const windowDimensions = Dimensions.get('window')
+  const Stack = createNativeStackNavigator()
+
+  const Home = ({ navigation }) => {
+    return (
+      <View>
+        <Home
+          navigation={navigation}
+          dimensions={windowDimensions} />
+
+      </View>
+    )
+  }
+
   let [fontsLoaded] = useFonts({
     IndieFlower_400Regular,
   });
-
   if(!fontsLoaded){
     return <AppLoading />;
 } else{
   return (
-  
+  <NavigationContainer>
     <View style={styles.appContainer}>    
-      <ImageBackground   source={require("./assets/background-with-leaves.png")} resizeMode="cover">
-        <View style={styles.appContainer}> 
+      {/* <ImageBackground   source={require("./assets/background-with-leaves.png")} resizeMode="cover"> */}
+        <Stack.Navigator>
+          <Stack.Screen 
+            name="Home"
+            component={Home}
+            options={{title: 'Wecome'}}
+          />
+          <Stack.Screen 
+            name="Favorites"
+            component={FavoritesCard}
+          />
+        </Stack.Navigator>
+
+
+        {/* <View style={styles.appContainer}> 
           <Home />
           <View>
             <CustomSlider data={cardData} />
@@ -27,10 +57,12 @@ const App = () => {
           <View style={styles.bottomNavContainer}>
             <BottomNavBar />      
           </View>
-        </View>
-      </ImageBackground>
+        </View> */}
+      {/* </ImageBackground> */}
     </View>
    
+
+  </NavigationContainer>
   );
  }
 }
@@ -50,14 +82,7 @@ const styles = StyleSheet.create({
     width: "100%",
 
   },
-  bottomNavContainer: {
-    // alignItems: 'flex-end',
-    marginTop: -80,
-    // justifyContent: 'flex-end',
-    // height: 180,
-    width: "100%",
-    // margin: 20,
-  }
+ 
 });
 
 {/* <StatusBar style="auto" />  */}
