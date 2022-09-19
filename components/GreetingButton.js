@@ -2,32 +2,47 @@ import { View, Text, StyleSheet } from 'react-native';
 import React, { useState, useEffect } from 'react';
 import AppLoading from 'expo-app-loading';
 import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
-import CheckListModal from '../components/Navigation/CheckListModal'
 import GoodVibeModal from './Navigation/GoodVibeModal';
 
 
 const GreetingButton = () => {
-    const [compliments, setCompliments] = useState([]);
-    const [error, setError] = useState('');
+    const [quote, setQuote] = useState('')  
+    const fetchApiCall = () => {
+        return fetch("http://localhost:3001/mantra")
+            .then(response => response.json())
+            .then(data => {
+                setQuote(data)
+            console.log('data: ', data);
+            })
+            .catch(err => {
+            console.log(err);
+            });
+        }
+        useEffect(() => {
+            fetchApiCall();
+        }, [])
+
+    // const [compliments, setCompliments] = useState([]);
+    // const [error, setError] = useState('');
     let [fontsLoaded] = useFonts({
         IndieFlower_400Regular,
       });
-    const getCompliments = async () => {
-        const url = "https://complimentr.com/api" 
-        setError('')
+    // const getCompliments = async () => {
+    //     const url = "https://complimentr.com/api" 
+    //     setError('')
     
-        try {
-          const response = await fetch(url)
-          const compliments = await response.json()
-          setCompliments(compliments)
-        } catch(error) {
-          setError(error.message)
-        }
-      }
+    //     try {
+    //       const response = await fetch(url)
+    //       const compliments = await response.json()
+    //       setCompliments(compliments)
+    //     } catch(error) {
+    //       setError(error.message)
+    //     }
+    //   }
   
-      useEffect(() => {
-        getCompliments()
-      }, [])
+    //   useEffect(() => {
+    //     getCompliments()
+    //   }, [])
 
 
       if(!fontsLoaded){
@@ -36,8 +51,8 @@ const GreetingButton = () => {
     return (
         <View style={styles.greetingContainer}>     
                 {/* <Text title="Positive reinforcement leads to good habits." style={styles.title}>{quote}</Text> */}
-                <Text style={styles.textStyle}>Tell Me Something Good</Text>
-                <GoodVibeModal compliment={compliments.compliment} fetch={getCompliments} style={{zIndex:2}}/>
+            <Text style={styles.textStyle}>Tell Me Something Good</Text>
+            <GoodVibeModal quote={quote.mantra} fetch={fetchApiCall} title=""/>
         </View>
 
 

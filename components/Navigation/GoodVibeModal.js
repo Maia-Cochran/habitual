@@ -5,8 +5,7 @@ import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flowe
 import { LinearGradient } from 'expo-linear-gradient';
 import { BlurView } from 'expo-blur';
 
-const GoodVibeModal = ({compliment, fetch}, props) => {
-
+const GoodVibeModal = ({quote, fetch}, props) => {
     const [modalVisible, setModalVisible] = useState(false);
     let [fontsLoaded] = useFonts({
       IndieFlower_400Regular,
@@ -54,7 +53,7 @@ const GoodVibeModal = ({compliment, fetch}, props) => {
                     >
                 <Text style={styles.textStyle}>✖️</Text>
                 </Pressable>
-                <Text style={styles.modalText}>{compliment}
+                <Text style={styles.modalText}>{quote}
                 </Text>
                 </LinearGradient>
             </View>
@@ -78,6 +77,8 @@ const GoodVibeModal = ({compliment, fetch}, props) => {
   );
  };
 }
+
+
 
 const styles = StyleSheet.create({
     centeredView: {
