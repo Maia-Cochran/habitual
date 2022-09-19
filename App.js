@@ -1,27 +1,48 @@
 import { StyleSheet, Text, View, Button, Modal, Dimensions, useWindowDimensions } from 'react-native';
 import React, { useState } from 'react';
 import Home from './components/Home';
-
 import AppLoading from 'expo-app-loading';
 import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
-
-
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NavigationContainer } from '@react-navigation/native';
 import FavoritesCard from './components/CarouselCards/FavoritesCard'
 
 const App = () => {
-  // const [apiKey, setApiKey] = useState('')
-  // const windowDimensions = Dimensions.get('window')
+  const [mantras, setMantras] = useState([])
+  const [favs, setFavs] = useState([])
   const Stack = createNativeStackNavigator()
+  const handleChange = (newMantra, newFav) => {
+    setMantras([...mantras, newMantra])
+    setFavs([...favs, newFav])
+  }
 
-  const Home = ({ navigation }) => {
+  const HomeScreen = ({ navigation }) => {
+    return (
+      <View >
+        {/* <Text>Home Screen</Text> */}
+        <Home 
+          handleChange={handleChange}
+          favs={favs}
+          mantras={mantras}
+          navigation={navigation}
+        />
+        {/* <Button
+          title="Go to Favorites"
+          onPress={() => navigation.navigate('FavoritesCard', {name: 'All my Favorites'})}
+        /> */}
+    </View>
+    )
+  }
+  const FavoritesScreen = ({navigation}) => {
     return (
       <View>
-        <Home
+        <FavoritesCard 
+          handleChange={handleChange}
+          favs={favs}
+          mantras={mantras}
           navigation={navigation}
-          dimensions={windowDimensions} />
-
+        />
+        {/* <Text>This is the {route.params.name} page</Text> */}
       </View>
     )
   }
@@ -31,24 +52,47 @@ const App = () => {
   });
   if(!fontsLoaded){
     return <AppLoading />;
-} else{
+} else {
+
   return (
   <NavigationContainer>
-    <View style={styles.appContainer}>    
-      {/* <ImageBackground   source={require("./assets/background-with-leaves.png")} resizeMode="cover"> */}
         <Stack.Navigator>
           <Stack.Screen 
             name="Home"
-            component={Home}
-            options={{title: 'Wecome'}}
+            component={HomeScreen}
+            options={{title: 'Welcome'}}
           />
           <Stack.Screen 
-            name="Favorites"
-            component={FavoritesCard}
+            name="FavoritesCard"
+            component={FavoritesScreen}
           />
         </Stack.Navigator>
+  </NavigationContainer>
+  );
+ }
+}
+export default App;
+
+// const styles = StyleSheet.create({
+//   appContainer: {
+//     flex: 1,
+//     backgroundColor: 'none',
+//     alignItems: 'center',
+//     fontFamily: 'IndieFlower_400Regular',
+//     // justifyContent: 'center',
+//   },
+//   image: {
+//     flex: 1,
+//     height: '100%',
+//     width: "100%",
+//   },
+// });
+
+{/* <StatusBar style="auto" />  */}
 
 
+ {/* <View style={styles.appContainer}>     */}
+      {/* <ImageBackground   source={require("./assets/background-with-leaves.png")} resizeMode="cover"> */}
         {/* <View style={styles.appContainer}> 
           <Home />
           <View>
@@ -59,30 +103,4 @@ const App = () => {
           </View>
         </View> */}
       {/* </ImageBackground> */}
-    </View>
-   
-
-  </NavigationContainer>
-  );
- }
-}
-export default App;
-
-const styles = StyleSheet.create({
-  appContainer: {
-    flex: 1,
-    backgroundColor: 'none',
-    alignItems: 'center',
-    fontFamily: 'IndieFlower_400Regular',
-    // justifyContent: 'center',
-  },
-  image: {
-    flex: 1,
-    height: '100%',
-    width: "100%",
-
-  },
- 
-});
-
-{/* <StatusBar style="auto" />  */}
+    {/* </View> */}

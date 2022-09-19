@@ -6,8 +6,11 @@ import AppLoading from 'expo-app-loading';
 import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
 
 
-const FavoritesCard = () => {
+const FavoritesCard = ({ navigation }) => {
 
+    return (
+        <Text>It would be so cool if this would work</Text>
+    )
 }
 
 export default FavoritesCard
