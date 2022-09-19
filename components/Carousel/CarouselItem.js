@@ -6,19 +6,13 @@ import GoodVibeModal from '../Navigation/GoodVibeModal';
 import CheckListModal from '../Navigation/CheckListModal'
 
 
-const CarouselItem = ({item, index}, parallaxProps) => {
+const CarouselItem = ({item, index, navigation}, parallaxProps) => {
 
 
 
     
     return (
-        <Pressable onPress={() => {
-            if(item.id === 1) {
-                return (<GoodVibeModal />)
-            } else if (item.id === 2) {
-                return (<CheckListModal />)
-            }
-        }}
+        <Pressable onPress={() => navigation.navigate("GoodVibeModal")}
             >
         <SafeAreaView style={styles.item}>
           <Text style={styles.title}>{item.title}</Text>

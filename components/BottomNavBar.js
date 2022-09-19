@@ -1,15 +1,42 @@
+import React from 'react';
 import { Dimensions, View, Text, StyleSheet, Image } from 'react-native';
+import { HomeStackNavigator } from './Navigation/StackNavigator';
+
+// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+
+const Tab = createMaterialBottomTabNavigator();
+
 const { width: screenWidth } = Dimensions.get('window');
+
+
+
 const BottomNavBar = () => {
 
     return (
-        <View style={styles.bottomNavBar}>
-          {/* <Image source={require("../assets/calendar.png")} style={styles.icons}/> */}
-           <Image source={require("../assets/active-home-icon-8.png")} style={styles.icons}/>
-           {/* <Image source={require("../assets/NavBarIcons/checklistIcon.png")} style={styles.icons}/> */}
-           <Image source={require("../assets/active-fav-icon-8.png")} style={styles.icons}/>
-           <Image source={require("../assets/active-lotus-icon-8.png")} style={styles.icons}/>
-        </View>
+        <Tab.Navigator screenOptions={{ headerShown: false }}>
+        <Tab.Screen
+            name="Home"
+            component={HomeStackNavigator}
+            options={{
+                tabBarIcon: () => (<Image source={require("../assets/active-home-icon-8.png")} style={{width: 20, height: 20}} />)
+            }}
+             />
+        {/* <Tab.Screen 
+            name="Contact" 
+            component={ContactStackNavigator}
+            options={{
+                tabBarIcon: () => (<Image source={require("../assets/active-fav-icon-8.png")} style={{width: 20, height: 20}} />)
+            }}
+        /> */}
+    </Tab.Navigator>
+        // <View style={styles.bottomNavBar}>
+        //   {/* <Image source={require("../assets/calendar.png")} style={styles.icons}/> */}
+        //    <Image source={require("../assets/active-home-icon-8.png")} style={styles.icons}/>
+        //    {/* <Image source={require("../assets/NavBarIcons/checklistIcon.png")} style={styles.icons}/> */}
+        //    <Image source={require("../assets/active-fav-icon-8.png")} style={styles.icons}/>
+        //    <Image source={require("../assets/active-lotus-icon-8.png")} style={styles.icons}/>
+        // </View>
     )
 }
 
