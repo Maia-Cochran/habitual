@@ -36,21 +36,20 @@ const Home = ({ navigation, data }) =>{
 
         return (
          
-            <View style={styles.appContainer}>    
+             
             <ImageBackground   source={require("../assets/background-with-leaves.png")} resizeMode="cover">
               <View style={styles.appContainer}> 
               <Header />
                 <GreetingButton quote={quote.mantra} fetch={fetchApiCall} title="" onPress={() => navigation.navigate("GoodVibeModal")}/>
-                <Home />
                 <View>
                    <CustomSlider data={data} />
                  </View>
-                 <View style={styles.bottomNavContainer}>
+                 {/* <View style={styles.bottomNavContainer}>
                    <BottomNavBar />      
-                 </View>
+                 </View> */}
                  </View>
             </ImageBackground>
-            </View>
+ 
      
          
         )
@@ -66,13 +65,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         fontFamily: 'IndieFlower_400Regular',
         justifyContent: 'center',
-      },
-    appContainer: {
-        flex: 1,
-        backgroundColor: 'none',
-        alignItems: 'center',
-        fontFamily: 'IndieFlower_400Regular',
-        // justifyContent: 'center',
       },
       image: {
         flex: 1,

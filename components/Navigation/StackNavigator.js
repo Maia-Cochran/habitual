@@ -12,9 +12,9 @@ const Stack = createStackNavigator();
 
 const screenOptionStyle = {
   headerStyle: {
-    backgroundColor: "#9AC4F8",
+    backgroundColor: "000000",
   },
-  headerTintColor: "white",
+  headerTintColor: "purple",
   headerBackTitle: "Back",
 };
 
@@ -22,17 +22,17 @@ const HomeStackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
       <Stack.Screen name="Home" component={Home} options={{headerLeft: (props) => null }}  />
+      
+    </Stack.Navigator>
+  );
+}
+const GoodVibeNavigator = () => {
+  return (
+    <Stack.Navigator screenOptions={screenOptionStyle}>
       <Stack.Screen name="GoodVibeModal" component={GoodVibeModal} />
     </Stack.Navigator>
   );
 }
-// const ContactStackNavigator = () => {
-//   return (
-//     <Stack.Navigator screenOptions={screenOptionStyle}>
-//       <Stack.Screen name="Contact" component={Contact} options={{ headerLeft: (props) => null }} />
-//     </Stack.Navigator>
-//   );
-// }
 export default MainStackNavigator = () => {
     return (
         <Stack.Navigator screenOptions={{headerShown: false}}>
@@ -41,4 +41,4 @@ export default MainStackNavigator = () => {
         </Stack.Navigator>
     );
 }
-export { HomeStackNavigator };
+export { HomeStackNavigator, GoodVibeNavigator  };

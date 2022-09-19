@@ -1,9 +1,11 @@
 import React from 'react';
 import { Dimensions, View, Text, StyleSheet, Image } from 'react-native';
-import { HomeStackNavigator } from './Navigation/StackNavigator';
+import { HomeStackNavigator, GoodVibeNavigator  } from './Navigation/StackNavigator';
 
 // import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+
+
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -19,16 +21,16 @@ const BottomNavBar = () => {
             name="Home"
             component={HomeStackNavigator}
             options={{
-                tabBarIcon: () => (<Image source={require("../assets/active-home-icon-8.png")} style={{width: 20, height: 20}} />)
+                tabBarIcon: () => (<Image source={require("../assets/active-home-icon-8.png")} style={{width: 40, height: 40}} />)
             }}
              />
-        {/* <Tab.Screen 
-            name="Contact" 
-            component={ContactStackNavigator}
+       <Tab.Screen 
+            name="GoodVibeModal" 
+            component={GoodVibeNavigator}
             options={{
-                tabBarIcon: () => (<Image source={require("../assets/active-fav-icon-8.png")} style={{width: 20, height: 20}} />)
+                tabBarIcon: () => (<Image source={require("../assets/active-fav-icon-8.png")} style={{width: 40, height: 40}} />)
             }}
-        /> */}
+        />
     </Tab.Navigator>
         // <View style={styles.bottomNavBar}>
         //   {/* <Image source={require("../assets/calendar.png")} style={styles.icons}/> */}
