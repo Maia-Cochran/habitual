@@ -75,7 +75,6 @@ const GoodVibeModal = ({quote, fetch}, props) => {
  };
 }
 
-
 const styles = StyleSheet.create({
     centeredView: {
         flex: 1,
