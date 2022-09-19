@@ -1,4 +1,5 @@
-import { View, StyleSheet, TouchableHighlight, Image, ImageBackground } from 'react-native'
+import React, {useEffect, useState} from 'react'
+import { View, StyleSheet, Text, TouchableHighlight, Image, ImageBackground, Button } from 'react-native'
 import Header from './Header'
 import GreetingButton from './GreetingButton'
 import CustomSlider from './Carousel/CustomSlider';
@@ -8,7 +9,7 @@ import cardData from '../utilities/data';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const Home = ({navigation}) =>{
+const Home = ({navigation, handleChange, }) =>{
     return (
         <View style={styles.homeContainer}>
                 <ImageBackground  source={require("../assets/background-with-leaves.png")} resizeMode="cover">
@@ -18,7 +19,13 @@ const Home = ({navigation}) =>{
                 <CustomSlider data={cardData} />
             </View>
             <View style={styles.bottomNavContainer}>
-                <BottomNavBar />      
+                    
+            <BottomNavBar>    
+        <Button
+          title="Go to Favorites"
+          onPress={() => navigation.navigate('FavoritesCard', {name: 'All my Favorites'})}
+         />
+                </BottomNavBar>
             </View>
             </ImageBackground>
         </View>
@@ -32,7 +39,8 @@ export default Home;
         },
         bottomNavContainer: {
             // alignItems: 'flex-end',
-            marginTop: -80,
+            marginTop: -160,
+            marginLeft: 20,
             // justifyContent: 'flex-end',
             // height: 180,
             width: "100%",

@@ -8,17 +8,28 @@ import { NavigationContainer } from '@react-navigation/native';
 import FavoritesCard from './components/CarouselCards/FavoritesCard'
 
 const App = () => {
-  
+  const [mantras, setMantras] = useState([])
+  const [favs, setFavs] = useState([])
   const Stack = createNativeStackNavigator()
+  const handleChange = (newMantra, newFav) => {
+    setMantras([...mantras, newMantra])
+    setFavs([...favs, newFav])
+  }
 
-  const Home = ({ navigation }) => {
+  const HomeScreen = ({ navigation }) => {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to Favorites"
-        onPress={() => navigation.navigate('FavoritesCard', {name: 'All my Favorites'})}
-      />
+        {/* <Text>Home Screen</Text> */}
+        <Home 
+          handleChange={handleChange}
+          favs={favs}
+          mantras={mantras}
+          navigation={navigation}
+        />
+        {/* <Button
+          title="Go to Favorites"
+          onPress={() => navigation.navigate('FavoritesCard', {name: 'All my Favorites'})}
+        /> */}
     </View>
     )
   }
@@ -43,7 +54,7 @@ const App = () => {
         <Stack.Navigator>
           <Stack.Screen 
             name="Home"
-            component={Home}
+            component={HomeScreen}
             options={{title: 'Welcome'}}
           />
           <Stack.Screen 
@@ -57,20 +68,20 @@ const App = () => {
 }
 export default App;
 
-const styles = StyleSheet.create({
-  appContainer: {
-    flex: 1,
-    backgroundColor: 'none',
-    alignItems: 'center',
-    fontFamily: 'IndieFlower_400Regular',
-    // justifyContent: 'center',
-  },
-  image: {
-    flex: 1,
-    height: '100%',
-    width: "100%",
-  },
-});
+// const styles = StyleSheet.create({
+//   appContainer: {
+//     flex: 1,
+//     backgroundColor: 'none',
+//     alignItems: 'center',
+//     fontFamily: 'IndieFlower_400Regular',
+//     // justifyContent: 'center',
+//   },
+//   image: {
+//     flex: 1,
+//     height: '100%',
+//     width: "100%",
+//   },
+// });
 
 {/* <StatusBar style="auto" />  */}
 
