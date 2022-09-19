@@ -4,7 +4,7 @@ import AppLoading from 'expo-app-loading';
 import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
 import GoodVibeModal from './Navigation/GoodVibeModal';
 
-const GreetingButton = ({ addFavorite, fetchApiCall }) => {
+const GreetingButton = ({ addFavorite, fetchApiCall, quote }) => {
    
 
     let [fontsLoaded] = useFonts({
@@ -25,7 +25,7 @@ const GreetingButton = ({ addFavorite, fetchApiCall }) => {
     return (
         <View style={styles.greetingContainer}>     
             <Text style={styles.textStyle}>Tell Me Something Good</Text>
-        <GoodVibeModal quote={quote.mantra} fetch={fetchApiCall} title="" addFavorite={addFavorite}/>
+        <GoodVibeModal quote={quote} fetch={fetchApiCall} title="" addFavorite={addFavorite}/>
         </View>
     )
   }

@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, Button, Modal, Dimensions, useWindowDimensions } from 'react-native';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Home from './components/Home';
 import AppLoading from 'expo-app-loading';
 import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
