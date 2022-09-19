@@ -28,7 +28,7 @@ const BottomNavBar = () => {
             name="GoodVibeModal" 
             component={GoodVibeNavigator}
             options={{
-                tabBarIcon: () => (<Image source={require("../assets/active-fav-icon-8.png")} style={{width: 40, height: 40}} />)
+                tabBarIcon: () => (<Image source={require("../assets/active-fav-icon-8.png")} style={{width: 50, height: 42}} />)
             }}
         />
     </Tab.Navigator>

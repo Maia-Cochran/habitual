@@ -9,6 +9,7 @@ import BottomNavBar from './BottomNavBar'
 
 const Home = ({ navigation, data }) =>{
    const [quote, setQuote] = useState('')  
+   const [isFavorite, setIsFavorite] = useState(false)
     const fetchApiCall = () => {
         return fetch("http://localhost:3001/mantra")
             .then(response => response.json())
@@ -29,18 +30,37 @@ const Home = ({ navigation, data }) =>{
         let [fontsLoaded] = useFonts({
           IndieFlower_400Regular,
         });
+
+
+
+      const favoriteHandler = () => {
+        setIsFavorite(true)
+      }
+      
+      const notFavoriteHandler = () => {
+      setIsFavorite(false)
+      }
+      
+      function addFavoriteHandler(event) {
+          setIsFavorite(currentFavorite => [
+            ...currentFavorite, 
+            {text: event, id: Math.random().toString()}
+        
+          ]);
+      
+
+
       
         if(!fontsLoaded){
           return <AppLoading />;
       } else{
 
         return (
-         
-             
-            <ImageBackground   source={require("../assets/background-with-leaves.png")} resizeMode="cover">
+  
+            <ImageBackground source={require("../assets/background-with-leaves.png")} resizeMode="cover">
               <View style={styles.appContainer}> 
               <Header />
-                <GreetingButton quote={quote.mantra} fetch={fetchApiCall} title="" onPress={() => navigation.navigate("GoodVibeModal")}/>
+                <GreetingButton quote={quote.mantra} fetch={fetchApiCall} title="" onPress={() => navigation.navigate("./GoodVibeModal")}/>
                 <View>
                    <CustomSlider data={data} />
                  </View>
@@ -55,6 +75,7 @@ const Home = ({ navigation, data }) =>{
         )
       }
     }
+  }
 
 export default Home;
 

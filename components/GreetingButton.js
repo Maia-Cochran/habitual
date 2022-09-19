@@ -1,11 +1,16 @@
+import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
 import AppLoading from 'expo-app-loading';
 import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
 
 const GreetingButton = ({ quote, fetch}) => {
+   
     let [fontsLoaded] = useFonts({
         IndieFlower_400Regular,
       });
+
+   
+
 
 if(!fontsLoaded){
     return <AppLoading />;
