@@ -20,12 +20,11 @@ const Home = ({navigation, handleChange, }) =>{
             </View>
             <View style={styles.bottomNavContainer}>
                     
-            <BottomNavBar>    
+            <BottomNavBar/>    
         <Button
           title="Go to Favorites"
           onPress={() => navigation.navigate('FavoritesCard', {name: 'All my Favorites'})}
          />
-                </BottomNavBar>
             </View>
             </ImageBackground>
         </View>

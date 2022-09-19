@@ -18,7 +18,7 @@ const App = () => {
 
   const HomeScreen = ({ navigation }) => {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <View >
         {/* <Text>Home Screen</Text> */}
         <Home 
           handleChange={handleChange}
@@ -33,11 +33,16 @@ const App = () => {
     </View>
     )
   }
-  const FavoritesCard = ({navigation, route}) => {
+  const FavoritesScreen = ({navigation}) => {
     return (
       <View>
-        {/* <FavoritesCard /> */}
-        <Text>This is the {route.params.name} page</Text>
+        <FavoritesCard 
+          handleChange={handleChange}
+          favs={favs}
+          mantras={mantras}
+          navigation={navigation}
+        />
+        {/* <Text>This is the {route.params.name} page</Text> */}
       </View>
     )
   }
@@ -59,7 +64,7 @@ const App = () => {
           />
           <Stack.Screen 
             name="FavoritesCard"
-            component={FavoritesCard}
+            component={FavoritesScreen}
           />
         </Stack.Navigator>
   </NavigationContainer>
