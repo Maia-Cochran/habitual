@@ -5,34 +5,30 @@ import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flowe
 import { LinearGradient } from 'expo-linear-gradient';
 import { BlurView } from 'expo-blur';
 
-const GoodVibeModal = ({compliment, fetch}, props) => {
-
+const GoodVibeModal = ({quote, fetch}, props) => {
     const [modalVisible, setModalVisible] = useState(false);
+
     let [fontsLoaded] = useFonts({
       IndieFlower_400Regular,
     });
-
     if(!fontsLoaded){
       return <AppLoading />;
-  } else{
+  } else {
+
   return (
     <TouchableHighlight onPress={fetch}>
-    
         <View style={styles.centeredView}>
-                
         <Modal
-            id={props.id}
-        // visible={props.visible}
             // fetch={fetchAllData}
             // compliments={compliments.compliment}
             animationType="fade"
             transparent={true}
+            visible={modalVisible}
             onRequestClose={() => {
             Alert.alert("Modal has been closed.");
             setModalVisible(!modalVisible);
             }}>
                 
-          
             <View style={styles.centeredView}>
             
             <View style={styles.modalView}>
@@ -54,7 +50,7 @@ const GoodVibeModal = ({compliment, fetch}, props) => {
                     >
                 <Text style={styles.textStyle}>✖️</Text>
                 </Pressable>
-                <Text style={styles.modalText}>{compliment}
+                <Text style={styles.modalText}>{quote}
                 </Text>
                 </LinearGradient>
             </View>
@@ -78,6 +74,7 @@ const GoodVibeModal = ({compliment, fetch}, props) => {
   );
  };
 }
+
 
 const styles = StyleSheet.create({
     centeredView: {

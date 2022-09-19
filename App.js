@@ -8,7 +8,6 @@ import CustomSlider from './components/Carousel/CustomSlider';
 import cardData from './utilities/data';
 
 const App = () => {
-  // const [modalVisible, setModalVisible] = useState(false);
   let [fontsLoaded] = useFonts({
     IndieFlower_400Regular,
   });

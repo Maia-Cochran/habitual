@@ -4,10 +4,9 @@ import { Text, Pressable, SafeAreaView, Button } from 'react-native';
 import styles from './styles';
 import GoodVibeModal from '../Navigation/GoodVibeModal';
 import CheckListModal from '../Navigation/CheckListModal'
-import APICalls from '../../apiCalls';
 
 
-const CarouselItem = ({item, index, quote, fetch}, parallaxProps) => {
+const CarouselItem = ({item}, parallaxProps) => {
   console.log('id: ', item.id)
     return (
         <Pressable onPress={() => {
@@ -28,7 +27,7 @@ const CarouselItem = ({item, index, quote, fetch}, parallaxProps) => {
             style={styles.image}
             {...parallaxProps} 
           />
-          <Text style={styles.motto}>{item.motto}</Text>
+          {/* <Text style={styles.motto}>{item.motto}</Text>
             {item.button && 
             <Button 
               style={styles.button} 
@@ -36,7 +35,7 @@ const CarouselItem = ({item, index, quote, fetch}, parallaxProps) => {
               onPress={async () => {
                 await fetch() 
                 setModalVisible(true)}}
-              ></Button>}
+              ></Button>} */}
 
         </SafeAreaView>
       </Pressable>

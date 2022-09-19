@@ -2,108 +2,46 @@ import { View, Text, StyleSheet } from 'react-native';
 import React, { useState, useEffect } from 'react';
 import AppLoading from 'expo-app-loading';
 import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
-import CheckListModal from '../components/Navigation/CheckListModal'
 import GoodVibeModal from './Navigation/GoodVibeModal';
 
-
 const GreetingButton = () => {
-    const [compliments, setCompliments] = useState([]);
-    const [error, setError] = useState('');
+    const [quote, setQuote] = useState('')  
+    const fetchApiCall = () => {
+        return fetch("http://localhost:3001/mantra")
+            .then(response => response.json())
+            .then(data => {
+                setQuote(data)
+            console.log('data: ', data);
+            })
+            .catch(err => {
+            console.log(err);
+            });
+        }
+        useEffect(() => {
+            fetchApiCall();
+        }, [])
+
     let [fontsLoaded] = useFonts({
         IndieFlower_400Regular,
       });
-    const getCompliments = async () => {
-        const url = "https://complimentr.com/api" 
-        setError('')
-    
-        try {
-          const response = await fetch(url)
-          const compliments = await response.json()
-          setCompliments(compliments)
-        } catch(error) {
-          setError(error.message)
-        }
-      }
-  
-      useEffect(() => {
-        getCompliments()
-      }, [])
-
 
       if(!fontsLoaded){
         return <AppLoading />;
     } else{
     return (
         <View style={styles.greetingContainer}>     
-                {/* <Text title="Positive reinforcement leads to good habits." style={styles.title}>{quote}</Text> */}
-                <Text style={styles.textStyle}>Tell Me Something Good</Text>
-                <GoodVibeModal compliment={compliments.compliment} fetch={getCompliments} style={{zIndex:2}}/>
+            <Text style={styles.textStyle}>Tell Me Something Good</Text>
+            <GoodVibeModal quote={quote.mantra} fetch={fetchApiCall} title=""/>
         </View>
-
-
-
-//         <View style={styles.textContainer}>  
-//             <Text style={styles.textStyle}>Tell Me Something Good</Text>
-//             <Image source={require("../../assets/zen.png")} style={styles.icons}/>
-//             <Text style={styles.textStyle}>Press Here for Your Dose of Good Vibes</Text>
-            
-//                 <View>
-// <GoodVibeModal compliment={compliments.compliment} fetch={getCompliments} style={{zIndex:2}}/>
-//                 </View>
-           
-//         </View>
     )
   }
 };
-
-
-
-
-
-
-
-
-//     const [compliments, setCompliments] = useState([]);
-//     const [error, setError] = useState('');
-//     let [fontsLoaded] = useFonts({
-//         IndieFlower_400Regular,
-//       });
-
-//       const getCompliments = async () => {
-//         const url = "https://complimentr.com/api" 
-//         setError('')
-    
-//         try {
-//           const response = await fetch(url)
-//           const compliments = await response.json()
-//           setCompliments(compliments)
-//         } catch(error) {
-//           setError(error.message)
-//         }
-//       }
-  
-//       useEffect(() => {
-//         getCompliments()
-//       }, [])
-
-// if(!fontsLoaded){
-//     return <AppLoading />;
-// } else{
-    
-//     return (
-//        <View style={styles.greetingContainer}>     
-//                 {/* <Text title="Positive reinforcement leads to good habits." style={styles.title}>{quote}</Text> */}
-//                 <Text style={styles.textStyle}>Press here to see your daily routine checklist</Text>
-//                 <GoodVibeModal compliment={compliments.compliment} fetch={getCompliments} style={{zIndex:2}}/>
-//         </View>
-//     )
-//   }
-// }
 
 export default GreetingButton;
 
 const styles = StyleSheet.create({
     greetingContainer: {
+        justifyContent: 'center',
         backgroundColor: '#869684',
         height: 90,
         width: 350, 
@@ -150,6 +88,78 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     }
 })
+
+
+
+
+
+ // const getCompliments = async () => {
+    //     const url = "https://complimentr.com/api" 
+    //     setError('')
+    
+    //     try {
+    //       const response = await fetch(url)
+    //       const compliments = await response.json()
+    //       setCompliments(compliments)
+    //     } catch(error) {
+    //       setError(error.message)
+    //     }
+    //   }
+  
+    //   useEffect(() => {
+    //     getCompliments()
+    //   }, [])
+
+
+//         <View style={styles.textContainer}>  
+//             <Text style={styles.textStyle}>Tell Me Something Good</Text>
+//             <Image source={require("../../assets/zen.png")} style={styles.icons}/>
+//             <Text style={styles.textStyle}>Press Here for Your Dose of Good Vibes</Text>
+            
+//                 <View>
+// <GoodVibeModal compliment={compliments.compliment} fetch={getCompliments} style={{zIndex:2}}/>
+//                 </View>
+           
+//         </View>
+
+
+
+//     const [compliments, setCompliments] = useState([]);
+//     const [error, setError] = useState('');
+//     let [fontsLoaded] = useFonts({
+//         IndieFlower_400Regular,
+//       });
+
+//       const getCompliments = async () => {
+//         const url = "https://complimentr.com/api" 
+//         setError('')
+    
+//         try {
+//           const response = await fetch(url)
+//           const compliments = await response.json()
+//           setCompliments(compliments)
+//         } catch(error) {
+//           setError(error.message)
+//         }
+//       }
+  
+//       useEffect(() => {
+//         getCompliments()
+//       }, [])
+
+// if(!fontsLoaded){
+//     return <AppLoading />;
+// } else{
+    
+//     return (
+//        <View style={styles.greetingContainer}>     
+//                 {/* <Text title="Positive reinforcement leads to good habits." style={styles.title}>{quote}</Text> */}
+//                 <Text style={styles.textStyle}>Press here to see your daily routine checklist</Text>
+//                 <GoodVibeModal compliment={compliments.compliment} fetch={getCompliments} style={{zIndex:2}}/>
+//         </View>
+//     )
+//   }
+// }
 
 
 
