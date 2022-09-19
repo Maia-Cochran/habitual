@@ -10,6 +10,9 @@ import BottomNavBar from './BottomNavBar'
 const Home = ({ navigation, data }) =>{
    const [quote, setQuote] = useState('')  
    const [isFavorite, setIsFavorite] = useState(false)
+    let [fontsLoaded] = useFonts({
+          IndieFlower_400Regular,
+        });
     const fetchApiCall = () => {
         return fetch("http://localhost:3001/mantra")
             .then(response => response.json())
@@ -27,9 +30,7 @@ const Home = ({ navigation, data }) =>{
             fetchApiCall();
         }, [])
 
-        let [fontsLoaded] = useFonts({
-          IndieFlower_400Regular,
-        });
+
 
 
 
