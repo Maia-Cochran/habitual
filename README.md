@@ -38,6 +38,7 @@
 
 ----
 #### Modal Display
+![Simulator Screen Shot - iPhone 14 - 2022-09-20 at 02 02 25](https://user-images.githubusercontent.com/101746747/191217603-37a1b2a5-aec2-4dd1-a807-8a120f1b8d7c.png)
 
 ----
 #### Favorite Quotes Display
@@ -65,9 +66,9 @@
 
 ## Roadmap
 Future features could include:
-- Calendar for tracking habit-making
-- Chart to display this trend
-- Checklist to guide and track habit-making activities
+- Functioning carousel tile with link for creating a daily checklist
+- Chart to display habit-making trends
+- Calendar to track and guide habit-making daily, weekly, and monthly
 
 ## Deployed Page
 Visit the published site [here]()
