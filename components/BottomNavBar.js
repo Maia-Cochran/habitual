@@ -1,10 +1,15 @@
-import { View, Text, StyleSheet, Image, Button, Pressable } from 'react-native';
+import { View, StyleSheet, Image, Pressable } from 'react-native';
+import { useState } from 'react';
 
-const BottomNavBar = () => {
+
+const BottomNavBar = ({quote}) => {
+    const [modalVisible, setModalVisible] = useState(false);
+
 
     return (
         <View style={styles.bottomNavBar}>
-            <Pressable onPress={() => {console.log("Pressed!!")}}>
+            <Pressable onPress={() => {
+                console.log("Pressed!!")}}>
                 <Image source={require("../assets/active-fav-icon-8.png")} style={styles.icons}/>
             </Pressable>
         </View>
@@ -17,7 +22,6 @@ const styles = StyleSheet.create({
     bottomNavBar: {
         flexDirection: 'row',
         backgroundColor: '#39376E',
-        // height: 105,
         padding: 25,
         width: '100%',
         alignContent: 'center',
@@ -33,9 +37,7 @@ const styles = StyleSheet.create({
         shadowRadius: 10,
     },
     icons: {
-        // padding: 10,
         color: '#F5F5F5',
-        // margin: 25,
         height: 48,
         width: 56,
     }

@@ -22,10 +22,8 @@ export default Header;
 
 const styles = StyleSheet.create({
     headerContainer: {
-        marginBottom: 30,
-        marginTop: 300,
-        marginTop: 60,
-        marginBottom: 40,
+        marginBottom: 15,
+        marginTop: 15,
         backgroundColor: '#3A376F',
         height: 80,
         width: 300, 
@@ -42,12 +40,10 @@ const styles = StyleSheet.create({
       shadowOpacity: 0.8,
       shadowRadius: 10,
       elevation: 5
-        // ^^^ need to play with the shadow
-        //thinking purple for the greeting and green for the header
+
     },
 
     title: {
-        // fontFamily: ??? needs to be imported
         fontSize: 40,
         color: '#F5F5F5',
         fontFamily: 'IndieFlower_400Regular'

@@ -1,42 +1,41 @@
-import React, { useState, useEffect } from "react";
-import { Text, View, Modal, StyleSheet, Pressable, TouchableHighlight, Image, Button } from "react-native";
+import React, { useState} from "react";
+import { Text, View, Modal, StyleSheet, Pressable, Image} from "react-native";
 import AppLoading from 'expo-app-loading';
 import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
 import { LinearGradient } from 'expo-linear-gradient';
-import { BlurView } from 'expo-blur';
 
-const GoodVibeModal = ({quote, fetch, addFavorite}) => {
-    const [modalVisible, setModalVisible] = useState(false);
+
+const GoodVibeModal = ({quote, addFavorite, toggleModal, modalVisible, getUrl }) => {
     const [favorite, setFavorite] = useState(false)
-    // const [displayQuote, setDisplayQuote] = useState('')
+
     let [fontsLoaded] = useFonts({
       IndieFlower_400Regular,
     });
 
 
+    const onRequestClose=(() => {
+        Alert.alert("Modal has been closed.");
+        toggleModal(!modalVisible);
+      })
+
+ 
     if(!fontsLoaded){
       return <AppLoading />;
   } else {
+   
 
   return (
-    <TouchableHighlight onPress={fetch}>
-        <View style={styles.centeredView}>
         <Modal
-            // fetch={fetchAllData}
-            // compliments={compliments.compliment}
+            visible={modalVisible}
             animationType="fade"
             transparent={true}
-            visible={modalVisible}
-            onRequestClose={() => {
-            Alert.alert("Modal has been closed.");
-            setModalVisible(!modalVisible);
-            }}>
-                
+            onRequestClose={onRequestClose}
+            getUrl={getUrl}
+         >   
             <View style={styles.centeredView}>
             
             <View style={styles.modalView}>
             <LinearGradient
-            // Background Linear Gradient
             colors={[
               'rgba(102, 124, 148, 1)',
               'rgba(117, 135, 157, 1)',
@@ -46,41 +45,28 @@ const GoodVibeModal = ({quote, fetch, addFavorite}) => {
               'rgba(178, 131, 122, 1)', 
               ]}
             style={styles.gradient}>
-
                 <Pressable
                     style={[styles.buttonClose]}
-                    onPress={() => {setModalVisible(!modalVisible)}}
+                    onPress={() => {toggleModal(!modalVisible)}}
                     >
                 <Text style={styles.textStyle}>✖️</Text>
-                </Pressable>      
+                </Pressable>  
+                <Text style={styles.modalText}>{quote.mantra}</Text> 
                 <Pressable
                     title="favButton"
-                    style={[styles.favBtn]}
+                    style={[styles.favButton]}
                     onPress={(e) => {
                         addFavorite(e)
                     }}
                     >
-                <Image style={styles.textStyle} source={require('../../assets/heart.png')} />
+                    <Text style={styles.textStyle}>Press here to save</Text>
+                    <Image source={require("../../assets/active-fav-icon-8.png")} style={styles.icons}/>
+                    <Text style={styles.textStyle}> your favorite quote</Text>
                 </Pressable>
-                <Text style={styles.modalText}>{quote}</Text>
                 </LinearGradient>
-            </View> 
-            </View>
+             </View> 
+          </View>
         </Modal>
-     
-        <Pressable
-            style={styles.buttonOpen}
-            onPress = {async () => {
-                await fetch() 
-                setModalVisible(true)
-            }}
-        >
-             <BlurView intensity={80} tint="light" style={styles.blurContainer}>
-                <View style={styles.centeredView}></View>
-                </BlurView>
-        </Pressable>
-        </View>
-    </TouchableHighlight>
   );
  };
 }
@@ -90,15 +76,12 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        
     },
     modalView: {
         height: '68%',
         width: '85%',
         backgroundColor: "#2C3F54",
-         // backgroundColor: "#2C3F54",
         borderRadius: 20,
-        // padding: 35,
         alignItems: "center",
         shadowColor: "#000",
         shadowOffset: {
@@ -122,19 +105,7 @@ const styles = StyleSheet.create({
         shadowRadius: 10,
         elevation: 5,
         padding: 10,
-    },
-    buttonOpen: {
-        backgroundColor: "#869684",
-        height: 90,
-        width: 350,
-        borderRadius: 20,
-        marginTop: -66,
-        // padding: 10,
-        opacity: 0.0,
-        // borderColor: 'blue',
-        // borderWidth: 2,
-    },
-    buttonClose: {
+    },buttonClose: {
         justifyContent: "center",
         backgroundColor: "#869684",
         alignItems: "center",
@@ -154,24 +125,30 @@ const styles = StyleSheet.create({
         color: "white",
         fontWeight: "bold",
         textAlign: "center",
-        fontSize: 12,
+        fontSize: 20,
         fontFamily: 'IndieFlower_400Regular',
 
     },
     modalText: {
-        // flex: 1,
-        // justifyContent: "center",
-        // alignContent: "center",
         color: "white",
         marginTop: '30%',
         textAlign: "center",
         fontSize: 30,
-        // padding: 10,
         fontFamily: 'IndieFlower_400Regular',
     },
-    favBtn:{
-        height: 10,
+    favButton: {
+        padding: 40,
+        alignItems: 'center',
+    },
+    icons: {
+        height: 60,
+        width: 70,
+    },
+     favBtn:{
+        height: 5,
+        width: 5
     }
 });
+
 
 export default GoodVibeModal;

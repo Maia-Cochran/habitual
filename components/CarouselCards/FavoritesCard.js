@@ -1,27 +1,34 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, Pressable, ImageBackground } from 'react-native';
-import { useState, useEffect } from 'react';
-import GoodVibeModal from '../Navigation/GoodVibeModal';
+import { View, Text, StyleSheet, ImageBackground } from 'react-native';
 import AppLoading from 'expo-app-loading';
 import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
 
 
-const FavoritesCard = ({renderFavorite}) => {
-    //rendeFavorite conditioned to be the data that always exists
-    // in a ternary !function()?? display: do nothing
+const FavoritesCard = ({renderFavorite, addFavorite, quote, navigation}) => {
+    let [fontsLoaded] = useFonts({
+        IndieFlower_400Regular,
+      });
 
-
-
-
+      if(!fontsLoaded){
+        return <AppLoading />;
+    } else{
     return (
-        <View style={styles.favoritesContainer}>
-            <ImageBackground  style={styles.imageContainer} source={require("../../assets/background-with-leaves.png")} resizeMode="cover">
-            {!renderFavorite() ? <Text>Add Fav</Text> : renderFavorite()}
-            {/* <Text style={styles.textStyles}>This is where all my dreams come true</Text> */}
+        <View 
+            style={styles.favoritesContainer} 
+            renderFavorite={renderFavorite} 
+            addFavorite={addFavorite} 
+            navigation={navigation}>
+            <ImageBackground  
+                style={styles.imageContainer} 
+                source={require("../../assets/background-with-leaves.png")} 
+                resizeMode="cover">
+            <Text style={styles.textStyles}>{renderFavorite}</Text>
+            {!renderFavorite() ? <Text style={styles.textStyles}>Add Fav</Text> : renderFavorite()}
             </ImageBackground>
         </View>
     )
-}
+  }
+};
 
 const styles = StyleSheet.create({
     favoritesContainer: {
@@ -32,13 +39,16 @@ const styles = StyleSheet.create({
         height: '100%',
         width: '100%',
         alignItems: 'center',
-    
+        
     },
     textStyles: {
         padding: 40,
+        fontSize: 50,
+        color: '#869684',
         textAlign: 'center',
-        alignItems: 'center'
-    }
+        alignItems: 'center', 
+        fontFamily: 'IndieFlower_400Regular',
+    },
 })
 
 export default FavoritesCard

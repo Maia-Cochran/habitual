@@ -2,13 +2,9 @@ import { Dimensions, StyleSheet, Platform } from 'react-native';
 
 const { width: screenWidth } = Dimensions.get('window');
 const styles = StyleSheet.create({
-    container: {    // container for carousel
-        marginTop: 40,
-        marginBottom: 0,
-        height: '65%',    
-        paddingLeft: 0, 
-        // borderWidth: 2,
-        // borderColor: 'red',
+    container: {    
+        marginTop: 15,
+        height: '75%',    
         },
     title: {
         fontFamily: 'IndieFlower_400Regular',
@@ -31,11 +27,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         width: '100%',
         height: screenWidth - 20, //height will be 20 units less than screen width.
-        height: '95%',
+        height: '90%',
         borderRadius: 20,
         backgroundColor: '#39376E',
-        //    borderWidth: 2,
-        // borderColor: 'red',
         shadowColor: "#000000",
         shadowOffset: {
             width: 10,
@@ -50,8 +44,6 @@ const styles = StyleSheet.create({
         width: "100%",
         marginBottom: Platform.select({ ios: 0, android: 1 }), //handle rendering bug.
         marginBottom: 0,
-        // borderWidth: 1,
-        // borderColor: 'red'
       },
     image: {
         flex: 1,    
