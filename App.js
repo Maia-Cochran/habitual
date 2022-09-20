@@ -13,7 +13,7 @@ const App = () => {
   const [modalVisible, setModalVisible] = useState('');
   const fetchApiCall = () => {
     console.log(`1--------------------`)
-       fetch("http://localhost:3001/mantra")
+       fetch("https://mantras-apiv2.herokuapp.com/mantra")
           .then(response => response.json())
           .then(data => {
             setQuote(data)  
