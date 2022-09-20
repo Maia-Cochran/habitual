@@ -1,21 +1,22 @@
-import React, {getUrl} from 'react'
-import GreetingButton from './components/GreetingButton';
+// import React, {getUrl} from 'react'
+// import GreetingButton from './components/GreetingButton';
 
 
 
-const DataComponent = () => {
+// const DataComponent = () => {
 
-const APICalls = (props) => {
-    const getUrl = useCallback(() => {
-      return "http://localhost:3001/mantra";
-    }, []); // <-- Note that we can't add id to the deps array in this case
+// const APICalls = (props) => {
+//     const getUrl = useCallback(() => {
+//       return "http://localhost:3001/mantra";
+//     }, []); // <-- Note that we can't add id to the deps array in this case
  
-    //do some other stuff here that might cause re-renders, like setting state
-    return <GreetingButton getUrl={getUrl}/>
- }
+//     //do some other stuff here that might cause re-renders, like setting state
+//     return (<GreetingButton getUrl={getUrl}/>)
+//  }
 
-}
- export default APICalls;
+// }
+
+//  export default DataComponent;
 
 
  /* import CarouselItem from "./components/Carousel/CarouselItem";  */

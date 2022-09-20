@@ -11,14 +11,14 @@ const styles = StyleSheet.create({
         // borderColor: 'red',
         },
     title: {
-        fontFamily: 'IndieFlower_400Regular',
+        // fontFamily: 'IndieFlower_400Regular',
         padding: 30,
         fontSize: 28,
         textAlign: 'center',
         color: "white",
     },
     motto: {
-        fontFamily: 'IndieFlower_400Regular',
+        // fontFamily: 'IndieFlower_400Regular',
         padding: 30,
         paddingBottom: 60,
         fontSize: 24,

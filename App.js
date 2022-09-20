@@ -12,17 +12,20 @@ const App = () => {
   const [favs, setFavs] = useState([])
   const Stack = createNativeStackNavigator()
   const [quote, setQuote] = useState('')  
-  // const fetchApiCall = () => {
-  //      fetch("http://localhost:3001/mantra")
-  //         .then(response => response.json())
-  //         .then(data => {
-  //           setQuote(data)  
-  //         console.log('data: ', data);   
-  //         })
-  //         .catch(err => {
-  //         console.log(err);
-  //         });
-  //     }
+  const [modalVisible, setModalVisible] = useState('');
+  const fetchApiCall = () => {
+       fetch("http://localhost:3001/mantra")
+          .then(response => response.json())
+          .then(data => {
+            setQuote(data)  
+            setModalVisible(true)
+          console.log(`quote, APP`, quote )
+          console.log('data: ', data);   
+          })
+          .catch(err => {
+          console.log(err);
+          });
+      }
 
 
 
@@ -36,7 +39,7 @@ const App = () => {
 
       // useEffect( () => {
       //   console.log(`quote`, quote)
-      //   // setQuote(fetchApiCall())
+      //   fetchApiCall()
       // }, [quote])
 
 
@@ -68,7 +71,9 @@ const App = () => {
           // mantras={mantras}
           navigation={navigation}
           addFavorite={addFavorite}
-          // fetchApiCall={fetchApiCall}
+          fetchApiCall={fetchApiCall}
+          modalVisible={modalVisible}
+          setModalVisible={setModalVisible}
           
         />
         {/* <Button

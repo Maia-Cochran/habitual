@@ -1,8 +1,10 @@
 import { View, Text, StyleSheet, Pressable } from 'react-native';
 import React, { useState, useEffect, getUrl } from 'react';
 import AppLoading from 'expo-app-loading';
-import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
+// import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
 import GoodVibeModal from './Navigation/GoodVibeModal';
+// import DataComponent from '../apiCalls';
+
 
 const GreetingButton = ({ addFavorite, fetchApiCall, quote, modalVisible,  toggleModal, getUrl }) => {
    
@@ -11,8 +13,8 @@ const GreetingButton = ({ addFavorite, fetchApiCall, quote, modalVisible,  toggl
             style={styles.buttonOpen}
             onPress = { (e) => {
                 // e.preventDefault()
-                { getUrl}
-                  toggleModal(true)
+                fetchApiCall()
+                //   toggleModal(true)
                  
             }}
         >
@@ -20,7 +22,7 @@ const GreetingButton = ({ addFavorite, fetchApiCall, quote, modalVisible,  toggl
             <Text style={styles.textStyle}>Tell me something good</Text>
            <GoodVibeModal 
             quote={quote} 
-            // fetch={fetchApiCall} 
+            fetch={fetchApiCall} 
             title="" 
             addFavorite={addFavorite} 
             toggleModal={toggleModal} 
@@ -75,7 +77,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#F5F5F5',
         // padding: 5,
-        fontFamily: 'IndieFlower_400Regular',
+        // fontFamily: 'IndieFlower_400Regular',
     },
     // modalContainer: {
     //     height: 85,

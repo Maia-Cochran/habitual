@@ -75,7 +75,7 @@ const GoodVibeModal = ({quote, fetch, addFavorite, toggleModal, modalVisible, ge
             style={styles.gradient}>
                 <Pressable
                     style={[styles.buttonClose]}
-                    onPress={() => {toggleModal}}
+                    onPress={() => {toggleModal(!modalVisible)}}
                     >
                 <Text style={styles.textStyle}>✖️</Text>
                 </Pressable>      
