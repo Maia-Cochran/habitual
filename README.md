@@ -12,7 +12,7 @@
 - [Project Specs](#project-specs)
 
 ## Introduction
-- 
+- Habitual is an application built in React Native, based in IOS. This is an application that allows a user to browse through a list of quotes and save them to a list within the application for a daily dose of positive vibes.
 
 ## Learning Goals
 - Gain competency with React fundamentals
