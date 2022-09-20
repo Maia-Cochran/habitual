@@ -35,6 +35,7 @@
 
 ## Illustrations and Demo
 #### Home Screen Display
+![Simulator Screen Shot - iPhone 14 - 2022-09-20 at 02 02 53](https://user-images.githubusercontent.com/101746747/191217942-eccc6fd7-af90-4a74-be99-bb80a92b74bb.png)
 
 ----
 #### Modal Display
