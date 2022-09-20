@@ -5,15 +5,19 @@ import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flowe
 import { LinearGradient } from 'expo-linear-gradient';
 import { BlurView } from 'expo-blur';
 
-const GoodVibeModal = ({quote, fetch, addFavorite}) => {
-    const [modalVisible, setModalVisible] = useState(false);
+const GoodVibeModal = ({quote, fetch, addFavorite, modalVisible}) => {
+    // const [modalVisible, setModalVisible] = useState(false);
     const [favorite, setFavorite] = useState(false)
     // const [displayQuote, setDisplayQuote] = useState('')
     let [fontsLoaded] = useFonts({
       IndieFlower_400Regular,
     });
 
+   useEffect(() => {
+    console.log(`quote`, quote)
+    console.log(`modalVissible`, modalVisible)
 
+}, [quote])
     // const basicFunction =() => {
     //     console.log(`quote`, quote)
     // }
@@ -25,7 +29,7 @@ const GoodVibeModal = ({quote, fetch, addFavorite}) => {
   } else {
 
   return (
-    <TouchableHighlight onPress={quote}>
+    <TouchableHighlight >
         <View style={styles.centeredView}>
         <Modal
             // fetch={fetchAllData}
@@ -33,11 +37,18 @@ const GoodVibeModal = ({quote, fetch, addFavorite}) => {
             animationType="fade"
             transparent={true}
             visible={modalVisible}
-            onRequestClose={() => {
-            Alert.alert("Modal has been closed.");
-            setModalVisible(!modalVisible);
-            }}>
-                
+            // onShow={() => {
+            //     return (
+            //         quote
+            //     )
+            // }}
+            // onRequestClose={() => {
+            // Alert.alert("Modal has been closed.");
+            // setModalVisible(!modalVisible);
+            
+            // }}
+            >
+         
             <View style={styles.centeredView}>
             
             <View style={styles.modalView}>
@@ -55,7 +66,7 @@ const GoodVibeModal = ({quote, fetch, addFavorite}) => {
 
                 <Pressable
                     style={[styles.buttonClose]}
-                    onPress={() => {setModalVisible(!modalVisible)}}
+                    onPress={() => {setModalVisible(false)}}
                     >
                 <Text style={styles.textStyle}>✖️</Text>
                 </Pressable>      
@@ -76,10 +87,10 @@ const GoodVibeModal = ({quote, fetch, addFavorite}) => {
      
         <Pressable
             style={styles.buttonOpen}
-            onPress = {async (e) => {
-                //  await fetch() 
+            onPress = {(e) => {
+                e.preventDefault()
+                 fetch() 
                 setModalVisible(true) 
-                e.preventDefault();
             }}
         >
              <BlurView intensity={80} tint="light" style={styles.blurContainer}>
@@ -178,6 +189,7 @@ const styles = StyleSheet.create({
     },
     favBtn:{
         height: 5,
+        width: 5
     }
 });
 

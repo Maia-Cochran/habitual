@@ -29,7 +29,7 @@ const GreetingButton = ({ addFavorite, fetchApiCall, quote }) => {
     return (
         <View style={styles.greetingContainer}>     
             <Text style={styles.textStyle}>Tell Me Something Good</Text>
-        <GoodVibeModal quote={quote} fetch={fetchApiCall} title="" addFavorite={addFavorite}/>
+           <GoodVibeModal quote={quote} fetch={fetchApiCall} title="" addFavorite={addFavorite} />
         </View>
     )
   }

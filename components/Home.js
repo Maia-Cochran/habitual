@@ -8,8 +8,12 @@ import cardData from '../utilities/data';
 // import { useState, useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import GoodVibeModal from './Navigation/GoodVibeModal';
+
 
 const Home = ({navigation, handleChange, addFavorite, fetchApiCall, quote }) =>{
+    const [modalVisible, setModalVisible] = useState(false);
+
     // const basicFunction =() => {
     //     console.log(`quote`, quote.mantra)
     // }
@@ -20,8 +24,9 @@ const Home = ({navigation, handleChange, addFavorite, fetchApiCall, quote }) =>{
             
             <ImageBackground  source={require("../assets/background-with-leaves.png")} resizeMode="cover">
                 <Header />
+           
                 <GreetingButton addFavorite={addFavorite} fetchApiCall={fetchApiCall} quote={quote.mantra} />
-                
+               
                 <View>
                     
                     <CustomSlider data={cardData} />

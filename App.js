@@ -32,8 +32,8 @@ const App = ( ) => {
       // when there is a qupet there ?? loading : function that returns the array of the mapped favorites
       // I  
 
-      useEffect(() => {
-          fetchApiCall();
+      useEffect( () => {
+         fetchApiCall();
       }, [])
 
 
@@ -41,7 +41,7 @@ const App = ( ) => {
   const addFavorite = (e) => {
     // e.preventDefault();
     setFavs([...favs, newFav])
-    //  favs.push(mantra) 
+    return favs.push(quote) 
     // setMantras([...mantras, newMantra])
     // console.log(`mantras`, mantras)
     // 
