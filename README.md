@@ -50,6 +50,11 @@
 
 ----
 
+#### Calendar View Display
+![Simulator Screen Shot - iPhone 14 - 2022-09-20 at 02 03 37](https://user-images.githubusercontent.com/101746747/191218122-7c0d38b9-9d84-4540-a46c-2d83ac45059f.png)
+
+----
+
 ## Project Reflections
 #### Wins
 - Successfully rendered API Calls
