@@ -1,10 +1,18 @@
+// import React, { useState } from 'react'; 
 import { View, Text, StyleSheet, Image, Button, Pressable } from 'react-native';
+import { useState } from 'react';
+import GoodVibeModal from './Navigation/GoodVibeModal';
 
-const BottomNavBar = () => {
+const BottomNavBar = ({quote}) => {
+    const [modalVisible, setModalVisible] = useState(false);
+
 
     return (
         <View style={styles.bottomNavBar}>
-            <Pressable onPress={() => {console.log("Pressed!!")}}>
+            <Pressable onPress={() => {
+                
+                <GoodVibeModal modalVisible={setModalVisible(true)}/>
+                console.log("Pressed!!")}}>
                 <Image source={require("../assets/active-fav-icon-8.png")} style={styles.icons}/>
             </Pressable>
         </View>

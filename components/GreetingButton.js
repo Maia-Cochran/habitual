@@ -5,18 +5,22 @@ import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flowe
 import GoodVibeModal from './Navigation/GoodVibeModal';
 
 const GreetingButton = ({ addFavorite, fetchApiCall, quote }) => {
-   
+    // const basicFunction =() => {
+    //     console.log(`quote`, quote)
+    // }
+    // console.log(12345,basicFunction())
+    // console.log(`quote`, quote)
 
     let [fontsLoaded] = useFonts({
         IndieFlower_400Regular,
       });
 
 
-      const renderFavorite = () => {
-        return favs.map((mantra, index) =>{
-           return <Text key={index}>mantra.mantra</Text>
-        })
-     }
+    //   const renderFavorite = () => {
+    //     return favs.map((mantra, index) =>{
+    //        return <Text key={index}>mantra.mantra</Text>
+    //     })
+    //  }
 
 
       if(!fontsLoaded){

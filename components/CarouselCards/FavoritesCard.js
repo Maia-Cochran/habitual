@@ -16,8 +16,8 @@ const FavoritesCard = ({renderFavorite}) => {
     return (
         <View style={styles.favoritesContainer}>
             <ImageBackground  style={styles.imageContainer} source={require("../../assets/background-with-leaves.png")} resizeMode="cover">
-            {!renderFavorite() ? <Text>Add Fav</Text> : renderFavorite()}
-            {/* <Text style={styles.textStyles}>This is where all my dreams come true</Text> */}
+            {/* {!renderFavorite() ? <Text>Add Fav</Text> : renderFavorite()} */}
+            <Text style={styles.textStyles}>This is where all my dreams come true</Text>
             </ImageBackground>
         </View>
     )

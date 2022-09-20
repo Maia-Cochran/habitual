@@ -14,12 +14,18 @@ const GoodVibeModal = ({quote, fetch, addFavorite}) => {
     });
 
 
+    // const basicFunction =() => {
+    //     console.log(`quote`, quote)
+    // }
+    // console.log(12345,basicFunction())
+    // console.log(`quote`, quote)
+
     if(!fontsLoaded){
       return <AppLoading />;
   } else {
 
   return (
-    <TouchableHighlight onPress={fetch}>
+    <TouchableHighlight onPress={quote}>
         <View style={styles.centeredView}>
         <Modal
             // fetch={fetchAllData}
@@ -64,15 +70,16 @@ const GoodVibeModal = ({quote, fetch, addFavorite}) => {
                 </Pressable>
                 <Text style={styles.modalText}>{quote}</Text>
                 </LinearGradient>
-            </View> 
-            </View>
+             </View> 
+          </View>
         </Modal>
      
         <Pressable
             style={styles.buttonOpen}
-            onPress = {async () => {
-                await fetch() 
-                setModalVisible(true)
+            onPress = {async (e) => {
+                //  await fetch() 
+                setModalVisible(true) 
+                e.preventDefault();
             }}
         >
              <BlurView intensity={80} tint="light" style={styles.blurContainer}>
@@ -170,7 +177,7 @@ const styles = StyleSheet.create({
         fontFamily: 'IndieFlower_400Regular',
     },
     favBtn:{
-        height: 10,
+        height: 5,
     }
 });
 

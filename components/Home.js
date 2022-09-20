@@ -10,12 +10,20 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Home = ({navigation, handleChange, addFavorite, fetchApiCall, quote }) =>{
+    // const basicFunction =() => {
+    //     console.log(`quote`, quote.mantra)
+    // }
+    // console.log(12345,basicFunction())
+    // console.log(`quote`, quote.mantra)
     return (
         <View style={styles.homeContainer}>
+            
             <ImageBackground  source={require("../assets/background-with-leaves.png")} resizeMode="cover">
                 <Header />
-                <GreetingButton addFavorite={addFavorite} fetchApiCall={fetchApiCall} quote={quote}/>
+                <GreetingButton addFavorite={addFavorite} fetchApiCall={fetchApiCall} quote={quote.mantra} />
+                
                 <View>
+                    
                     <CustomSlider data={cardData} />
                 </View>
                 <View style={styles.bottomNavContainer}>

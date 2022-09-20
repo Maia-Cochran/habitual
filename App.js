@@ -35,13 +35,16 @@ const App = ( ) => {
       useEffect(() => {
           fetchApiCall();
       }, [])
+
+
   
   const addFavorite = (e) => {
-    e.preventDefault();
-     favs.push(quote) 
+    // e.preventDefault();
+    setFavs([...favs, newFav])
+    //  favs.push(mantra) 
     // setMantras([...mantras, newMantra])
     // console.log(`mantras`, mantras)
-    // setFavs([...favs, newFav])
+    // 
     // console.log(`favs`, favs)
   }
 
@@ -52,7 +55,8 @@ const App = ( ) => {
         {/* <Text>Home Screen</Text> */}
         <Home 
           favs={favs}
-          mantras={mantras}
+          quote={quote}
+          // mantras={mantras}
           navigation={navigation}
           addFavorite={addFavorite}
           fetchApiCall={fetchApiCall}
@@ -65,11 +69,11 @@ const App = ( ) => {
     )
   }
   
-  const renderFavorite = () => {
-    return favs.map((mantra, index) =>{
-       return <Text key={index}>mantra.mantra</Text>
-    })
-  }
+  // const renderFavorite = () => {
+  //   return favs.map((mantra, index) =>{
+  //      return <Text key={index}>mantra.mantra</Text>
+  //   })
+  // }
 
   const FavoritesScreen = ({navigation}) => {
     return (
