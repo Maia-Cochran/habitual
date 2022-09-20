@@ -43,6 +43,7 @@
 
 ----
 #### Favorite Quotes Display
+![Simulator Screen Shot - iPhone 14 - 2022-09-20 at 02 17 41](https://user-images.githubusercontent.com/101746747/191219611-c3872c93-fa39-483b-a1f7-7ce4efbf655a.png)
 
 ----
 #### Checklist Display
