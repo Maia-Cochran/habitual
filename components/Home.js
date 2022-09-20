@@ -1,38 +1,28 @@
-import React, {useEffect, useState} from 'react'
-import { View, StyleSheet, Text, TouchableHighlight, Image, ImageBackground, Button } from 'react-native'
+import React from 'react'
+import { View, StyleSheet, ImageBackground, Button } from 'react-native'
 import Header from './Header'
 import GreetingButton from './GreetingButton'
 import CustomSlider from './Carousel/CustomSlider';
 import BottomNavBar from './BottomNavBar';
 import cardData from '../utilities/data';
-// import { useState, useEffect } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import GoodVibeModal from './Navigation/GoodVibeModal';
-
+import AppLoading from 'expo-app-loading';
+import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
 
 const Home = ({navigation, addFavorite, fetchApiCall, quote, getUrl, modalVisible, setModalVisible}) =>{
     
+    let [fontsLoaded] = useFonts({
+        IndieFlower_400Regular,
+      });
 
-    // const basicFunction =() => {
-    //     console.log(`quote`, quote.mantra)
-    // }
-    // console.log(12345,basicFunction())
-    // console.log(`quote`, quote.mantra)
-    // useEffect( () => {
-    //     console.log(`modalVisible`, modalVisible)
-    //  }, [modalVisible])
-
-// const toggleModal= () => {
-//     console.log(`togleModalTriggered`)
-//    setModalVisible(!modalVisible)
-// }
+      if(!fontsLoaded){
+        return <AppLoading />;
+    } else{
 
 
     return (
         <View style={styles.homeContainer}>
             
-            <ImageBackground  source={require("../assets/background-with-leaves.png")} resizeMode="cover">
+            <ImageBackground  style={styles.imageContainer} source={require("../assets/background-with-leaves.png")} resizeMode="cover">
                 <Header />
            
                 <GreetingButton 
@@ -43,37 +33,49 @@ const Home = ({navigation, addFavorite, fetchApiCall, quote, getUrl, modalVisibl
                     getUrl={getUrl} 
                     fetchApiCall={fetchApiCall}
                     />
-                 {/* {modalVisible && <GoodVibeModal quote={quote} fetch={fetchApiCall} title="" addFavorite={addFavorite} toggleModal={toggleModal} modalVisible={modalVisible} />} */}
+
                 <View>
                     <CustomSlider data={cardData} />
                 </View>
                 <View style={styles.bottomNavContainer}>
                         
-                <BottomNavBar/>    
-                <View>
+                <View style={styles.buttonContainer}>
                 <Button
                     title="Go to Favorites"
                     onPress={() => navigation.navigate('FavoritesCard', {name: 'All my Favorites'})}/>
+                    <BottomNavBar/>    
                 </View>
 
                 </View>
             </ImageBackground>
         </View>
     )
+  }
 }
 
 export default Home;
-    const styles = StyleSheet.create({
-        homeContainer: {
-            alignItems: 'center',
-        },
-        bottomNavContainer: {
-            // alignItems: 'flex-end',
-            marginTop: -160,
-            marginLeft: 20,
-            // justifyContent: 'flex-end',
-            // height: 180,
-            width: "100%",
-            // margin: 20,
-          }
-    })
+const styles = StyleSheet.create({
+    homeContainer: {
+        alignContent: 'center',
+        alignItems: 'center',
+    },
+    imageContainer: {
+        height: '100%',
+        width: '100%',
+        alignItems: 'center',
+    
+    },
+    bottomNavContainer: {
+        marginTop: -140,
+        width: "100%",
+      },
+    buttonContainer: {
+        backgroundColor: '#39376E',
+        margin: 0,
+     
+    },
+    textStyle: {
+        fontFamily: 'IndieFlower_400Regular',
+        textColor: 'white',
+    }
+})

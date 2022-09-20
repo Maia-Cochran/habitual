@@ -12,7 +12,6 @@ export default function CustomSlider({ data }) {
     data: data,
     renderItem: CarouselItem,
     hasParallaxImages: true,
-    // modalIsVisible: false,
   };
   return (
     <View style={styles.container}>
