@@ -27,3 +27,14 @@
 // }
 
 // export default APICalls
+
+const APICalls = (props) => {
+    const getUrl = useCallback(() => {
+      return "http://localhost:3001/mantra";
+    }, []); // <-- Note that we can't add id to the deps array in this case
+ 
+    //do some other stuff here that might cause re-renders, like setting state
+    return <DataFetcher getUrl={getUrl}>
+ }
+
+ export default APICalls

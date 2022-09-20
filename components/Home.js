@@ -11,24 +11,33 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import GoodVibeModal from './Navigation/GoodVibeModal';
 
 
-const Home = ({navigation, handleChange, addFavorite, fetchApiCall, quote  }) =>{
-    const [modalVisible, setModalVisible] = useState(false);
+const Home = ({navigation, addFavorite, fetchApiCall, quote }) =>{
+    const [modalVisible, setModalVisible] = useState('');
 
     // const basicFunction =() => {
     //     console.log(`quote`, quote.mantra)
     // }
     // console.log(12345,basicFunction())
     // console.log(`quote`, quote.mantra)
+    useEffect( () => {
+        console.log(`modalVisible`, modalVisible)
+     }, [modalVisible])
+
+// const toggleModal= () => {
+//     console.log(`togleModalTriggered`)
+//    setModalVisible(!modalVisible)
+// }
+
+
     return (
         <View style={styles.homeContainer}>
             
             <ImageBackground  source={require("../assets/background-with-leaves.png")} resizeMode="cover">
                 <Header />
            
-                <GreetingButton addFavorite={addFavorite} fetchApiCall={fetchApiCall} quote={quote.mantra} />
-                 {modalVisible && <GoodVibeModal quote={quote} fetch={fetchApiCall} title="" addFavorite={addFavorite} toggleModal={setModalVisible} />}
+                <GreetingButton addFavorite={addFavorite} fetchApiCall={fetchApiCall} quote={quote} toggleModal={setModalVisible} modalVisible={modalVisible}/>
+                 {/* {modalVisible && <GoodVibeModal quote={quote} fetch={fetchApiCall} title="" addFavorite={addFavorite} toggleModal={toggleModal} modalVisible={modalVisible} />} */}
                 <View>
-                    
                     <CustomSlider data={cardData} />
                 </View>
                 <View style={styles.bottomNavContainer}>

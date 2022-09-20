@@ -4,16 +4,16 @@ import AppLoading from 'expo-app-loading';
 import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
 import GoodVibeModal from './Navigation/GoodVibeModal';
 
-const GreetingButton = ({ addFavorite, fetchApiCall, quote, modalVisible,  setModalVisible }) => {
+const GreetingButton = ({ addFavorite, fetchApiCall, quote, modalVisible,  toggleModal }) => {
     // const basicFunction =() => {
     //     console.log(`quote`, quote)
     // }
     // console.log(12345,basicFunction())
     // console.log(`quote`, quote)
 
-    let [fontsLoaded] = useFonts({
-        IndieFlower_400Regular,
-      });
+    // let [fontsLoaded] = useFonts({
+    //     IndieFlower_400Regular,
+    //   });
 
 
     //   const renderFavorite = () => {
@@ -23,27 +23,27 @@ const GreetingButton = ({ addFavorite, fetchApiCall, quote, modalVisible,  setMo
     //  }
 
 
-      if(!fontsLoaded){
-        return <AppLoading />;
-    } else{
+    //   if(!fontsLoaded){
+    //     return <AppLoading />;
+    // } else{
     return (
         <Pressable
             style={styles.buttonOpen}
-            onPress = {async (e) => {
-                e.preventDefault()
-                 await fetchApiCall() 
+            onPress = { (e) => {
+                // e.preventDefault()
+                 fetchApiCall() 
+                  toggleModal(true)
                  
             }}
-            setModalVisible={setModalVisible}
         >
         <View style={styles.greetingContainer}>     
-            <Text style={styles.textStyle}>Tell me something good </Text>
-           {/* <GoodVibeModal quote={quote} fetch={fetchApiCall} title="" addFavorite={addFavorite} setModalVisible={setModalVisible} modalVisible={modalVisible} /> */}
+            <Text style={styles.textStyle}>Tell me something good</Text>
+           <GoodVibeModal quote={quote} fetch={fetchApiCall} title="" addFavorite={addFavorite} toggleModal={toggleModal} modalVisible={modalVisible} />
         </View>
         </Pressable>
     )
   }
-};
+// };
 
 export default GreetingButton;
 
@@ -69,6 +69,17 @@ const styles = StyleSheet.create({
         shadowRadius: 10,
         elevation: 5,
     },
+    // buttonOpen: {
+    //     // backgroundColor: "#869684",
+    //     height: 90,
+    //     width: 350,
+    //     borderRadius: 20,
+    //     marginTop: -66,
+    //     // padding: 10,
+    //     opacity: 0.9,
+    //     borderColor: 'blue',
+    //     borderWidth: 2,
+    // },
     textStyle: {
         // zIndex: 2,
         fontSize: 27,
@@ -94,7 +105,8 @@ const styles = StyleSheet.create({
         borderRadius: 18,
         justifyContent: 'center', 
         alignItems: 'center'
-    }
+    },
+
 })
 
 

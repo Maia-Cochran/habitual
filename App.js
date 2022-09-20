@@ -1,28 +1,30 @@
 import { StyleSheet, Text, View, Button, Modal, Dimensions, useWindowDimensions } from 'react-native';
 import React, { useState, useEffect } from 'react';
 import Home from './components/Home';
-import AppLoading from 'expo-app-loading';
-import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
+// import AppLoading from 'expo-app-loading';
+// import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NavigationContainer } from '@react-navigation/native';
 import FavoritesCard from './components/CarouselCards/FavoritesCard'
 
-const App = ( ) => {
-  const [mantras, setMantras] = useState([])
+const App = () => {
+  // const [mantras, setMantras] = useState([])
   const [favs, setFavs] = useState([])
   const Stack = createNativeStackNavigator()
   const [quote, setQuote] = useState('')  
   const fetchApiCall = () => {
-          fetch("http://localhost:3001/mantra")
+       fetch("http://localhost:3001/mantra")
           .then(response => response.json())
           .then(data => {
-              setQuote(data)
-          console.log('data: ', data);
+            setQuote(data)  
+          console.log('data: ', data);   
           })
           .catch(err => {
           console.log(err);
           });
       }
+
+
 
 
       //  when I click on that quote that is the fav, fav a quote the app will look to its
@@ -33,11 +35,18 @@ const App = ( ) => {
       // I  
 
       useEffect( () => {
-         fetchApiCall();
+        console.log(`quote`, quote)
+        // setQuote(fetchApiCall())
+      }, [quote])
+
+
+      useEffect(async() => {
+
+        await fetchApiCall()
+ 
       }, [])
 
 
-  
   const addFavorite = (e) => {
     // e.preventDefault();
     // setFavs([...favs, newFav])
@@ -60,6 +69,7 @@ const App = ( ) => {
           navigation={navigation}
           addFavorite={addFavorite}
           fetchApiCall={fetchApiCall}
+          
         />
         {/* <Button
           title="Go to Favorites"
@@ -98,12 +108,12 @@ const App = ( ) => {
 
 
 
-  let [fontsLoaded] = useFonts({
-    IndieFlower_400Regular,
-  });
-  if(!fontsLoaded){
-    return <AppLoading />;
-} else {
+//   let [fontsLoaded] = useFonts({
+//     IndieFlower_400Regular,
+//   });
+//   if(!fontsLoaded){
+//     return <AppLoading />;
+// } else {
 
   return (
   <NavigationContainer>
@@ -122,7 +132,7 @@ const App = ( ) => {
   </NavigationContainer>
   );
  }
-}
+
 export default App;
 
 // const styles = StyleSheet.create({

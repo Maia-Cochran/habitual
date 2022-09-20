@@ -5,17 +5,23 @@ import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flowe
 import { LinearGradient } from 'expo-linear-gradient';
 import { BlurView } from 'expo-blur';
 
-const GoodVibeModal = ({quote, fetch, addFavorite }) => {
+const GoodVibeModal = ({quote, fetch, addFavorite, toggleModal, modalVisible }) => {
     // const [modalVisible, setModalVisible] = useState(false);
     const [favorite, setFavorite] = useState(false)
     // const [displayQuote, setDisplayQuote] = useState('')
-    let [fontsLoaded] = useFonts({
-      IndieFlower_400Regular,
-    });
+    // let [fontsLoaded] = useFonts({
+    //   IndieFlower_400Regular,
+    // });
+
+
+    const onRequestClose=(() => {
+        Alert.alert("Modal has been closed.");
+        toggleModal(!modalVisible);
+      })
 
    useEffect(() => {
-    console.log(`quote`, quote)
-    console.log(`modalVissible`, modalVisible)
+    console.log(`quoteGoodVibeModal`, quote)
+    // console.log(`modalVissible`, modalVisible)
 
 }, [quote])
     // const basicFunction =() => {
@@ -24,19 +30,22 @@ const GoodVibeModal = ({quote, fetch, addFavorite }) => {
     // console.log(12345,basicFunction())
     // console.log(`quote`, quote)
 
-    if(!fontsLoaded){
-      return <AppLoading />;
-  } else {
+//     if(!fontsLoaded){
+//       return <AppLoading />;
+//   } else {
+   
 
   return (
-    <TouchableHighlight >
-        <View style={styles.centeredView} >
+    // <TouchableHighlight >
+        // <View style={styles.centeredView} >
         <Modal
+            visible={modalVisible}
             // fetch={fetchAllData}
             // compliments={compliments.compliment}
             animationType="fade"
             transparent={true}
-            visible={modalVisible}
+            onRequestClose={onRequestClose}
+            // toggleModal ={toggleModal}
             // onShow={() => {
             //     return (
             //         quote
@@ -63,10 +72,9 @@ const GoodVibeModal = ({quote, fetch, addFavorite }) => {
               'rgba(178, 131, 122, 1)', 
               ]}
             style={styles.gradient}>
-
                 <Pressable
                     style={[styles.buttonClose]}
-                    onPress={() => {toggleModal(false)}}
+                    onPress={() => {toggleModal}}
                     >
                 <Text style={styles.textStyle}>✖️</Text>
                 </Pressable>      
@@ -79,22 +87,20 @@ const GoodVibeModal = ({quote, fetch, addFavorite }) => {
                     >
                 <Image style={styles.textStyle} source={require('../../assets/heart.png')} />
                 </Pressable>
-                <Text style={styles.modalText}>{quote}</Text>
+                <Text style={styles.modalText}>{quote.mantra}</Text>
                 </LinearGradient>
              </View> 
           </View>
         </Modal>
-     
-        
-             <BlurView intensity={80} tint="light" style={styles.blurContainer}>
-                <View style={styles.centeredView}></View>
-                </BlurView>
+                // <BlurView intensity={80} tint="light" style={styles.blurContainer}>
+                // <View style={styles.centeredView}></View>
+                // </BlurView>
       
-        </View>
-    </TouchableHighlight>
+        // </View>
+    // </TouchableHighlight>
   );
  };
-}
+// }
 
 const styles = StyleSheet.create({
     centeredView: {
@@ -145,6 +151,7 @@ const styles = StyleSheet.create({
         borderColor: 'blue',
         borderWidth: 2,
     },
+  
     buttonClose: {
         justifyContent: "center",
         backgroundColor: "#869684",
