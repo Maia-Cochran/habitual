@@ -21,15 +21,12 @@
 - Create a multi-page UX using Router
 
 ## Technologies and Tools
-- Javascript
-- HTML
-- CSS
+- ReactNative
+- JSX
 - npm
 - Node.js
-- React
-- Router
 - Cypress Testing
-- RESTful API
+- Express API
 - ReactPlayer
 - GitHub Projects
 - GitHub Issues
