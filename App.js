@@ -14,6 +14,7 @@ const App = () => {
   const [quote, setQuote] = useState('')  
   const [modalVisible, setModalVisible] = useState('');
   const fetchApiCall = () => {
+    console.log(`1--------------------`)
        fetch("http://localhost:3001/mantra")
           .then(response => response.json())
           .then(data => {
@@ -30,34 +31,11 @@ const App = () => {
 
 
 
-      //  when I click on that quote that is the fav, fav a quote the app will look to its
-      // state called quote in App and will push it to the saved arr 
-      //that's when the map(render )should work should be ok . and should always be
-      //displayed in the fav arr 
-      // when there is a qupet there ?? loading : function that returns the array of the mapped favorites
-      // I  
-
-      // useEffect( () => {
-      //   console.log(`quote`, quote)
-      //   fetchApiCall()
-      // }, [quote])
-
-
-      // useEffect(async() => {
-
-      //   await fetchApiCall()
- 
-      // }, [])
-
 
   const addFavorite = (e) => {
-    // e.preventDefault();
-    // setFavs([...favs, newFav])
-     favs.push(quote) 
-    // setMantras([...mantras, newMantra])
-    // console.log(`mantras`, mantras)
-    // 
-    // console.log(`favs`, favs)
+    setFavs([...favs, quote])
+    console.log(`hello how are you`)
+    
   }
 
 
@@ -84,11 +62,14 @@ const App = () => {
     )
   }
   
-  // const renderFavorite = () => {
-  //   return favs.map((mantra, index) =>{
-  //      return <Text key={index}>mantra.mantra</Text>
-  //   })
-  // }
+  const renderFavorite = () => {
+    console.log(123444555555, favs)
+
+    return favs.map((mantra, index) =>{
+      // let string = mantra
+       return <Text key={index}>{mantra.mantra}</Text>
+    })
+  }
 
   const FavoritesScreen = ({navigation}) => {
     return (
@@ -96,8 +77,9 @@ const App = () => {
         <FavoritesCard 
           handleChange={addFavorite}
           favs={favs}
-          mantras={mantras}
+          quote={quote}
           navigation={navigation}
+          renderFavorite={renderFavorite}
         />
       </View>
     )

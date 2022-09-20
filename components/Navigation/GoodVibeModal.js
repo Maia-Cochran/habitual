@@ -141,17 +141,17 @@ const styles = StyleSheet.create({
         elevation: 5,
         padding: 10,
     },
-    buttonOpen: {
-        // backgroundColor: "#869684",
-        height: 90,
-        width: 350,
-        borderRadius: 20,
-        marginTop: -66,
-        // padding: 10,
-        opacity: 0.9,
-        borderColor: 'blue',
-        borderWidth: 2,
-    },
+    // buttonOpen: {
+    //     // backgroundColor: "#869684",
+    //     height: 90,
+    //     width: 350,
+    //     borderRadius: 20,
+    //     marginTop: -66,
+    //     // padding: 10,
+    //     opacity: 0.9,
+    //     borderColor: 'blue',
+    //     borderWidth: 2,
+    // },
   
     buttonClose: {
         justifyContent: "center",
@@ -178,14 +178,10 @@ const styles = StyleSheet.create({
 
     },
     modalText: {
-        // flex: 1,
-        // justifyContent: "center",
-        // alignContent: "center",
         color: "white",
         marginTop: '30%',
         textAlign: "center",
         fontSize: 30,
-        // padding: 10,
         fontFamily: 'IndieFlower_400Regular',
     },
     favBtn:{
