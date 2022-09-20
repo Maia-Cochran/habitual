@@ -34,29 +34,33 @@
 
 ## Illustrations and Demo
 #### Home Screen Display
-![Simulator Screen Shot - iPhone 14 - 2022-09-20 at 02 02 53](https://user-images.githubusercontent.com/101746747/191217942-eccc6fd7-af90-4a74-be99-bb80a92b74bb.png)
+
+<img width="200" src="https://user-images.githubusercontent.com/101746747/191217942-eccc6fd7-af90-4a74-be99-bb80a92b74bb.png">
 
 ----
 #### Modal Display
-![Simulator Screen Shot - iPhone 14 - 2022-09-20 at 02 02 25](https://user-images.githubusercontent.com/101746747/191217603-37a1b2a5-aec2-4dd1-a807-8a120f1b8d7c.png)
+
+<img width="200" src="https://user-images.githubusercontent.com/101746747/191217603-37a1b2a5-aec2-4dd1-a807-8a120f1b8d7c.png">
 
 ----
 #### Favorite Quotes Display
-![Simulator Screen Shot - iPhone 14 - 2022-09-20 at 02 17 41](https://user-images.githubusercontent.com/101746747/191219611-c3872c93-fa39-483b-a1f7-7ce4efbf655a.png)
+
+<img width="200" src="https://user-images.githubusercontent.com/101746747/191219611-c3872c93-fa39-483b-a1f7-7ce4efbf655a.png">
 
 ----
 #### Checklist Display
-![Simulator Screen Shot - iPhone 14 - 2022-09-20 at 02 03 34](https://user-images.githubusercontent.com/101746747/191217792-0caab9e2-d7ce-4274-8cd1-8bda3b0e5b35.png)
+
+<img width="200" src="https://user-images.githubusercontent.com/101746747/191217792-0caab9e2-d7ce-4274-8cd1-8bda3b0e5b35.png">
 
 ----
 
 #### Calendar View Display
-![Simulator Screen Shot - iPhone 14 - 2022-09-20 at 02 03 37](https://user-images.githubusercontent.com/101746747/191218122-7c0d38b9-9d84-4540-a46c-2d83ac45059f.png)
+<img width="200" src="https://user-images.githubusercontent.com/101746747/191218122-7c0d38b9-9d84-4540-a46c-2d83ac45059f.png">
 
 ----
 
 #### Demo
-![Demo-Stretch](https://user-images.githubusercontent.com/101746747/191220291-6e7850a4-4617-4ad9-b0de-2ae99412c8cc.mov)
+<img width="200" src="https://user-images.githubusercontent.com/101746747/191220291-6e7850a4-4617-4ad9-b0de-2ae99412c8cc.mov">
 
 ## Project Reflections
 #### Wins
