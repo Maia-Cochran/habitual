@@ -13,7 +13,7 @@ const App = ( ) => {
   const Stack = createNativeStackNavigator()
   const [quote, setQuote] = useState('')  
   const fetchApiCall = () => {
-      return fetch("http://localhost:3001/mantra")
+          fetch("http://localhost:3001/mantra")
           .then(response => response.json())
           .then(data => {
               setQuote(data)
@@ -40,8 +40,8 @@ const App = ( ) => {
   
   const addFavorite = (e) => {
     // e.preventDefault();
-    setFavs([...favs, newFav])
-    return favs.push(quote) 
+    // setFavs([...favs, newFav])
+     favs.push(quote) 
     // setMantras([...mantras, newMantra])
     // console.log(`mantras`, mantras)
     // 

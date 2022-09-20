@@ -5,7 +5,7 @@ import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flowe
 import { LinearGradient } from 'expo-linear-gradient';
 import { BlurView } from 'expo-blur';
 
-const GoodVibeModal = ({quote, fetch, addFavorite, modalVisible}) => {
+const GoodVibeModal = ({quote, fetch, addFavorite }) => {
     // const [modalVisible, setModalVisible] = useState(false);
     const [favorite, setFavorite] = useState(false)
     // const [displayQuote, setDisplayQuote] = useState('')
@@ -30,7 +30,7 @@ const GoodVibeModal = ({quote, fetch, addFavorite, modalVisible}) => {
 
   return (
     <TouchableHighlight >
-        <View style={styles.centeredView}>
+        <View style={styles.centeredView} >
         <Modal
             // fetch={fetchAllData}
             // compliments={compliments.compliment}
@@ -66,7 +66,7 @@ const GoodVibeModal = ({quote, fetch, addFavorite, modalVisible}) => {
 
                 <Pressable
                     style={[styles.buttonClose]}
-                    onPress={() => {setModalVisible(false)}}
+                    onPress={() => {toggleModal(false)}}
                     >
                 <Text style={styles.textStyle}>✖️</Text>
                 </Pressable>      
@@ -85,18 +85,11 @@ const GoodVibeModal = ({quote, fetch, addFavorite, modalVisible}) => {
           </View>
         </Modal>
      
-        <Pressable
-            style={styles.buttonOpen}
-            onPress = {(e) => {
-                e.preventDefault()
-                 fetch() 
-                setModalVisible(true) 
-            }}
-        >
+        
              <BlurView intensity={80} tint="light" style={styles.blurContainer}>
                 <View style={styles.centeredView}></View>
                 </BlurView>
-        </Pressable>
+      
         </View>
     </TouchableHighlight>
   );
@@ -142,15 +135,15 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     buttonOpen: {
-        backgroundColor: "#869684",
+        // backgroundColor: "#869684",
         height: 90,
         width: 350,
         borderRadius: 20,
         marginTop: -66,
         // padding: 10,
-        opacity: 0.0,
-        // borderColor: 'blue',
-        // borderWidth: 2,
+        opacity: 0.9,
+        borderColor: 'blue',
+        borderWidth: 2,
     },
     buttonClose: {
         justifyContent: "center",

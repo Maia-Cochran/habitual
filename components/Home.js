@@ -11,7 +11,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import GoodVibeModal from './Navigation/GoodVibeModal';
 
 
-const Home = ({navigation, handleChange, addFavorite, fetchApiCall, quote }) =>{
+const Home = ({navigation, handleChange, addFavorite, fetchApiCall, quote  }) =>{
     const [modalVisible, setModalVisible] = useState(false);
 
     // const basicFunction =() => {
@@ -26,7 +26,7 @@ const Home = ({navigation, handleChange, addFavorite, fetchApiCall, quote }) =>{
                 <Header />
            
                 <GreetingButton addFavorite={addFavorite} fetchApiCall={fetchApiCall} quote={quote.mantra} />
-               
+                 {modalVisible && <GoodVibeModal quote={quote} fetch={fetchApiCall} title="" addFavorite={addFavorite} toggleModal={setModalVisible} />}
                 <View>
                     
                     <CustomSlider data={cardData} />

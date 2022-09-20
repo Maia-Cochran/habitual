@@ -1,10 +1,10 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
 import React, { useState, useEffect } from 'react';
 import AppLoading from 'expo-app-loading';
 import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
 import GoodVibeModal from './Navigation/GoodVibeModal';
 
-const GreetingButton = ({ addFavorite, fetchApiCall, quote }) => {
+const GreetingButton = ({ addFavorite, fetchApiCall, quote, modalVisible,  setModalVisible }) => {
     // const basicFunction =() => {
     //     console.log(`quote`, quote)
     // }
@@ -27,10 +27,20 @@ const GreetingButton = ({ addFavorite, fetchApiCall, quote }) => {
         return <AppLoading />;
     } else{
     return (
+        <Pressable
+            style={styles.buttonOpen}
+            onPress = {async (e) => {
+                e.preventDefault()
+                 await fetchApiCall() 
+                 
+            }}
+            setModalVisible={setModalVisible}
+        >
         <View style={styles.greetingContainer}>     
-            <Text style={styles.textStyle}>Tell Me Something Good</Text>
-           <GoodVibeModal quote={quote} fetch={fetchApiCall} title="" addFavorite={addFavorite} />
+            <Text style={styles.textStyle}>Tell me something good </Text>
+           {/* <GoodVibeModal quote={quote} fetch={fetchApiCall} title="" addFavorite={addFavorite} setModalVisible={setModalVisible} modalVisible={modalVisible} /> */}
         </View>
+        </Pressable>
     )
   }
 };
