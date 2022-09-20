@@ -44,7 +44,8 @@
 #### Favorite Quotes Display
 
 ----
-#### Carousel Display
+#### Checklist Display
+![Simulator Screen Shot - iPhone 14 - 2022-09-20 at 02 03 34](https://user-images.githubusercontent.com/101746747/191217792-0caab9e2-d7ce-4274-8cd1-8bda3b0e5b35.png)
 
 ----
 
