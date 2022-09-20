@@ -30,31 +30,44 @@
 - ReactPlayer
 - GitHub Projects
 - GitHub Issues
+- Figma
+- FigJam
 
 ## Illustrations and Demo
-#### Loading Page
+#### Home Screen Display
 
 ----
-#### Feature Display
+#### Modal Display
 
 ----
-#### Feature Display
+#### Favorite Quotes Display
 
 ----
-#### View
+#### Carousel Display
 
 ----
 
 ## Project Reflections
 #### Wins
-- 
+- Successfully rendered API Calls
+- Working in React Native
+- Successful use of React Native Modal
+- Successful use of React Native Carousel
+- Creating Express API
+- Working with React Navigation
+- Illustrations for icons
+- Working with Figma
 
 #### Challenges
-- 
+- Sourcing accurate documentation for React Native 
+- Accurately maintianing flow of data with Modal/Carousel
+- Accurately rendering modal for multiple different tiles
 
 ## Roadmap
 Future features could include:
-- 
+- Calendar for tracking habit-making
+- Chart to display this trend
+- Checklist to guide and track habit-making activities
 
 ## Deployed Page
 Visit the published site [here]()
