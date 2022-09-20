@@ -12,17 +12,17 @@ const App = () => {
   const [favs, setFavs] = useState([])
   const Stack = createNativeStackNavigator()
   const [quote, setQuote] = useState('')  
-  const fetchApiCall = () => {
-       fetch("http://localhost:3001/mantra")
-          .then(response => response.json())
-          .then(data => {
-            setQuote(data)  
-          console.log('data: ', data);   
-          })
-          .catch(err => {
-          console.log(err);
-          });
-      }
+  // const fetchApiCall = () => {
+  //      fetch("http://localhost:3001/mantra")
+  //         .then(response => response.json())
+  //         .then(data => {
+  //           setQuote(data)  
+  //         console.log('data: ', data);   
+  //         })
+  //         .catch(err => {
+  //         console.log(err);
+  //         });
+  //     }
 
 
 
@@ -34,17 +34,17 @@ const App = () => {
       // when there is a qupet there ?? loading : function that returns the array of the mapped favorites
       // I  
 
-      useEffect( () => {
-        console.log(`quote`, quote)
-        // setQuote(fetchApiCall())
-      }, [quote])
+      // useEffect( () => {
+      //   console.log(`quote`, quote)
+      //   // setQuote(fetchApiCall())
+      // }, [quote])
 
 
-      useEffect(async() => {
+      // useEffect(async() => {
 
-        await fetchApiCall()
+      //   await fetchApiCall()
  
-      }, [])
+      // }, [])
 
 
   const addFavorite = (e) => {
@@ -68,7 +68,7 @@ const App = () => {
           // mantras={mantras}
           navigation={navigation}
           addFavorite={addFavorite}
-          fetchApiCall={fetchApiCall}
+          // fetchApiCall={fetchApiCall}
           
         />
         {/* <Button

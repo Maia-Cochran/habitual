@@ -5,7 +5,7 @@ import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flowe
 import { LinearGradient } from 'expo-linear-gradient';
 import { BlurView } from 'expo-blur';
 
-const GoodVibeModal = ({quote, fetch, addFavorite, toggleModal, modalVisible }) => {
+const GoodVibeModal = ({quote, fetch, addFavorite, toggleModal, modalVisible, getUrl }) => {
     // const [modalVisible, setModalVisible] = useState(false);
     const [favorite, setFavorite] = useState(false)
     // const [displayQuote, setDisplayQuote] = useState('')
@@ -45,6 +45,7 @@ const GoodVibeModal = ({quote, fetch, addFavorite, toggleModal, modalVisible }) 
             animationType="fade"
             transparent={true}
             onRequestClose={onRequestClose}
+            getUrl={getUrl}
             // toggleModal ={toggleModal}
             // onShow={() => {
             //     return (

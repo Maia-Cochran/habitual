@@ -1,49 +1,36 @@
 import { View, Text, StyleSheet, Pressable } from 'react-native';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, getUrl } from 'react';
 import AppLoading from 'expo-app-loading';
 import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
 import GoodVibeModal from './Navigation/GoodVibeModal';
 
-const GreetingButton = ({ addFavorite, fetchApiCall, quote, modalVisible,  toggleModal }) => {
-    // const basicFunction =() => {
-    //     console.log(`quote`, quote)
-    // }
-    // console.log(12345,basicFunction())
-    // console.log(`quote`, quote)
-
-    // let [fontsLoaded] = useFonts({
-    //     IndieFlower_400Regular,
-    //   });
-
-
-    //   const renderFavorite = () => {
-    //     return favs.map((mantra, index) =>{
-    //        return <Text key={index}>mantra.mantra</Text>
-    //     })
-    //  }
-
-
-    //   if(!fontsLoaded){
-    //     return <AppLoading />;
-    // } else{
+const GreetingButton = ({ addFavorite, fetchApiCall, quote, modalVisible,  toggleModal, getUrl }) => {
+   
     return (
         <Pressable
             style={styles.buttonOpen}
             onPress = { (e) => {
                 // e.preventDefault()
-                 fetchApiCall() 
+                { getUrl}
                   toggleModal(true)
                  
             }}
         >
         <View style={styles.greetingContainer}>     
             <Text style={styles.textStyle}>Tell me something good</Text>
-           <GoodVibeModal quote={quote} fetch={fetchApiCall} title="" addFavorite={addFavorite} toggleModal={toggleModal} modalVisible={modalVisible} />
+           <GoodVibeModal 
+            quote={quote} 
+            // fetch={fetchApiCall} 
+            title="" 
+            addFavorite={addFavorite} 
+            toggleModal={toggleModal} 
+            modalVisible={modalVisible}
+            getUrl={getUrl} />
         </View>
         </Pressable>
     )
   }
-// };
+
 
 export default GreetingButton;
 
@@ -110,6 +97,122 @@ const styles = StyleSheet.create({
 })
 
 
+// import { View, Text, StyleSheet, Pressable } from 'react-native';
+// import React, { useState, useEffect } from 'react';
+// import AppLoading from 'expo-app-loading';
+// import { useFonts, IndieFlower_400Regular } from '@expo-google-fonts/indie-flower';
+// import GoodVibeModal from './Navigation/GoodVibeModal';
+
+// const GreetingButton = ({ addFavorite, fetchApiCall, quote, modalVisible,  toggleModal }) => {
+//     // const basicFunction =() => {
+//     //     console.log(`quote`, quote)
+//     // }
+//     // console.log(12345,basicFunction())
+//     // console.log(`quote`, quote)
+
+//     // let [fontsLoaded] = useFonts({
+//     //     IndieFlower_400Regular,
+//     //   });
+
+
+//     //   const renderFavorite = () => {
+//     //     return favs.map((mantra, index) =>{
+//     //        return <Text key={index}>mantra.mantra</Text>
+//     //     })
+//     //  }
+
+
+//     //   if(!fontsLoaded){
+//     //     return <AppLoading />;
+//     // } else{
+//     return (
+//         <Pressable
+//             style={styles.buttonOpen}
+//             onPress = { (e) => {
+//                 // e.preventDefault()
+//                  fetchApiCall() 
+//                   toggleModal(true)
+                 
+//             }}
+//         >
+//         <View style={styles.greetingContainer}>     
+//             <Text style={styles.textStyle}>Tell me something good</Text>
+//            <GoodVibeModal 
+//             quote={quote} 
+//             fetch={fetchApiCall} 
+//             title="" 
+//             addFavorite={addFavorite} 
+//             toggleModal={toggleModal} 
+//             modalVisible={modalVisible} />
+//         </View>
+//         </Pressable>
+//     )
+//   }
+// // };
+
+// export default GreetingButton;
+
+// const styles = StyleSheet.create({
+//     greetingContainer: {
+//         justifyContent: 'center',
+//         backgroundColor: '#869684',
+//         height: 90,
+//         width: 350, 
+//         padding: 8,
+//         paddingBottom: 0,
+//         borderWidth: 1,
+//         borderColor: '#3A376F',
+//         borderRadius: 20,
+//         // borderColor: 'red',
+//         // borderWidth: 2,
+//         shadowColor: "#000",
+//         shadowOffset: {
+//             width: 6,
+//             height: 6
+//         },
+//         shadowOpacity: 0.8,
+//         shadowRadius: 10,
+//         elevation: 5,
+//     },
+//     // buttonOpen: {
+//     //     // backgroundColor: "#869684",
+//     //     height: 90,
+//     //     width: 350,
+//     //     borderRadius: 20,
+//     //     marginTop: -66,
+//     //     // padding: 10,
+//     //     opacity: 0.9,
+//     //     borderColor: 'blue',
+//     //     borderWidth: 2,
+//     // },
+//     textStyle: {
+//         // zIndex: 2,
+//         fontSize: 27,
+//         fontWeight:'bolder',
+//         justifyContent: 'center',
+//         textAlign: 'center',
+//         color: '#F5F5F5',
+//         // padding: 5,
+//         fontFamily: 'IndieFlower_400Regular',
+//     },
+//     // modalContainer: {
+//     //     height: 85,
+//     //     width: 350, 
+//     //     // zIndex:2,
+//     //     borderRadius: 18,
+//     //     borderColor: 'red',
+//     //     borderWidth: 2,
+//     // },
+
+//     highlight: {
+//         height: 85,
+//         width: 350, 
+//         borderRadius: 18,
+//         justifyContent: 'center', 
+//         alignItems: 'center'
+//     },
+
+// })
 
 
 
