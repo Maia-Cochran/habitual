@@ -15,10 +15,9 @@
 - 
 
 ## Learning Goals
-- Gain competency with React fundamentals
-- Learn how to test React components & asynchronous JS
+- Gain competency with React Native fundamentals
 - Practice refactoring
-- Create a multi-page UX using Router
+- Create a multi-page UX using React Native Navigation
 
 ## Technologies and Tools
 - Javascript
