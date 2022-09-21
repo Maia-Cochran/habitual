@@ -19,7 +19,7 @@
 ## Deployed App
 Visit the published App via Expo App [here](exp://exp.host/@maia-cochran/habitual?release-channel=default), or click [here](https://expo.dev/@maia-cochran/habitual) to scan the QR Code.  
 
-* Please note that you will need to first download the Expo App from the Apple App Store
+* Please note that you will need to first download the Expo App from the Apple App Store to view this on your device.
 
 ## Learning Goals
 - Challenge ourselves to self teach a new technology
