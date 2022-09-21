@@ -96,11 +96,6 @@ Visit the published App via Expo App [here](exp://exp.host/@maia-cochran/habitua
 4. Run `npm install`
 5. Run `npm start`
 ----
-### Please do the following to run API:
-1. Clone down https://github.com/GOECHA/mantras-api
-2. npm install
-3. node server.js
-
 
 ## Contributors
  - [Shauna MacFarlane-Okongo](https://github.com/DrSLMac) | [LinkedIn](https://github.com/DrSLMac)
