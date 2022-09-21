@@ -17,7 +17,7 @@
 - Habitual is an application built in React Native, based in IOS. This is an application that allow the user to receive a random mantra or affirmation when user clicks on the button. User is able to save favorite quotes to a Favorites Page to view on the Favorites page later. User can also scroll through a carousel of encouraging quotes and reminders.
 
 ## Deployed App
-Visit the published App via Expo App [here](https://expo.dev/@maia-cochran/habitual) to scan the QR Code.  
+Visit the published App via Expo App [here](https://expo.dev/@maia-cochran/habitual) by scanning the QR Code.  
 
 * Please note that you will need to first download the Expo App from the Apple App Store to view this on your device.
 
