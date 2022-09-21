@@ -1,36 +1,38 @@
-## Table of Contents 🪷
+# Habitual 🪷
+
+## Table of Contents 🧘🏼
 - [Introduction](#introduction)
 - [Learning Goals](#learning-goals)
 - [Technologies and Tools](#technologies-and-tools)
 - [Illustrations & Demo](#illustrations-and-demo)
 - [Project Reflections](#project-reflections)
 - [Roadmap](#roadmap)
-- [Deployed Page](#deployed-page)
 - [Set Up](#set-up)
 - [Contributors](#contributors)
 - [Sources](#sources)
 - [Project Specs](#project-specs)
 
 ## Introduction
-- Habitual is an application built in React Native, based in IOS. This is an application that allows a user to browse through a list of quotes and save them to a list within the application for a daily dose of positive vibes.
+- Habitual is an application built in React Native, based in IOS. This is an application that allow the user to receive a random mantra or affirmation when user clicks on the button. User is able to save favorite quotes to a Favorites Page to view on the Favorites page later. User can also scroll through a carousel of encouraging quotes and reminders.
 
 ## Learning Goals
+- Challenge ourselves to self teach a new technology
 - Gain competency with React Native fundamentals
 - Practice refactoring
 - Create a multi-page UX using React Native Navigation
 
 ## Technologies and Tools
-- ReactNative
+- React Native
+- React-Snap-Carousel
+- React Native Modal
+- Bootstrap
+- Expo Go
 - JSX
-- npm
 - Node.js
-- Cypress Testing
 - Express API
-- ReactPlayer
 - GitHub Projects
 - GitHub Issues
 - Figma
-- FigJam
 
 ## Illustrations and Demo
 #### Home Screen Display
@@ -84,18 +86,22 @@ Future features could include:
 - Chart to display habit-making trends
 - Calendar to track and guide habit-making daily, weekly, and monthly
 
-## Deployed Page
-Visit the published App via Expo App [here](exp://exp.host/@maia-cochran/habitual?release-channel=default), or click [here](https://expo.dev/@maia-cochran/habitual) to scan the QR Code.  
-
-* Please note that you will need to first download the Expo App from the Apple App Store
-
 ## Set Up
 1. Fork this repo
 2. Clone the repo to your local machine
 3. `cd` into the root of the project directory
 4. Run `npm install`
 5. Run `npm start`
+6. Download Expo Go app
+
+![IMG_7017](https://user-images.githubusercontent.com/102887963/191565442-a55d183b-9485-44db-8e74-7de837d974ed.jpg)
+
+7. Upon start you will see a QR code in the command line. 
+<img width="738" alt="Screen Shot 2022-09-21 at 11 43 27 AM" src="https://user-images.githubusercontent.com/102887963/191564520-ff90176e-47a5-43df-b012-0ec23540baa6.png">
+8. Using your smart phone, scan the QR code and open the app in the Expo Go Simulator on your computer or Expo Go App on your device
 ----
+
+
 
 ## Contributors
  - [Shauna MacFarlane-Okongo](https://github.com/DrSLMac) | [LinkedIn](https://github.com/DrSLMac)
@@ -108,10 +114,9 @@ Visit the published App via Expo App [here](exp://exp.host/@maia-cochran/habitua
  - [MDN](http://developer.mozilla.org/en-US/)
  - [YouTube](https://www.youtube.com/)
  - [W3Schools](https://www.w3schools.com/)
- - [Heroku cloud PaaS](https://heroku.com/)
- - [Router docs](https://reactrouter.com/)
- - [Cypress docs](https://docs.cypress.io/guides/overview/why-cypress)
+ - [React Native Docs](https://reactnative.dev/)
  - [Medium](https://medium.com/)
+ - [React Native Linear Gradient](https://www.npmjs.com/package/react-native-linear-gradient)
 
 ## Project Specs
  - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-3/stretch.html)
