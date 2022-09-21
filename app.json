@@ -2,6 +2,7 @@
   "expo": {
     "name": "habitual",
     "slug": "habitual",
+    "description": "It's a beautiful day to be happy.", 
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
